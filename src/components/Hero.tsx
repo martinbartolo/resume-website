@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 type Props = {}
 
@@ -19,7 +20,7 @@ export default function Hero({}: Props) {
                 <h1
                     className='text-center
                     text-7xl
-                    p-5
+                    pb-10
                     font-playfair
                     drop-shadow-[3px_3px_0_rgba(0,0,0,1)]'>
                         Hey, I&apos;m Martin Bartolo
@@ -27,47 +28,57 @@ export default function Hero({}: Props) {
                 <h2
                     className='text-center
                     text-lg
+                    pb-8
                     font-montserrat'>
                     I&apos;m currently pursuing a Master&apos;s degree in Computer Science at the University of Colorado, Boulder.<br/>
                     Most of my experience is in backend development and machine learning. I am also currently experimenting with website design in my free time.
                 </h2>
 
                 <div>
-                    <motion.button 
-                    whileHover={{
-                        scale: 1.075,
-                        transition: { duration: 0.1 },
-                    }}
-                    className='heroButton'>
-                        About
-                    </motion.button>
-
-                    <motion.button 
-                    whileHover={{
-                        scale: 1.075,
-                        transition: { duration: 0.1 },
-                    }}
-                    className='heroButton'>
-                        Experience
-                    </motion.button>
-
-                    <motion.button 
-                    whileHover={{
-                        scale: 1.075,
-                        transition: { duration: 0.1 },
-                    }}
-                    className='heroButton'>
-                        Education
-                    </motion.button>
+                    <Link href='#about'>
+                        <motion.button 
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 },
+                        }}
+                        className='heroButton'>
+                            About
+                        </motion.button>
+                    </Link>
                     
-                    <motion.button 
-                    whileHover={{
-                        scale: 1.075,
-                        transition: { duration: 0.1 },
-                    }}
-                    className='heroButton'>
-                        Skills
-                    </motion.button>
+                    
+                    <Link href='#experience'>
+                        <motion.button 
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 },
+                        }}
+                        className='heroButton'>
+                            Experience
+                        </motion.button>
+                    </Link>
+
+                    <Link href='#education'>
+                        <motion.button 
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 },
+                        }}
+                        className='heroButton'>
+                            Education
+                        </motion.button>
+                    </Link>
+                    
+                    <Link href='#skills'>
+                        <motion.button 
+                        whileHover={{
+                            scale: 1.075,
+                            transition: { duration: 0.1 },
+                        }}
+                        className='heroButton'>
+                            Skills
+                        </motion.button>
+                    </Link>
                 </div>
             </div>
         </div>

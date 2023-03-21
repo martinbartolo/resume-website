@@ -8,7 +8,7 @@ export default function Header() {
 
     const changeNavBg = () => {
         console.log(window.scrollY);
-        window.scrollY > 50 ? setNavBg(true) : setNavBg(false);
+        window.scrollY > 915 ? setNavBg(true) : setNavBg(false);
     }
 
     useEffect(() => {
@@ -20,7 +20,7 @@ export default function Header() {
     <div onScroll={changeNavBg}>
         <header
             className={navBg ? 
-                'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-black' : 
+                'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-transparent' : 
                 'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-transparent'
                 }>
             <motion.div 
@@ -40,7 +40,7 @@ export default function Header() {
             className='flex flex-row items-center'>
                 <motion.div
                     whileHover={{
-                        scale: 1.075,
+                        scale: 1.15,
                         transition: { duration: 0.1 },
                     }}>
                     <SocialIcon
@@ -51,7 +51,7 @@ export default function Header() {
                 
                 <motion.div
                     whileHover={{
-                        scale: 1.075,
+                        scale: 1.15,
                         transition: { duration: 0.1 },
                     }}>
                     <SocialIcon
@@ -76,7 +76,7 @@ export default function Header() {
                 duration: 1
             }}
             whileHover={{
-                scale: 1.075,
+                scale: 1.15,
                 transition: { duration: 0.1 },
             }}
             className='flex flex-row items-center cursor-pointer'>
