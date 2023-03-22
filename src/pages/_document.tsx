@@ -15,7 +15,7 @@ export default function Document() {
         rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className='bodyoverlay'>
         <Main />
         <NextScript />
       </body>

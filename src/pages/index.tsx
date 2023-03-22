@@ -5,20 +5,20 @@ import Head from 'next/head'
 
 export default function Home() {
   return (
-    <div className='bg-black text-white h-screen w-full'>
+    <div className='bg-black text-white w-full'>
       <Head>
         <title>Martin Bartolo</title>
       </Head>
       
       <Header />
 
-      { /* Hero */ }
+      { /* Hero */ } 
       <section id="hero" className='snap-start'>
         <Hero />
       </section>
 
       { /* About */ }
-      <section id="about" className='snap-center'>
+      <section id="about" className='snap-start'>
         <About />
       </section>
       { /* Experience */ }

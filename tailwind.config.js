@@ -6,5 +6,8 @@ module.exports = {
       'montserrat': ['Montserrat', 'sans-serif'],
       'playfair': ['"Playfair Display"', 'serif'],
     }
-  }
-}
+  },
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
+};
