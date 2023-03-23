@@ -25,20 +25,27 @@
 ::-webkit-scrollbar {
     background-color: transparent;
     border: none;
-    width: 15px;
+    width: 13px;
+    height: 13px;
 }
 *{
-    scrollbar-color: #404040b3 transparent; /*firefox*/
+    scrollbar-color: white transparent; /*firefox*/
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track:horizontal{
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+::-webkit-scrollbar-track:vertical{
     background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 20px;
     border: 4px solid transparent;
-    background-color: black;
+    background-color: whitesmoke;
     background-clip: content-box;
 }
 
@@ -71,6 +78,6 @@
 
 @layer components {
     .heroButton {
-        @apply px-5 py-2 text-xl font-montserrat font-medium
+        @apply px-2 md:px-8 py-2 text-xl font-montserrat font-medium
     }
 }

@@ -18,11 +18,13 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-scroll": "^1.8.9",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^5.15.0",
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@types/react-scroll": "^1.8.6",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "tailwind-scrollbar": "^3.0.0",

@@ -1,7 +1,6 @@
 import React from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Link, animateScroll } from 'react-scroll';
 
 type Props = {}
 
@@ -10,17 +9,11 @@ export default function Hero({}: Props) {
     <div className='big-image'>
     <div className='overlay'>
         <div className='h-screen scale-[0.8] xl:scale-100 2xl:scale-110 flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-            <Image 
-                className='relative rounded-full'
-                src='/avatar.jpg'
-                alt="avatar"
-                width={125}
-                height={125}/>
             <div>
                 <h1 className='text-center text-6xl md:text-7xl max-w-prose pb-10 font-playfair drop-shadow-[3px_3px_0_rgba(0,0,0,1)]'>
                     Hey, I&apos;m Martin Bartolo
                 </h1>
-                <h2 className='text-center text-base md:text-xl px-5 max-w-prose pb-8 font-montserrat'>
+                <h2 className='text-justify text-xl md:text-xl px-5 max-w-prose pb-8 font-montserrat'>
                     I&apos;m currently pursuing a Master&apos;s degree in Computer Science at the 
                     University of Colorado, Boulder. Most of my experience is in backend development and 
                     machine learning and I am also currently experimenting with website design in my free 
@@ -29,7 +22,9 @@ export default function Hero({}: Props) {
                 </h2>
 
                 <div>
-                    <Link href='#about'>
+                    <Link 
+                    to='about'
+                    smooth={true}>
                         <motion.button 
                         whileHover={{
                             scale: 1.15,
@@ -41,7 +36,9 @@ export default function Hero({}: Props) {
                     </Link>
                     
                     
-                    <Link href='#experience'>
+                    <Link 
+                    to='experience'
+                    smooth={true}>
                         <motion.button 
                         whileHover={{
                             scale: 1.15,
@@ -52,7 +49,7 @@ export default function Hero({}: Props) {
                         </motion.button>
                     </Link>
 
-                    <Link href='#education'>
+                    <Link to='education'>
                         <motion.button 
                         whileHover={{
                             scale: 1.15,
@@ -63,7 +60,7 @@ export default function Hero({}: Props) {
                         </motion.button>
                     </Link>
                     
-                    <Link href='#skills'>
+                    <Link to='skills'>
                         <motion.button 
                         whileHover={{
                             scale: 1.075,

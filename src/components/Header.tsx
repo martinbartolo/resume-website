@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <div onScroll={changeNavBg}>
-        <header className={navBg ? 'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-black md:bg-transparent' : 'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-transparent' }>
+        <header className={navBg ? 'fixed left-0 top-0 w-full p-2 md:p-5 flex justify-between mx-auto z-20 bg-black md:bg-transparent' : 'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-transparent' }>
             <motion.div 
             initial={{
                 x: -500,
@@ -30,20 +30,18 @@ export default function Header() {
                 opacity: 1,
                 scale: 1
             }}
-            transition={{
-                duration: 1.5
-            }}
-            className='md:px-6 flex flex-row items-center'>
+            transition={{ duration: 1 }}
+            className='md:px-6 flex flex-row items-center gap-0 md:gap-2 xl:gap-3 2xl:gap-4'>
                 <motion.div
                     whileHover={{
                         scale: 1.15,
-                        transition: { duration: 0.1 },
+                        transition: { duration: 0.1 }
                     }}>
                     <SocialIcon
                     url="https://github.com/martin-bartolo"
                     fgColor="white"
                     bgColor="transparent" 
-                    className='p-6 scale-110 2xl:pr-10 xl:scale-125 2xl:scale-150'/>
+                    className='scale-110 xl:scale-125 2xl:scale-150'/>
                 </motion.div>
                 
                 <motion.div
@@ -55,31 +53,29 @@ export default function Header() {
                     url="https://www.linkedin.com/in/martinbartolo"
                     fgColor="white"
                     bgColor="transparent"
-                    className='p-6 xl:pl-10 scale-110 xl:scale-125 2xl:scale-150'/>
+                    className='scale-110 xl:scale-125 2xl:scale-150'/>
                 </motion.div>
             </motion.div>
 
             <motion.div 
             initial={{
                 x: 500,
-                y: 10,
+                y: 5,
                 opacity: 0,
                 scale: 0.5
             }}
             animate={{
                 x: 0,
-                y: 10,
+                y: 5,
                 opacity: 1,
                 scale: 1
             }}
-            transition={{
-                duration: 1
-            }}
+            transition={{ duration: 1 }}
             whileHover={{
                 scale: 1.15,
                 transition: { duration: 0.1 },
             }}
-            className='px-2 md:px-10'>
+            className='px-2 pt-2 xl:pt-0 md:px-10'>
                 <button className='font-montserrat font-medium text-base xl:text-xl text-white'> Contact Me </button>
             </motion.div>
         </header>
