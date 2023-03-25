@@ -35,7 +35,6 @@ export default function Hero({}: Props) {
                         </motion.button>
                     </Link>
                     
-                    
                     <Link 
                     to='experience'
                     smooth={true}>

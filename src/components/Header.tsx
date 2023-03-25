@@ -82,3 +82,18 @@ export default function Header() {
     </div>
   )
 }
+
+/* 
+<motion.div
+    whileHover={{
+        scale: 1.15,
+        transition: { duration: 0.1 },
+    }}>
+    <a
+    className='font-montserrat font-medium text-base xl:text-lg text-white'
+    href='/MartinBartolo_Resume.pdf'
+    target="_blank">
+        View Resume
+    </a>
+</motion.div>
+*/
