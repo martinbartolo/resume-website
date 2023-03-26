@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
 
 export default function Header() {
 
@@ -70,35 +69,20 @@ export default function Header() {
             }}
             transition={{ duration: 1 }}
             className='px-2 pt-3 md:pt-2 md:px-10'>
-                <Link
-                to='contact'
-                smooth={true}>
-                    <motion.button
+                <motion.div
                     whileHover={{
                         scale: 1.15,
                         transition: { duration: 0.1 },
-                    }}
-                    className='font-montserrat font-medium md:pt-0.5 text-lg xl:text-xl text-white'>
-                        Contact Me
-                    </motion.button>
-                </Link>
+                    }}>
+                    <a
+                        className='font-montserrat font-medium text-base xl:text-lg text-white'
+                        href='/MartinBartolo_Resume.pdf'
+                        target="_blank">
+                            View Resume
+                    </a>
+                </motion.div>
             </motion.div>
         </header>
     </div>
   )
 }
-
-/* 
-<motion.div
-    whileHover={{
-        scale: 1.15,
-        transition: { duration: 0.1 },
-    }}>
-    <a
-    className='font-montserrat font-medium text-base xl:text-lg text-white'
-    href='/MartinBartolo_Resume.pdf'
-    target="_blank">
-        View Resume
-    </a>
-</motion.div>
-*/
