@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 export default function Header() {
 
     const [navBg, setNavBg] = useState(false);
 
     const changeNavBg = () => {
-        console.log(window.scrollY);
         window.scrollY > 0 ? setNavBg(true) : setNavBg(false);
     }
 
@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <div onScroll={changeNavBg}>
-        <header className={navBg ? 'fixed left-0 top-0 w-full p-2 md:p-5 flex justify-between mx-auto z-20 bg-black md:bg-transparent' : 'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-transparent' }>
+        <header className={navBg ? 'fixed left-0 top-0 w-full p-1 md:p-2 flex justify-between mx-auto z-20 bg-black' : 'fixed left-0 top-0 w-full p-5 flex justify-between mx-auto z-20 bg-transparent' }>
             <motion.div 
             initial={{
                 x: -500,
@@ -60,23 +60,28 @@ export default function Header() {
             <motion.div 
             initial={{
                 x: 500,
-                y: 5,
                 opacity: 0,
                 scale: 0.5
             }}
             animate={{
                 x: 0,
-                y: 5,
                 opacity: 1,
                 scale: 1
             }}
             transition={{ duration: 1 }}
-            whileHover={{
-                scale: 1.15,
-                transition: { duration: 0.1 },
-            }}
-            className='px-2 pt-2 xl:pt-0 md:px-10'>
-                <button className='font-montserrat font-medium text-base xl:text-xl text-white'> Contact Me </button>
+            className='px-2 pt-3 md:pt-2 md:px-10'>
+                <Link
+                to='contact'
+                smooth={true}>
+                    <motion.button
+                    whileHover={{
+                        scale: 1.15,
+                        transition: { duration: 0.1 },
+                    }}
+                    className='font-montserrat font-medium md:pt-0.5 text-lg xl:text-xl text-white'>
+                        Contact Me
+                    </motion.button>
+                </Link>
             </motion.div>
         </header>
     </div>

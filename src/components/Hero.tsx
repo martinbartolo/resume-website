@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { Link, animateScroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 type Props = {}
 
@@ -48,7 +48,9 @@ export default function Hero({}: Props) {
                         </motion.button>
                     </Link>
 
-                    <Link to='education'>
+                    <Link 
+                    to='education'
+                    smooth={true}>
                         <motion.button 
                         whileHover={{
                             scale: 1.15,
@@ -59,7 +61,9 @@ export default function Hero({}: Props) {
                         </motion.button>
                     </Link>
                     
-                    <Link to='skills'>
+                    <Link 
+                    to='skills'
+                    smooth={true}>
                         <motion.button 
                         whileHover={{
                             scale: 1.075,

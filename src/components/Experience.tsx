@@ -6,7 +6,8 @@ type Props = {}
 export default function Experience({}: Props) {
   return (
     <div
-        className='h-screen max-w-full relative flex flex-col md:flex-row overflow-hidden bg-black px-10 justify-evenly mx-auto items-center border-y border-white'>
+        className='h-screen max-w-full relative flex flex-col md:flex-row overflow-hidden bg-black px-10 justify-evenly 
+        mx-auto items-center'>
         <motion.div
             initial={{
                 x: -200,

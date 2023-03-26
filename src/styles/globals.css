@@ -78,6 +78,10 @@
 
 @layer components {
     .heroButton {
-        @apply px-2 md:px-8 py-2 text-xl font-montserrat font-medium
+        @apply px-2 md:px-8 py-1 text-xl font-montserrat font-medium text-white
+    }
+
+    .contactInput {
+        @apply outline-none selectionwhite font-medium font-montserrat bg-black rounded-sm px-2 py-4 border focus:border-4 border-white text-white placeholder-white transition-all
     }
 }
