@@ -4,7 +4,9 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
-import ContactMe from '@/components/ContactMe'
+import Contact from '@/components/Contact'
+import Skills from '@/components/Skills'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -20,27 +22,23 @@ export default function Home() {
         <Hero />
       </section>
 
+      { /* Skills */ }
+      <section id="skills" className='snap-center'>
+        <Skills />
+      </section>
+      
       { /* About */ }
-      <section id="about" className='snap-center'>
+      <section id="about" className='snap-center 2xl:h-[1100px]'>
         <About />
       </section>
 
-      { /* Experience */ }
-      <section id="experience" className='snap-center'>
-        <Experience />
-      </section>
-
-      { /* Education */ }
-      <section id="education" className='snap-center'>
-        <Education />
-      </section>
-
-      { /* Skills */ }
-
       { /* Contact Me */ }
-      <section id="contact" className='snap-center'>
-        <ContactMe />
+      <section id="contact" className='snap-end'>
+        <Contact />
       </section>
+
+      <Footer />
+
     </div >
   )
 }

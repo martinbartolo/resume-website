@@ -10,8 +10,8 @@ export default function Hero({}: Props) {
     <div className='overlay'>
         <div className='h-screen scale-[0.8] xl:scale-100 2xl:scale-110 flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
             <div>
-                <h1 className='text-center text-6xl md:text-7xl max-w-prose pb-10 font-playfair drop-shadow-[3px_3px_0_rgba(0,0,0,1)]'>
-                    Hey, I&apos;m Martin Bartolo
+                <h1 className='text-center text-5xl md:text-7xl max-w-prose pb-10 font-playfair drop-shadow-[3px_3px_0_rgba(0,0,0,1)]'>
+                    Hey, I&apos;m Martin.
                 </h1>
                 <h2 className='text-justify text-xl md:text-xl px-5 max-w-prose pb-8 font-montserrat'>
                     I&apos;m currently pursuing a Master&apos;s degree in Computer Science at the 
@@ -21,7 +21,33 @@ export default function Hero({}: Props) {
                     actively seeking positions.
                 </h2>
 
-                <div>
+                <div className='flex  justify-center'>
+                    <Link 
+                    to='skills'
+                    smooth={true}>
+                        <motion.button 
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 },
+                        }}
+                        className='heroButton'>
+                            Skills
+                        </motion.button>
+                    </Link>
+                    
+                    <Link 
+                    to='work'
+                    smooth={true}>
+                        <motion.button 
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 },
+                        }}
+                        className='heroButton'>
+                            Work
+                        </motion.button>
+                    </Link>
+
                     <Link 
                     to='about'
                     smooth={true}>
@@ -36,33 +62,7 @@ export default function Hero({}: Props) {
                     </Link>
                     
                     <Link 
-                    to='experience'
-                    smooth={true}>
-                        <motion.button 
-                        whileHover={{
-                            scale: 1.15,
-                            transition: { duration: 0.1 },
-                        }}
-                        className='heroButton'>
-                            Experience
-                        </motion.button>
-                    </Link>
-
-                    <Link 
-                    to='education'
-                    smooth={true}>
-                        <motion.button 
-                        whileHover={{
-                            scale: 1.15,
-                            transition: { duration: 0.1 },
-                        }}
-                        className='heroButton'>
-                            Education
-                        </motion.button>
-                    </Link>
-                    
-                    <Link 
-                    to='skills'
+                    to='contact'
                     smooth={true}>
                         <motion.button 
                         whileHover={{
@@ -70,7 +70,7 @@ export default function Hero({}: Props) {
                             transition: { duration: 0.1 },
                         }}
                         className='heroButton'>
-                            Skills
+                            Contact
                         </motion.button>
                     </Link>
                 </div>

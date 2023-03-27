@@ -7,7 +7,7 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link
-          href="https://fonts.googleapis.com/css2?family=Cabin&family=Montserrat:wght@400;500&family=Playfair+Display&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat:wght@400;500&family=Playfair+Display&display=swap"
           rel="stylesheet"/>
 
       </Head>
