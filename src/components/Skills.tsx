@@ -38,7 +38,7 @@ export default function Skills({}: Props) {
                 Skills.
             </motion.h1>
 
-            <div className='mx-auto gap-20 pt-32 pb-20 md:pt-48 items-start justify-center space-y-16 xl:space-y-0 xl:grid xl:grid-cols-4 md:mx-20'>
+            <div className='mx-auto gap-20 pt-32 pb-20 md:pt-48 items-start justify-center space-y-10 md:space-y-16 xl:space-y-0 xl:grid xl:grid-cols-4 md:mx-20'>
                 <div className='flex flex-col items-center justify-between space-y-10'>
                     <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
                         initial={{ opacity: 0 }}
@@ -152,9 +152,7 @@ export default function Skills({}: Props) {
                         <Skill name="Haskell" path='/logos/haskell.svg'/>
                     </motion.div>
                 </div>
-
             </div>
-
         </div>
     )
 }

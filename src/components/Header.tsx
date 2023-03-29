@@ -28,7 +28,8 @@ export default function Header() {
                         <SocialIcon className='scale-110 xl:scale-125 2xl:scale-150'
                         url="https://www.linkedin.com/in/martinbartolo"
                         fgColor="white"
-                        bgColor="transparent"/>
+                        bgColor="transparent"
+                        target="_blank"/>
                     </motion.div>
 
                     <motion.div
@@ -39,7 +40,8 @@ export default function Header() {
                         <SocialIcon className='scale-110 xl:scale-125 2xl:scale-150'
                         url="https://github.com/martin-bartolo"
                         fgColor="white"
-                        bgColor="transparent"/>
+                        bgColor="transparent"
+                        target="_blank"/>
                     </motion.div>
                     
                     <motion.div className='pl-3'
