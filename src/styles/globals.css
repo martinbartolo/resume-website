@@ -76,7 +76,7 @@
     }
 
     .heroButton {
-        @apply px-2 md:px-8 py-1 text-xl font-montserrat font-medium hover:font-bold text-white hover:text-black border border-white hover:bg-white
+        @apply px-2 md:px-8 py-1 text-xl font-montserrat rounded-lg font-medium hover:font-bold text-white hover:text-black border border-white hover:bg-white
     }
 
     .contactInput {

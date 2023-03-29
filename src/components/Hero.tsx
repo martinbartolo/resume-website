@@ -55,7 +55,7 @@ export default function Hero({}: Props) {
                         <Link to='skills' smooth={true}>
                             <motion.button className='heroButton'
                                 whileHover={{
-                                    scale: 1.15,
+                                    scale: 1.1,
                                     transition: { duration: 0.1 }
                                 }}>
                                 Skills
@@ -65,7 +65,7 @@ export default function Hero({}: Props) {
                         <Link to='experience' smooth={true}>
                             <motion.button className='heroButton'
                                 whileHover={{
-                                    scale: 1.15,
+                                    scale: 1.1,
                                     transition: { duration: 0.1 }
                                 }}>
                                 Experience
@@ -75,7 +75,7 @@ export default function Hero({}: Props) {
                         <Link to='about' smooth={true}>
                             <motion.button className='heroButton'
                                 whileHover={{
-                                    scale: 1.15,
+                                    scale: 1.1,
                                     transition: { duration: 0.1 }
                                 }}>
                                 About
@@ -85,7 +85,7 @@ export default function Hero({}: Props) {
                         <Link to='contact' smooth={true}>
                             <motion.button className='heroButton'
                                 whileHover={{
-                                    scale: 1.075,
+                                    scale: 1.1,
                                     transition: { duration: 0.1 }
                                 }}>
                                 Contact

@@ -17,10 +17,10 @@ export default function Footer({}: Props) {
               y: 0,
               opacity: 100
             }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.25 }}
             whileHover={{
               scale: 1.15,
-              transition: { duration: 0.5 },
+              transition: { duration: 0.1 },
             }}>
             <Link 
             to='hero'

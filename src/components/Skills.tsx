@@ -29,7 +29,7 @@ function Skill(props: skill) {
 
 export default function Skills({}: Props) {
     return (
-        <div className='2xl:scale-95 max-w-full h-fit relative px-10 mx-auto items-start justify-evenly'>
+        <div className='xl:scale-95 max-w-full h-fit relative px-10 mx-auto items-start justify-evenly'>
             <motion.h1 className='relative top-20 md:top-24 text-center selectionwhite font-montserrat font-bold text-6xl md:text-7xl 2xl:text-8xl'
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -38,7 +38,7 @@ export default function Skills({}: Props) {
                 Skills.
             </motion.h1>
 
-            <div className='mx-auto gap-20 pt-36 pb-20 md:pt-48 items-start justify-center space-y-16 xl:space-y-0 xl:grid xl:grid-cols-4 md:mx-20'>
+            <div className='mx-auto gap-20 pt-32 pb-20 md:pt-48 items-start justify-center space-y-16 xl:space-y-0 xl:grid xl:grid-cols-4 md:mx-20'>
                 <div className='flex flex-col items-center justify-between space-y-10'>
                     <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
                         initial={{ opacity: 0 }}
