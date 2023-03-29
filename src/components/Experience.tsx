@@ -51,7 +51,7 @@ export default function Experience({}: Props) {
                     </div>
                 </article>
 
-                <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[700px] 2xl:w-[1000px] snap-center p-5bg-black font-montserrat overflow-hidden border border-white hover:border-2'>
+                <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[700px] 2xl:w-[1000px] snap-center p-5 bg-black font-montserrat overflow-hidden border border-white hover:border-2'>
                     <div className='px-1 2xl:p-5'>
                         <h4 className='text-lg md:text-2xl xl:text-3xl 2xl:text-5xl font-light selectionwhite'>Freelance Graphic Designer</h4>
                         <p className='font-bold text-sm md:text-lg xl:text-lg 2xl:text-3xl py-1 2xl:py-3 selectionwhite'>Fiverr.com</p>
