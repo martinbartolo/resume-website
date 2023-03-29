@@ -9,9 +9,18 @@ export default function Footer({}: Props) {
   return (
     <footer className='py-10 flex relative justify-center items-end mx-auto z-20'>
         <motion.div
+            initial={{
+              y: 30,
+              opacity: 0
+            }}
+            whileInView={{
+              y: 0,
+              opacity: 100
+            }}
+            transition={{ duration: 0.2 }}
             whileHover={{
-                scale: 1.15,
-                transition: { duration: 0.1 },
+              scale: 1.15,
+              transition: { duration: 0.5 },
             }}>
             <Link 
             to='hero'

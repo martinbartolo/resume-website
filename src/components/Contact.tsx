@@ -1,5 +1,6 @@
 import React from 'react'
 import { send } from 'emailjs-com';
+import { motion } from 'framer-motion';
 
 type Props = {}
 
@@ -31,43 +32,51 @@ export default function Contact({}: Props) {
     };
 
     return (
-        <div className='w-full py-24 h-fit space-y-32 relative px-10 mx-auto flex flex-col items-center justify-evenly'>
-            <h1 className='relative top-20 2xl:top-0 text-center selectionwhite font-montserrat font-bold text-6xl md:text-7xl 2xl:text-8xl'>
+        <div className='w-full py-14 md:py-0 pt-32 md:pt-5 2xl:pt-24 2xl:py-20 h-fit space-y-32 relative px-10 mx-auto flex flex-col items-center justify-evenly'>
+            <motion.h1 className='relative top-20 2xl:top-0 text-center selectionwhite font-montserrat font-bold text-6xl md:text-7xl 2xl:text-8xl'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}>
                 Contact.
-            </h1>
+            </motion.h1>
             
-            <form 
-            onSubmit={onSubmit}
-            className='relative flex flex-col space-y-2 w-full md:w-8/12'>
-                <input
-                    type="text"
-                    name='from_name'
-                    placeholder='Name'
-                    value={toSend.from_name}
-                    onChange={handleChange}
-                    className='contactInput h-12'
-                    required
-                />
-                <input
-                    type="email"
-                    name='reply_to'
-                    placeholder='Email'
-                    value={toSend.reply_to}
-                    onChange={handleChange}
-                    className='contactInput h-12'
-                    required
-                />
-                <textarea
-                    name='message'
-                    placeholder='Message'
-                    value={toSend.message}
-                    onChange={handleChange}
-                    className='contactInput'
-                    required>
-                </textarea>
+            <motion.form className='relative flex flex-col space-y-2 w-full md:w-8/12'
+                onSubmit={onSubmit}
+                initial={{ 
+                    y: 100,
+                    opacity: 0 
+                }}
+                whileInView={{ 
+                    y: 0,
+                    opacity: 1
+                }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}>
+                    <input className='contactInput h-12'
+                        type="text"
+                        name='from_name'
+                        placeholder='Name'
+                        value={toSend.from_name}
+                        onChange={handleChange}
+                        required/>
+                    <input className='contactInput h-12'
+                        type="email"
+                        name='reply_to'
+                        placeholder='Email'
+                        value={toSend.reply_to}
+                        onChange={handleChange}
+                        required/>
+                    <textarea className='contactInput'
+                        name='message'
+                        placeholder='Message'
+                        value={toSend.message}
+                        onChange={handleChange}
+                        required>
+                    </textarea>
 
-                <button type='submit' className='ml-auto font-medium font-montserrat text-lg gradient w-28 p-2 rounded-sm border-2'> Send </button>
-            </form>
+                    <button type='submit' className='ml-auto font-medium font-montserrat text-lg gradient w-28 p-2 rounded-sm border-2'> Send </button>
+            </motion.form>
         </div>
     )
 }

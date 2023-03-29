@@ -27,6 +27,11 @@ export default function Home() {
         <Skills />
       </section>
       
+      { /* Experience */ }
+      <section id="experience" className='snap-center'>
+        <Experience />
+      </section>
+
       { /* About */ }
       <section id="about" className='snap-center 2xl:h-[1100px]'>
         <About />

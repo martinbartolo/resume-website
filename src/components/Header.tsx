@@ -16,39 +16,33 @@ export default function Header() {
         window.addEventListener("scroll", changeNavBg)
     })
 
-  return (
-    <div onScroll={changeNavBg}>
-        <header className={navBg ? 'header bg-black' : 'header bg-transparent' }>
-            <div className='md:py-2 2xl:py-5 md:px-10'>
-                <div 
-                className='flex flex-row items-center space-x-5'>
-                    <div className='flex flex-row items-center space-x-5 2xl:space-x-10 pr-3 2xl:pr-8'>
-                        <motion.div
-                            whileHover={{
-                                scale: 1.15,
-                                transition: { duration: 0.1 }
-                            }}>
-                            <SocialIcon
-                            url="https://github.com/martin-bartolo"
-                            fgColor="white"
-                            bgColor="transparent" 
-                            className='scale-110 xl:scale-125 2xl:scale-150'/>
-                        </motion.div>
-                        
-                        <motion.div
-                            whileHover={{
-                                scale: 1.15,
-                                transition: { duration: 0.1 },
-                            }}>
-                            <SocialIcon
-                            url="https://www.linkedin.com/in/martinbartolo"
-                            fgColor="white"
-                            bgColor="transparent"
-                            className='scale-110 xl:scale-125 2xl:scale-150'/>
-                        </motion.div>
-                    </div>
+    return (
+        <div onScroll={changeNavBg}>
+            <header className={navBg ? 'header bg-black' : 'header bg-transparent' }>
+                <div className='flex flex-row items-center space-x-5 2xl:space-x-10 pr-3 2xl:pr-8 md:py-2 2xl:py-5 md:px-10'>
+                    <motion.div
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 },
+                        }}>
+                        <SocialIcon className='scale-110 xl:scale-125 2xl:scale-150'
+                        url="https://www.linkedin.com/in/martinbartolo"
+                        fgColor="white"
+                        bgColor="transparent"/>
+                    </motion.div>
 
                     <motion.div
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 }
+                        }}>
+                        <SocialIcon className='scale-110 xl:scale-125 2xl:scale-150'
+                        url="https://github.com/martin-bartolo"
+                        fgColor="white"
+                        bgColor="transparent"/>
+                    </motion.div>
+                    
+                    <motion.div className='pl-3'
                         whileHover={{
                             scale: 1.15,
                             transition: { duration: 0.1 },
@@ -61,8 +55,7 @@ export default function Header() {
                         </a>
                     </motion.div>
                 </div>
-            </div>
-        </header>
-    </div>
-  )
+            </header>
+        </div>
+    )
 }
