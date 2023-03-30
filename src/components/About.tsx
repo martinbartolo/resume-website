@@ -28,7 +28,7 @@ export default function About({}: Props) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}>
                 I&apos;ve had the privilege of experiencing life in different parts of the world - from the island of Malta where I grew up, to the UK where I lived for a while. 
-                Currently, I&apos;m settled in the stunning mountains of Boulder, Colorado, where the breathtaking scenery has become a significant source of inspiration in my life.
+                Currently, I&apos;m settled in the stunning foothills of Boulder, Colorado, where the breathtaking scenery has become a significant source of inspiration in my life.
                 Colorado&apos;s diverse landscapes provide me with ample opportunities to pursue my outdoor interests, including skiing, fishing, and hiking.
                 <br/>
                 <br/>
