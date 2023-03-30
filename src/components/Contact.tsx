@@ -16,7 +16,7 @@ export default function Contact({}: Props) {
 
         send('service_vjrj0lu', 'template_fp82evd', toSend, 'DVk09GD4w6gOAHZDh')
 
-        .then((response) => {
+        .then(() => {
             document.querySelectorAll('textarea').forEach(singleInput => singleInput.value = '');
             document.querySelectorAll('input').forEach(singleInput => singleInput.value = '');
             alert("Message Sent.");
