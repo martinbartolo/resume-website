@@ -36,7 +36,7 @@ export default function Hero({}: Props) {
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}>
                         I&apos;m currently pursuing a Master&apos;s degree in Computer Science at the University of Colorado Boulder. 
-                        I am passionate about using cutting-edge technology to design and develop innovative, elegant software solutions 
+                        I am passionate about using cutting-edge technology to design and develop reliable, elegant software solutions 
                         and I am actively searching for exciting and challenging opportunities in the software engineering field.
                     </motion.h2>
 

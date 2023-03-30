@@ -45,36 +45,6 @@ export default function Skills({}: Props) {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}>
-                        Front End
-                    </motion.h2>
-
-                    <motion.div className='flex flex-wrap justify-evenly gap-5 md:gap-10'
-                        initial={{ 
-                            y: 100,
-                            opacity: 0 
-                        }}
-                        whileInView={{ 
-                            y: 0,
-                            opacity: 1
-                        }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}>
-                        <Skill name="React.js" path='/logos/reactjs.svg'/>
-                        <Skill name="Next.js" path='/logos/nextjs.png'/>
-                        <Skill name="HTML5" path='/logos/html5.svg'/>
-                        <Skill name="CSS3" path='/logos/css3.svg'/>
-                        <Skill name="Tailwind" path='/logos/tailwind.svg'/>
-                        <Skill name="JavaScript" path='/logos/javascript.svg'/>
-                        <Skill name="TypeScript" path='/logos/typescript.svg'/>
-                    </motion.div>
-                </div>
-
-                <div className='flex flex-col items-center justify-between space-y-10'>
-                    <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}>
                         Back End
                     </motion.h2>
 
@@ -96,7 +66,7 @@ export default function Skills({}: Props) {
                         <Skill name="Postman" path='/logos/postman.svg'/>
                     </motion.div>
                 </div>
-
+                
                 <div className='flex flex-col items-center justify-between space-y-10'>
                     <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
                         initial={{ opacity: 0 }}
@@ -150,6 +120,36 @@ export default function Skills({}: Props) {
                         <Skill name="C" path='/logos/c.svg'/>
                         <Skill name="C++" path='/logos/c++.svg'/>
                         <Skill name="Haskell" path='/logos/haskell.svg'/>
+                    </motion.div>
+                </div>
+
+                <div className='flex flex-col items-center justify-between space-y-10'>
+                    <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}>
+                        Front End
+                    </motion.h2>
+
+                    <motion.div className='flex flex-wrap justify-evenly gap-5 md:gap-10'
+                        initial={{ 
+                            y: 100,
+                            opacity: 0 
+                        }}
+                        whileInView={{ 
+                            y: 0,
+                            opacity: 1
+                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}>
+                        <Skill name="React.js" path='/logos/reactjs.svg'/>
+                        <Skill name="Next.js" path='/logos/nextjs.png'/>
+                        <Skill name="HTML5" path='/logos/html5.svg'/>
+                        <Skill name="CSS3" path='/logos/css3.svg'/>
+                        <Skill name="Tailwind" path='/logos/tailwind.svg'/>
+                        <Skill name="JavaScript" path='/logos/javascript.svg'/>
+                        <Skill name="TypeScript" path='/logos/typescript.svg'/>
                     </motion.div>
                 </div>
             </div>
