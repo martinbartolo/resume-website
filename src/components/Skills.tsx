@@ -12,7 +12,7 @@ type Props = {}
 function Skill(props: skill) {
     const altText = `${props.name} logo`
     return(
-        <div className='scale-[0.85] 2xl:scale-100 flex flex-col items-center justify-between space-y-2'>
+        <div className='scale-[0.85] 2xl:scale-100 flex flex-col items-center justify-evenly space-y-2'>
             <Image 
                 src={props.path}
                 alt={altText}
@@ -20,7 +20,7 @@ function Skill(props: skill) {
                 height={50}
             />
 
-            <h3 className='font-montserrat text-center selectionwhite text-base 2xl:text-lg'>
+            <h3 className='w-20 flex font-montserrat items-center justify-center text-center selectionwhite text-base 2xl:text-lg'>
                 {props.name}
             </h3>
         </div> 
@@ -35,11 +35,11 @@ export default function Skills({}: Props) {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}>
-                Skills.
+                Skills
             </motion.h1>
 
-            <div className='mx-auto gap-20 pt-32 pb-20 md:pt-48 items-start justify-center space-y-10 md:space-y-16 xl:space-y-0 xl:grid xl:grid-cols-4 md:mx-20'>
-                <div className='flex flex-col items-center justify-between space-y-10'>
+            <div className='mx-auto gap-20 pt-32 items-start justify-center space-y-10 md:space-y-16 xl:space-y-0 xl:grid xl:grid-cols-4 md:mx-20'>
+                <div className='flex flex-col items-center justify-between space-y-5'>
                     <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -48,7 +48,7 @@ export default function Skills({}: Props) {
                         Back End
                     </motion.h2>
 
-                    <motion.div className='flex flex-wrap justify-evenly gap-5 md:gap-10'
+                    <motion.div className='flex flex-wrap justify-evenly gap-5 2xl:gap-10'
                         initial={{ 
                             y: 100,
                             opacity: 0 
@@ -67,7 +67,7 @@ export default function Skills({}: Props) {
                     </motion.div>
                 </div>
                 
-                <div className='flex flex-col items-center justify-between space-y-10'>
+                <div className='flex flex-col items-center justify-between space-y-5 '>
                     <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -76,7 +76,7 @@ export default function Skills({}: Props) {
                         Machine Learning
                     </motion.h2>
 
-                    <motion.div className='flex flex-wrap justify-evenly gap-5 md:gap-10'
+                    <motion.div className='flex flex-wrap justify-evenly gap-5 wxl:gap-10'
                         initial={{ 
                             y: 100,
                             opacity: 0 
@@ -94,7 +94,7 @@ export default function Skills({}: Props) {
                     </motion.div>
                 </div>
 
-                <div className='flex flex-col items-center justify-between space-y-10'>
+                <div className='flex flex-col items-center justify-between space-y-5 xl:space-y-10'>
                     <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -103,7 +103,7 @@ export default function Skills({}: Props) {
                         Other Tools
                     </motion.h2>
 
-                    <motion.div className='flex flex-wrap justify-evenly gap-5 md:gap-10'
+                    <motion.div className='flex flex-wrap justify-evenly gap-5 2xl:gap-10'
                         initial={{ 
                             y: 100,
                             opacity: 0 
@@ -123,7 +123,7 @@ export default function Skills({}: Props) {
                     </motion.div>
                 </div>
 
-                <div className='flex flex-col items-center justify-between space-y-10'>
+                <div className='flex flex-col items-center justify-between space-y-5 xl:space-y-10'>
                     <motion.h2 className='font-montserrat font-medium text-center selectionwhite text-4xl'
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -132,7 +132,7 @@ export default function Skills({}: Props) {
                         Front End
                     </motion.h2>
 
-                    <motion.div className='flex flex-wrap justify-evenly gap-5 md:gap-10'
+                    <motion.div className='flex flex-wrap justify-evenly gap-5 2xl:gap-10'
                         initial={{ 
                             y: 100,
                             opacity: 0 

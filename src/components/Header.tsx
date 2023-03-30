@@ -19,7 +19,7 @@ export default function Header() {
     return (
         <div onScroll={changeNavBg}>
             <header className={navBg ? 'header bg-black' : 'header bg-transparent' }>
-                <div className='flex flex-row items-center space-x-5 2xl:space-x-10 pr-3 2xl:pr-8 md:py-2 2xl:py-5 md:px-10'>
+                <div className='flex flex-row items-center space-x-[31px] 2xl:space-x-10 pr-3 2xl:pr-8 md:py-2 2xl:py-5 md:px-10'>
                     <motion.div
                         whileHover={{
                             scale: 1.15,
@@ -39,6 +39,18 @@ export default function Header() {
                         }}>
                         <SocialIcon className='scale-110 xl:scale-125 2xl:scale-150'
                         url="https://github.com/martin-bartolo"
+                        fgColor="white"
+                        bgColor="transparent"
+                        target="_blank"/>
+                    </motion.div>
+
+                    <motion.div
+                        whileHover={{
+                            scale: 1.15,
+                            transition: { duration: 0.1 }
+                        }}>
+                        <SocialIcon className='scale-110 xl:scale-125 2xl:scale-150'
+                        url="https://youtube.com/@yesok"
                         fgColor="white"
                         bgColor="transparent"
                         target="_blank"/>

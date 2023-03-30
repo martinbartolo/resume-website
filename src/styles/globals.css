@@ -27,6 +27,7 @@
     border: none;
     width: 13px;
     height: 13px;
+    -webkit-appearance: none;
 }
 *{
     scrollbar-color: white transparent; /*firefox*/
@@ -36,6 +37,7 @@
     border-radius: 20px;
     background-color: transparent;
     border: 2px solid white;
+    height: 13px;
 }
 
 ::-webkit-scrollbar-track:vertical{
@@ -64,7 +66,7 @@
 
 @layer components {
     .overlay {
-        @apply absolute h-screen w-full top-0 left-0 bg-black/50 flex flex-col items-center justify-center
+        @apply absolute h-screen w-full top-0 left-0 bg-black/[.55] flex flex-col items-center justify-center
     }
 
     .gradient {

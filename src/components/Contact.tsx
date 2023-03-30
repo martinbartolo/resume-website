@@ -33,13 +33,13 @@ export default function Contact({}: Props) {
     };
 
     return (
-        <div className='w-full pt-14 h-fit space-y-32 relative px-10 mx-auto flex flex-col items-center justify-evenly'>
-            <motion.h1 className='relative top-20 2xl:top-0 text-center selectionwhite font-montserrat font-bold text-6xl md:text-7xl 2xl:text-8xl'
+        <div className='w-full h-fit space-y-32 2xl:pt-20 relative px-10 mx-auto flex flex-col items-center justify-evenly'>
+            <motion.h1 className='relative top-20 text-center selectionwhite font-montserrat font-bold text-6xl md:text-7xl 2xl:text-8xl'
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}>
-                Contact.
+                Contact
             </motion.h1>
             
             <motion.form className='relative flex flex-col space-y-2 w-full md:w-8/12'

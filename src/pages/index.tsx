@@ -33,7 +33,7 @@ export default function Home() {
       </section>
 
       { /* About */ }
-      <section id="about" className='snap-center 2xl:h-[1100px]'>
+      <section id="about" className='snap-center'>
         <About />
       </section>
 
