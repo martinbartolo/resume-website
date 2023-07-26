@@ -26,7 +26,7 @@ export default function Hero({}: Props) {
 						</motion.h1>
 
 						<motion.h2
-							className='text-center md:text-justify text-xl md:text-xl px-5 max-w-prose pb-8 font-poppins'
+							className='text-center text-xl md:text-xl px-5 max-w-prose pb-8 font-poppins'
 							initial={{
 								x: -100,
 								opacity: 0,
@@ -37,12 +37,12 @@ export default function Hero({}: Props) {
 							}}
 							viewport={{ once: true }}
 							transition={{ duration: 1 }}>
-							I am a recent M.S Computer Science graduate from the University of
-							Colorado Boulder. I am passionate about using cutting-edge
-							technology to design and develop reliable, elegant software
-							solutions. I am currently searching for exciting and challenging
-							full-stack development opportunities but I am also open to similar
-							roles in the software engineering field.
+							Recent M.S in Computer Science graduate from the University of
+							Colorado Boulder. Passionate about using cutting-edge technology
+							to design and develop reliable, elegant software solutions.
+							Currently searching for exciting and challenging full-stack
+							development opportunities but also open to similar roles in the
+							software engineering field.
 						</motion.h2>
 
 						<motion.div
