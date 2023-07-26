@@ -26,7 +26,7 @@ export default function Hero({}: Props) {
 						</motion.h1>
 
 						<motion.h2
-							className='text-center md:text-justify text-xl md:text-xl px-5 max-w-prose pb-8 font-montserrat'
+							className='text-center md:text-justify text-xl md:text-xl px-5 max-w-prose pb-8 font-poppins'
 							initial={{
 								x: -100,
 								opacity: 0,

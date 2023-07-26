@@ -7,7 +7,7 @@ export default function Experience({}: Props) {
 	return (
 		<div className='xl:scale-90 max-w-full space-y-10 h-fit px-10 items-center justify-evenly pt-14 pb-36'>
 			<motion.h1
-				className='top-20 md:top-24 text-center font-montserrat selectionwhite font-bold text-5xl md:text-7xl 2xl:text-8xl'
+				className='top-20 md:top-24 text-center font-poppins selectionwhite font-bold text-5xl md:text-7xl 2xl:text-8xl'
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				viewport={{ once: true }}
@@ -27,7 +27,7 @@ export default function Experience({}: Props) {
 				}}
 				viewport={{ once: true }}
 				transition={{ duration: 0.5 }}>
-				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[553px] lg:w-[553px] xl:w-[800px] 2xl:w-[1000px] snap-center p-5 bg-black font-montserrat overflow-hidden border border-white hover:border-2'>
+				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[553px] lg:w-[553px] xl:w-[800px] 2xl:w-[1000px] snap-center p-5 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
 					<div className='px-1 2xl:p-5'>
 						<h4 className='text-lg md:text-2xl xl:text-3xl 2xl:text-5xl font-light selectionwhite'>
 							Machine Learning Annotator
@@ -53,7 +53,7 @@ export default function Experience({}: Props) {
 					</div>
 				</article>
 
-				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[700px] 2xl:w-[1000px] snap-center p-5 bg-black font-montserrat overflow-hidden border border-white hover:border-2'>
+				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[700px] 2xl:w-[1000px] snap-center p-5 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
 					<div className='px-1 2xl:p-5'>
 						<h4 className='text-lg md:text-2xl xl:text-3xl 2xl:text-5xl font-light selectionwhite'>
 							Grader
@@ -76,7 +76,7 @@ export default function Experience({}: Props) {
 					</div>
 				</article>
 
-				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[800px] 2xl:w-[1000px] snap-center p-5 bg-black font-montserrat overflow-hidden border border-white hover:border-2'>
+				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[800px] 2xl:w-[1000px] snap-center p-5 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
 					<div className='px-1 2xl:p-5'>
 						<h4 className='text-lg md:text-2xl xl:text-3xl 2xl:text-5xl font-light selectionwhite'>
 							Freelance Graphic Designer
@@ -94,20 +94,18 @@ export default function Experience({}: Props) {
 								and social media graphics.
 							</li>
 							<li className='selectionwhite'>
-								Worked with over 1000 individuals and brands such as
+								Worked with over 1000 individuals and brands such as{' '}
 								<a
-									className='font-medium decoration-wavy underline text-blue-700 md:text-white md:hover:text-blue-700'
+									className='font-medium decoration-wavy underline text-blue-700 sm:text-white sm:hover:decoration-blue-700'
 									href='https://www.principal-it.com/'
 									target='_blank'>
-									{' '}
 									Principal IT
 								</a>{' '}
-								and
+								and{' '}
 								<a
-									className='font-medium decoration-wavy underline text-blue-700 md:text-white md:hover:text-blue-700'
+									className='font-medium decoration-wavy underline text-blue-700 sm:text-white sm:hover:decoration-blue-700'
 									href='https://barkbutter.au/'
 									target='_blank'>
-									{' '}
 									Bark Butter
 								</a>
 								.
@@ -116,11 +114,11 @@ export default function Experience({}: Props) {
 								Built a strong and loyal customer base, amassing over 1100
 								orders and 900 5-star reviews. Visit{' '}
 								<a
-									className='font-medium decoration-wavy underline text-blue-700 md:text-white md:hover:text-blue-700'
+									className='font-medium decoration-wavy underline text-blue-700 sm:text-white sm:hover:decoration-blue-700'
 									href='https://www.fiverr.com/martinbartolo'
 									target='_blank'>
-									https://www.fiverr.com/martinbartolo{' '}
-								</a>
+									https://www.fiverr.com/martinbartolo
+								</a>{' '}
 								to view my work and testimonials.
 							</li>
 						</ul>
