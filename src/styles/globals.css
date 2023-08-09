@@ -72,10 +72,10 @@
 	}
 
 	.header {
-		@apply fixed w-full p-1 md:p-2 flex flex-row justify-center md:justify-end mx-auto z-20;
+		@apply fixed w-full p-1 md:p-2 flex flex-row items-center justify-center mx-auto z-20;
 	}
 
-	.heroButton {
+	.button {
 		@apply px-2 md:px-8 py-1 text-xl font-poppins rounded-lg font-semibold text-white;
 	}
 

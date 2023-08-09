@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { HiDocument } from 'react-icons/hi2';
+import { Link } from 'react-scroll';
 import { SocialIcon } from 'react-social-icons';
 
 export default function Header() {
@@ -18,7 +19,19 @@ export default function Header() {
 	return (
 		<div onScroll={changeNavBg}>
 			<header className={navBg ? 'header bg-black' : 'header bg-transparent'}>
-				<div className='flex flex-row items-center space-x-[31px] 2xl:space-x-10 pr-3 2xl:pr-8 md:py-2 2xl:py-5 md:px-10'>
+				<div className='w-full flex items-center justify-start space-x-[31px] 2xl:space-x-10 pl-3 2xl:pl-8 md:py-2 2xl:py-5 md:px-10'>
+					<Link to='hero' smooth={true}>
+						<motion.button
+							className='button px-0 font-semibold text-4xl'
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.1 },
+							}}>
+							MB
+						</motion.button>
+					</Link>
+				</div>
+				<div className='w-full flex items-center justify-end md:space-x-[31px] 2xl:space-x-10 pr-3 2xl:pr-8 md:py-2 2xl:py-5 md:px-10'>
 					<motion.div
 						whileHover={{
 							scale: 1.15,

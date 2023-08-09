@@ -15,7 +15,7 @@ function Skill(props: skill) {
 		<div className='scale-[0.85] 2xl:scale-100 flex flex-col items-center justify-evenly space-y-2'>
 			<Image src={props.path} alt={altText} width={50} height={50} />
 
-			<h3 className='w-20 flex font-poppins items-center justify-center text-center selectionwhite text-base 2xl:text-lg'>
+			<h3 className='w-20 flex font-poppins items-center justify-center text-center selectionwhite text-base md:text-lg'>
 				{props.name}
 			</h3>
 		</div>
@@ -34,10 +34,10 @@ export default function Skills({}: Props) {
 				Skills
 			</motion.h1>
 
-			<div className='mx-auto gap-20 pt-32 items-start justify-center space-y-10 md:space-y-16 xl:space-y-0 xl:grid xl:grid-cols-4 md:mx-20'>
+			<div className='mx-auto gap-20 pt-32 space-y-10 md:space-y-16 md:mx-20'>
 				<div className='flex flex-col items-center justify-between space-y-5'>
 					<motion.h2
-						className='font-poppins font-medium text-center selectionwhite text-4xl'
+						className='font-poppins font-light text-center selectionwhite text-4xl'
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
@@ -67,7 +67,7 @@ export default function Skills({}: Props) {
 
 				<div className='flex flex-col items-center justify-between space-y-5 '>
 					<motion.h2
-						className='font-poppins font-medium text-center selectionwhite text-4xl'
+						className='font-poppins font-light text-center selectionwhite text-4xl'
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
@@ -96,7 +96,7 @@ export default function Skills({}: Props) {
 
 				<div className='flex flex-col items-center justify-between space-y-5 xl:space-y-10'>
 					<motion.h2
-						className='font-poppins font-medium text-center selectionwhite text-4xl'
+						className='font-poppins font-light text-center selectionwhite text-4xl'
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
@@ -126,7 +126,7 @@ export default function Skills({}: Props) {
 
 				<div className='flex flex-col items-center justify-between space-y-5 xl:space-y-10'>
 					<motion.h2
-						className='font-poppins font-medium text-center selectionwhite text-4xl'
+						className='font-poppins font-light text-center selectionwhite text-4xl'
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
