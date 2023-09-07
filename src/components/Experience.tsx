@@ -27,7 +27,7 @@ export default function Experience({}: Props) {
 				}}
 				viewport={{ once: true }}
 				transition={{ duration: 0.5 }}>
-				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[553px] lg:w-[553px] xl:w-[800px] 2xl:w-[1000px] snap-center p-5 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
+				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[553px] lg:w-[553px] xl:w-[800px] 2xl:w-[1000px] snap-center p-6 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
 					<div className='px-1 2xl:p-5'>
 						<h4 className='text-lg md:text-2xl xl:text-3xl 2xl:text-5xl font-light selectionwhite'>
 							Machine Learning Annotator
@@ -53,7 +53,7 @@ export default function Experience({}: Props) {
 					</div>
 				</article>
 
-				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[700px] 2xl:w-[1000px] snap-center p-5 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
+				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[700px] 2xl:w-[1000px] snap-center p-6 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
 					<div className='px-1 2xl:p-5'>
 						<h4 className='text-lg md:text-2xl xl:text-3xl 2xl:text-5xl font-light selectionwhite'>
 							Grader
@@ -76,7 +76,7 @@ export default function Experience({}: Props) {
 					</div>
 				</article>
 
-				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[800px] 2xl:w-[1000px] snap-center p-5 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
+				<article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[280px] md:w-[550px] lg:w-[550px] xl:w-[800px] 2xl:w-[1000px] snap-center p-6 bg-black font-poppins overflow-hidden border border-white hover:border-2'>
 					<div className='px-1 2xl:p-5'>
 						<h4 className='text-lg md:text-2xl xl:text-3xl 2xl:text-5xl font-light selectionwhite'>
 							Freelance Graphic Designer

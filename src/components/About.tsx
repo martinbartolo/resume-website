@@ -37,8 +37,7 @@ export default function About({}: Props) {
 					to pursue my outdoor interests, including skiing, fishing, and hiking.
 					<br />
 					<br />
-					Aside from exploring the great outdoors, music has always been my
-					passion. I have a{' '}
+					Aside from this, music has always been my passion. I have a{' '}
 					<a
 						className='decoration-wavy underline text-blue-700 sm:text-white sm:hover:decoration-blue-700'
 						href='https://www.youtube.com/@yesok'
