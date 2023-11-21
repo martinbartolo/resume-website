@@ -1,3 +1,5 @@
 export default function Date({ children }: { children: React.ReactNode }) {
-  return <p className="min-w-[150px] text-zinc-500">{children}</p>;
+  return (
+    <p className="min-w-[125px] whitespace-nowrap text-zinc-500">{children}</p>
+  );
 }

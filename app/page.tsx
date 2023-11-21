@@ -13,9 +13,10 @@ import workExperience from "./content/work-experience.json";
 
 export default function Home() {
   return (
-    <main className="gap- flex w-1/2 min-w-[480px] flex-col items-start justify-start px-4 py-28">
+    <main className="flex max-w-screen-sm flex-col items-start justify-start px-4 py-28">
       <section className="flex items-center gap-6">
         <Image
+          priority
           src="/cat.webp"
           alt="avatar"
           width={100}

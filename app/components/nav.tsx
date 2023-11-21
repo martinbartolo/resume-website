@@ -7,7 +7,11 @@ export default function Nav() {
         MB
       </h1>
       <Button>
-        <a href="/MartinBartolo_Resume.pdf" target="_blank">
+        <a
+          href="/MartinBartolo_Resume.pdf"
+          target="_blank"
+          className="hover:no-underline"
+        >
           Resume PDF
         </a>
       </Button>
