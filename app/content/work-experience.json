@@ -2,7 +2,7 @@
   {
     "company": "Aegimus",
     "date": "2023 - Present",
-    "description": "Helping to expand into the MLOps field, contributing to the implementation of solutions for efficient model deployment and data processing, contributing to application UIs.",
+    "description": "Helping to expand into the MLOps field, contributing to the implementation of solutions for efficient model deployment and data processing. Also working on application UIs.",
     "link": null,
     "position": "Full-stack Developer",
     "technologies": ["Python", "TS", "Angular", "SCSS", "AWS"]

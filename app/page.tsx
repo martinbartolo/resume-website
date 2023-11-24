@@ -83,6 +83,7 @@ export default function Home() {
               <div className="flex w-full flex-col gap-2">
                 <Title>{item.degree}</Title>
                 <p className="italic">{item.school}</p>
+                <p className="italic">GPA: {item.gpa}</p>
                 <ul>
                   {item.extras.map((extra, extra_index) => (
                     <li key={extra_index}>
