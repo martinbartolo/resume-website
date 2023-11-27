@@ -44,7 +44,10 @@ export default function Home() {
         <h2>Work Experience</h2>
         <div className="flex flex-col gap-8">
           {workExperience.map((item, index) => (
-            <div key={index} className="flex">
+            <div
+              key={index}
+              className="flex flex-col gap-2 sm:flex-row sm:gap-0"
+            >
               <Date>{item.date}</Date>
               <div className="flex w-full flex-col gap-2">
                 <Title link={item.link}>
@@ -62,7 +65,10 @@ export default function Home() {
         <h2>Side Projects</h2>
         <div className="flex flex-col gap-8">
           {sideProjects.map((item, index) => (
-            <div key={index} className="flex">
+            <div
+              key={index}
+              className="flex flex-col gap-2 sm:flex-row sm:gap-0"
+            >
               <Date>{item.date}</Date>
               <div className="flex w-full flex-col gap-2">
                 <Title link={item.link}>{item.title}</Title>
@@ -78,7 +84,10 @@ export default function Home() {
         <h2>Education</h2>
         <div className="flex flex-col gap-8">
           {education.map((item, index) => (
-            <div key={index} className="flex">
+            <div
+              key={index}
+              className="flex flex-col gap-2 sm:flex-row sm:gap-0"
+            >
               <Date>{item.date}</Date>
               <div className="flex w-full flex-col gap-2">
                 <Title>{item.degree}</Title>
@@ -101,7 +110,10 @@ export default function Home() {
         <h2>Certifications</h2>
         <div className="flex flex-col gap-8">
           {certifications.map((item, index) => (
-            <div key={index} className="flex">
+            <div
+              key={index}
+              className="flex flex-col gap-2 sm:flex-row sm:gap-0"
+            >
               <Date>{item.date}</Date>
               <div className="flex w-full flex-col gap-2">
                 <Title link={item.link}>{item.title}</Title>
@@ -116,7 +128,10 @@ export default function Home() {
         <h2>Links</h2>
         <div className="flex flex-col gap-4">
           {links.map((item, index) => (
-            <div key={index} className="flex">
+            <div
+              key={index}
+              className="flex flex-col gap-2 sm:flex-row sm:gap-0"
+            >
               <Date>{item.title}</Date>
               <Title link={item.link}>{item.username}</Title>
             </div>
