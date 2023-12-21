@@ -12,7 +12,7 @@ export default function Nav() {
           target="_blank"
           className="hover:no-underline"
         >
-          Resume PDF
+          CV / Resume PDF
         </a>
       </Button>
     </div>

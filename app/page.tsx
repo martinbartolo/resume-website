@@ -1,10 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 import Date from "./components/date";
+import ImageModal from "./components/image-modal";
 import Technologies from "./components/technologies";
 import Title from "./components/title";
-
 import certifications from "./content/certifications.json";
 import education from "./content/education.json";
 import links from "./content/links.json";
@@ -12,17 +15,23 @@ import sideProjects from "./content/side-projects.json";
 import workExperience from "./content/work-experience.json";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="flex max-w-screen-sm flex-col items-start justify-start px-4 py-28">
       <section className="flex items-center gap-6">
         <Image
           priority
-          src="/cat.webp"
+          src="/avatar.jpg"
           alt="avatar"
           width={100}
           height={100}
-          className="aspect-square rounded-full border border-black object-cover transition ease-in-out hover:scale-105"
+          className="aspect-square rounded-full border border-black object-cover hover:cursor-pointer"
+          onClick={() => setIsModalOpen(true)}
         />
+
+        <ImageModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+
         <div className="flex flex-col">
           <h1>Martin Bartolo</h1>
           <p>Full-stack Developer</p>
