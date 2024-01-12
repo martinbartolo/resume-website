@@ -8,7 +8,7 @@ export default function Title({
   link?: string | null;
 }) {
   return (
-    <div className="w-full">
+    <div className="w-fit">
       {link ? (
         <a href={link} target="_blank">
           <p className="text-white">

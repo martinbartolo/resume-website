@@ -58,7 +58,7 @@ export default function Home() {
               className="flex flex-col gap-2 sm:flex-row sm:gap-0"
             >
               <Date>{item.date}</Date>
-              <div className="flex w-full flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <Title link={item.link}>
                   {item.position} - {item.company}
                 </Title>
