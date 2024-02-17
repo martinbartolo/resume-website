@@ -18,7 +18,7 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <main className="flex max-w-screen-sm flex-col items-start justify-start px-4 py-28">
+    <main className="flex max-w-screen-sm flex-col items-start justify-start px-4 pt-28">
       <section className="flex items-center gap-6">
         <Image
           priority
@@ -146,6 +146,12 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section>
+        <Title link="https://github.com/martinbartolo/resume-website">
+          Source Code
+        </Title>
       </section>
     </main>
   );
