@@ -1,15 +1,23 @@
 [
   {
-    "company": "Aegimus",
-    "date": "2023 - Present",
-    "description": "Helping to expand into the MLOps field, contributing to the implementation of solutions for efficient model deployment and data processing. Also working on application UIs.",
-    "link": null,
+    "company": "Trovr",
+    "date": "Feb 2024 - Present",
+    "description": "",
+    "link": "https://trovrapp.com/",
+    "position": "Front End Developer",
+    "technologies": []
+  },
+  {
+    "company": "Siadat Software",
+    "date": "Oct 2023 - Dec 2023",
+    "description": "Worked on MLOps, contributing to the implementation of solutions for efficient model deployment and data processing. Built applications using Angular and SCSS.",
+    "link": "https://siadat.com/",
     "position": "Full-stack Developer",
     "technologies": ["Python", "TS", "Angular", "SCSS", "AWS"]
   },
   {
     "company": "CU Boulder",
-    "date": "2022 - 2023",
+    "date": "Mar 2022 - May 2023",
     "description": "Contributed to the creation and maintenance of multiple different natural language processing datasets for use in research by the Computational Linguistics Department.",
     "link": null,
     "position": "Machine Learning Annotator",
@@ -17,7 +25,7 @@
   },
   {
     "company": "CU Boulder",
-    "date": "2021",
+    "date": "Aug 2021 - Dec 2021",
     "description": "Graded homework and exams for over 100 students. Ran group and individual sessions to tutor students and answer their questions.",
     "link": null,
     "position": "Computer Science Grader",
@@ -25,7 +33,7 @@
   },
   {
     "company": "Fiverr.com",
-    "date": "2016 - 2021",
+    "date": "May 2016 - Jul 2021",
     "description": "Grew a successful online store on fiverr.com, offering graphic design services and working with over 1000 individuals and brands, amassing over 1100 orders and 900 5-star reviews in the process.",
     "link": "https://www.fiverr.com/martinbartolo",
     "position": "Freelance Graphic Designer",

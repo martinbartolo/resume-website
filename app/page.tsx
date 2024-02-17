@@ -18,7 +18,7 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <main className="flex max-w-screen-sm flex-col items-start justify-start px-4 pt-28">
+    <main className="flex max-w-screen-sm flex-col items-start justify-start px-4 pt-12">
       <section className="flex items-center gap-6">
         <Image
           priority
@@ -39,13 +39,9 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="pb-2">About</h2>
         <p>
-          I enjoy building reliable, elegant software solutions from start to
-          finish. Excited about creating, I find joy in bringing ideas to life.
-          US and Malta (EU) dual-citizenship. Willing to relocate/travel between
-          the US and Europe. Seeking exciting and challenging software
-          development opportunities.
+          Building reliable, elegant user experiences from start to finish.
+          Excited about creating, I find joy in bringing ideas to life.
         </p>
       </section>
 
@@ -60,7 +56,7 @@ export default function Home() {
               <Date>{item.date}</Date>
               <div className="flex flex-col gap-2">
                 <Title link={item.link}>
-                  {item.position} - {item.company}
+                  {item.position} @ {item.company}
                 </Title>
                 <p>{item.description}</p>
                 <Technologies list={item.technologies} />
@@ -149,9 +145,14 @@ export default function Home() {
       </section>
 
       <section>
-        <Title link="https://github.com/martinbartolo/resume-website">
-          Source Code
-        </Title>
+        <div className="flex flex-col gap-2">
+          <Title link="https://drive.google.com/file/d/1tU2QY5ZYBUL5pCPOABumsrErzxXxd_wZ/view?usp=sharing">
+            Résumé
+          </Title>
+          <Title link="https://github.com/martinbartolo/resume-website">
+            Source Code
+          </Title>
+        </div>
       </section>
     </main>
   );
