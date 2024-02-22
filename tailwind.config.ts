@@ -4,9 +4,9 @@ const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
-      color: {
-        text1: "#4a4a4a",
-        text2: "#a3a3a3",
+      colors: {
+        content: "var(--text-gray1)",
+        subcontent: "var(--text-gray2)",
       },
     },
   },

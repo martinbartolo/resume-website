@@ -6,6 +6,8 @@
   font-size: 15px;
   background-color: black;
   color: white;
+  --text-gray1: rgba(255, 255, 255, 0.65);
+  --text-gray2: rgba(255, 255, 255, 0.5);
 }
 
 body,
@@ -27,7 +29,7 @@ h2 {
 
 p,
 li {
-  color: theme("colors.zinc.400");
+  color: var(--text-gray1);
 }
 
 li {
