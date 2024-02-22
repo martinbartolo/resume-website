@@ -1,7 +1,7 @@
 [
   {
     "date": "Aug 2021 - May 2023",
-    "degree": "Master's Degree (M.S.) in Computer Science",
+    "degree": "M.S. in Computer Science",
     "extras": [
       "Capstone project with Lockheed Martin analyzing supply chain risks using Spacy for natural language processing and PyTorch to fine-tune Hugging Face transformer models. Models were handed off for use by the Lockheed Martin team at the end of the project."
     ],
@@ -10,10 +10,10 @@
   },
   {
     "date": "Oct 2017 - Jun 2021",
-    "degree": "B.Sc. (Hons) in Computing Science and Mathematics",
+    "degree": "B.Sc. Computing Science and Mathematics",
     "extras": [
-      "Included a year-long student exchange at the University of Warwick in the UK.",
-      "Dissertation [*Automated Data Collection Using Spatial Relationship Detection in Videos*](https://github.com/martin-bartolo/spatial-relationship-detection-bsc-final-year-project/blob/master/Short-Review-Paper.pdf) (A grade) in which I developed a system that could analyze videos and find the spatial relationships between identified objects in each frame."
+      "Dissertation [*Automated Data Collection Using Spatial Relationship Detection in Videos*](https://github.com/martin-bartolo/spatial-relationship-detection-bsc-final-year-project/blob/master/Short-Review-Paper.pdf) (A grade) in which I developed a system that could analyze videos and find the spatial relationships between identified objects in each frame.",
+      "Included a year-long student exchange at the University of Warwick in the UK."
     ],
     "gpa": "3.3/4.0",
     "school": "University of Malta"
