@@ -10,7 +10,7 @@
   {
     "company": "Siadat Software",
     "date": "Oct 2023 - Dec 2023",
-    "description": "Worked on MLOps, contributing to the implementation of solutions for efficient model deployment and data processing. Built applications using Angular and SCSS.",
+    "description": "Worked on MLOps, contributing to the implementation of solutions for efficient model deployment and data processing. Built applications using Python, Angular and SCSS.",
     "link": "https://siadat.com/",
     "position": "Full-stack Developer",
     "technologies": ["Python", "TS", "Angular", "SCSS", "AWS"]
