@@ -3,14 +3,24 @@
     "date": "Ongoing",
     "description": "A web e-commerce platform for independent music creators",
     "link": null,
-    "technologies": ["React", "Nextjs", "TS", "Supabase", "NextAuth"],
+    "technologies": [
+      "React",
+      "Nextjs",
+      "TS",
+      "Supabase",
+      "NextAuth",
+      "Vitest",
+      "Playwright"
+    ],
     "title": "Beatcat"
   },
   {
     "date": "Ongoing",
     "description": "I make music under the name yesok, creating instrumentals for rap artists around the world.",
     "link": "https://www.youtube.com/@yesok",
-    "technologies": ["FL Studio"],
+    "technologies": [
+      "FL Studio"
+    ],
     "title": "Music Production"
   }
 ]
