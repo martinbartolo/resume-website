@@ -58,7 +58,13 @@ export default function Home() {
                 <Title link={item.link}>
                   {item.position} @ {item.company}
                 </Title>
-                <p>{item.description}</p>
+                <ul>
+                  {item.description.map((item, i) => (
+                    <li key={i}>
+                      <p>{item}</p>
+                    </li>
+                  ))}
+                </ul>
                 <Technologies list={item.technologies} />
               </div>
             </div>
