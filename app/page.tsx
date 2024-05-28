@@ -153,7 +153,7 @@ export default function Home() {
 
       <section>
         <div className="flex flex-col gap-2">
-          <Title link="https://drive.google.com/file/d/1tU2QY5ZYBUL5pCPOABumsrErzxXxd_wZ/view?usp=sharing">
+          <Title link="https://drive.google.com/file/d/14Im6U1mtnyZlRVNK2383s_YnlP2-en_K/view?usp=sharing">
             Résumé
           </Title>
           <Title link="https://github.com/martinbartolo/resume-website">
