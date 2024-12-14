@@ -11,12 +11,12 @@ import workExperience from "../content/work-experience.json";
 
 export default function Home() {
   return (
-    <div className='w-full max-w-screen-sm space-y-10'>
-      <header className="flex items-center gap-6">
+    <article className='w-full max-w-screen-sm space-y-10'>
+      <header className="flex items-center gap-6" role="banner">
         <Image
           priority
           src="/avatar.jpg"
-          alt="avatar"
+          alt="Martin Bartolo - Avatar"
           width={100}
           height={100}
           className="aspect-square rounded-full border border-border object-cover transition-transform hover:scale-105"
@@ -27,18 +27,18 @@ export default function Home() {
         </div>
       </header>
 
-      <section>
+      <section aria-label="Introduction">
         <p className="text-base text-muted-foreground leading-relaxed">
           Building reliable, elegant user experiences from start to finish.
           Excited about creating, I find joy in bringing ideas to life.
         </p>
       </section>
 
-      <section>
+      <section aria-label="Work Experience">
         <h2 className="mb-6 text-lg font-medium">Work Experience</h2>
         <div className="space-y-8">
           {workExperience.map((item, index) => (
-            <div
+            <article
               key={index}
               className="flex flex-col sm:items-baseline gap-1 sm:flex-row sm:gap-4"
             >
@@ -47,23 +47,23 @@ export default function Home() {
                 <Title link={item.link}>
                   {item.position} @ {item.company}
                 </Title>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-sm text-muted-foreground" role="list">
                   {item.description.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
                 <Technologies list={item.technologies} />
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section>
+      <section aria-label="Side Projects">
         <h2 className="mb-6 text-lg font-medium">Side Projects</h2>
         <div className="space-y-8">
           {sideProjects.map((item, index) => (
-            <div
+            <article
               key={index}
               className="flex flex-col gap-1 sm:flex-row sm:gap-4"
             >
@@ -73,16 +73,16 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">{item.description}</p>
                 <Technologies list={item.technologies} />
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section>
+      <section aria-label="Education">
         <h2 className="mb-6 text-lg font-medium">Education</h2>
         <div className="space-y-8">
           {education.map((item, index) => (
-            <div
+            <article
               key={index}
               className="flex flex-col gap-1 sm:flex-row sm:gap-4"
             >
@@ -92,7 +92,7 @@ export default function Home() {
                   {item.degree} @ {item.school}
                 </Title>
                 <p className="text-sm text-muted-foreground">GPA: {item.gpa}</p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-sm text-muted-foreground" role="list">
                   {item.extras.map((extra, extra_index) => (
                     <li key={extra_index}>
                       <ReactMarkdown>{extra}</ReactMarkdown>
@@ -100,14 +100,14 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section>
+      <section aria-label="Links">
         <h2 className="mb-6 text-lg font-medium">Links</h2>
-        <div className="space-y-4">
+        <nav className="space-y-4">
           {links.map((item, index) => (
             <div
               key={index}
@@ -117,17 +117,17 @@ export default function Home() {
               <Title link={item.link}>{item.username}</Title>
             </div>
           ))}
-        </div>
+        </nav>
       </section>
 
-      <section className="space-y-2">
+      <footer className="space-y-2">
         <Title link="https://drive.google.com/file/d/14Im6U1mtnyZlRVNK2383s_YnlP2-en_K/view?usp=sharing">
           Résumé
         </Title>
         <Title link="https://github.com/martinbartolo/resume-website">
           Source Code
         </Title>
-      </section>
-    </div>
+      </footer>
+    </article>
   );
 }
