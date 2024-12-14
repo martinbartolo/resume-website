@@ -11,12 +11,7 @@
     ],
     "link": "https://trovrapp.com/",
     "position": "Front End Developer",
-    "technologies": [
-      "React Native",
-      "TS",
-      "Jest",
-      "MSW"
-    ]
+    "technologies": ["React Native", "TS", "Jest", "MSW"]
   },
   {
     "company": "Siadat Software",
@@ -26,13 +21,7 @@
     ],
     "link": "https://siadat.com/",
     "position": "Full-stack Developer",
-    "technologies": [
-      "Python",
-      "TS",
-      "Angular",
-      "SCSS",
-      "AWS"
-    ]
+    "technologies": ["Python", "TS", "Angular", "SCSS", "AWS"]
   },
   {
     "company": "CU Boulder",
@@ -62,9 +51,6 @@
     ],
     "link": "https://www.fiverr.com/martinbartolo",
     "position": "Freelance Graphic Designer",
-    "technologies": [
-      "Adobe Photoshop",
-      "Adobe Illustrator"
-    ]
+    "technologies": ["Adobe Photoshop", "Adobe Illustrator"]
   }
 ]
