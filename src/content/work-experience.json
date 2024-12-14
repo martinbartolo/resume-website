@@ -10,8 +10,7 @@
       "Contributing to the development of a design system to ensure a consistent user experience across the app."
     ],
     "link": "https://trovrapp.com/",
-    "position": "Front End Developer",
-    "technologies": ["React Native", "TS", "Jest", "MSW"]
+    "position": "Front End Developer"
   },
   {
     "company": "Siadat Software",
@@ -20,8 +19,7 @@
       "Worked on MLOps, contributing to the implementation of solutions for efficient model deployment and data processing. Built applications using Python, Angular and SCSS."
     ],
     "link": "https://siadat.com/",
-    "position": "Full-stack Developer",
-    "technologies": ["Python", "TS", "Angular", "SCSS", "AWS"]
+    "position": "Full-stack Developer"
   },
   {
     "company": "CU Boulder",
@@ -30,8 +28,7 @@
       "Contributed to the creation and maintenance of multiple different natural language processing datasets for use in research by the Computational Linguistics Department."
     ],
     "link": null,
-    "position": "Machine Learning Annotator",
-    "technologies": []
+    "position": "Machine Learning Annotator"
   },
   {
     "company": "CU Boulder",
@@ -40,8 +37,7 @@
       "Graded homework and exams for over 100 students. Ran group and individual sessions to tutor students and answer their questions."
     ],
     "link": null,
-    "position": "Computer Science Grader",
-    "technologies": []
+    "position": "Computer Science Grader"
   },
   {
     "company": "Fiverr.com",
@@ -50,7 +46,6 @@
       "Grew a successful online store on fiverr.com, offering graphic design services and working with over 1000 individuals and brands, amassing over 1100 orders and 900 5-star reviews in the process."
     ],
     "link": "https://www.fiverr.com/martinbartolo",
-    "position": "Freelance Graphic Designer",
-    "technologies": ["Adobe Photoshop", "Adobe Illustrator"]
+    "position": "Freelance Graphic Designer"
   }
 ]

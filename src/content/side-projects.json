@@ -3,22 +3,19 @@
     "date": "Ongoing",
     "description": "A web e-commerce platform for independent music creators",
     "link": null,
-    "technologies": [
-      "React",
-      "Nextjs",
-      "TS",
-      "Supabase",
-      "NextAuth",
-      "Vitest",
-      "Playwright"
-    ],
-    "title": "Beatcat"
+    "title": "Bopkit"
+  },
+  {
+    "date": "2024",
+    "description": "An interactive, lightweight award show platform that allows users to create and manage custom award ceremonies. Features include custom categories, real-time voting, live presentations, and secure event management.",
+    "link": "https://www.awardbro.com",
+    "sourceCode": "https://github.com/martinbartolo/awardbro",
+    "title": "AwardBro"
   },
   {
     "date": "Ongoing",
     "description": "I make music under the name yesok, creating instrumentals for rap artists around the world.",
     "link": "https://www.youtube.com/@yesok",
-    "technologies": ["FL Studio"],
     "title": "Music Production"
   }
 ]
