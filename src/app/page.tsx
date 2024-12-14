@@ -1,7 +1,7 @@
 import Image from "next/image";
-import ReactMarkdown from "react-markdown";
 
 import Date from "../components/date";
+import MarkdownText from "../components/markdown-text";
 import Title from "../components/title";
 import education from "../content/education.json";
 import links from "../content/links.json";
@@ -116,7 +116,7 @@ export default function Home() {
                 >
                   {item.extras.map((extra, extra_index) => (
                     <li key={extra_index}>
-                      <ReactMarkdown>{extra}</ReactMarkdown>
+                      <MarkdownText>{extra}</MarkdownText>
                     </li>
                   ))}
                 </ul>
