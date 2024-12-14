@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 import Date from "../components/date";
 import Technologies from "../components/technologies";
 import Title from "../components/title";
-import certifications from "../content/certifications.json";
 import education from "../content/education.json";
 import links from "../content/links.json";
 import sideProjects from "../content/side-projects.json";
@@ -100,24 +99,6 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="mb-6 text-lg font-medium">Certifications</h2>
-        <div className="space-y-6">
-          {certifications.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col gap-1 sm:flex-row sm:gap-4"
-            >
-              <Date>{item.date}</Date>
-              <div className="flex-1 flex flex-col gap-2">
-                <Title link={item.link}>{item.title}</Title>
-                <p className="text-sm text-muted-foreground">{item.institution}</p>
               </div>
             </div>
           ))}
