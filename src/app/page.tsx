@@ -7,6 +7,7 @@ import education from "../content/education.json";
 import links from "../content/links.json";
 import sideProjects from "../content/side-projects.json";
 import workExperience from "../content/work-experience.json";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -50,14 +51,14 @@ export default function Home() {
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
                   <Title link={item.link}>{item.title}</Title>
                   {item.sourceCode && (
-                    <a
+                    <Link
                       href={item.sourceCode}
                       className="text-xs text-muted-foreground transition-colors hover:text-foreground"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       [Source Code]
-                    </a>
+                    </Link>
                   )}
                 </div>
                 <p className="text-sm text-muted-foreground">

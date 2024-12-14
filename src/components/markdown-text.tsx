@@ -18,7 +18,7 @@ export default function MarkdownText({ children }: MarkdownTextProps) {
             <Link
               key={index}
               href={url ?? ""}
-              className="underline hover:text-foreground"
+              className="underline hover:text-foreground transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >

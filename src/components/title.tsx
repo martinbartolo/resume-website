@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Title({
   children,
@@ -10,7 +11,7 @@ export default function Title({
   return (
     <div className="w-fit">
       {link ? (
-        <a
+        <Link
           href={link}
           target="_blank"
           rel="noopener noreferrer"
@@ -18,7 +19,7 @@ export default function Title({
         >
           {children}
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:underline" />
-        </a>
+        </Link>
       ) : (
         <p className="text-sm font-medium text-foreground">{children}</p>
       )}
