@@ -8,8 +8,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Martin Bartolo",
-  description: "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
-  keywords: ["Martin Bartolo", "Software Developer", "Web Development", "Portfolio", "Resume"],
+  description:
+    "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
+  keywords: [
+    "Martin Bartolo",
+    "Software Developer",
+    "Web Development",
+    "Portfolio",
+    "Resume",
+  ],
   authors: [{ name: "Martin Bartolo" }],
   creator: "Martin Bartolo",
   robots: {
@@ -25,13 +32,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://martinbartolo.com",
     title: "Martin Bartolo",
-    description: "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
+    description:
+      "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
     siteName: "Martin Bartolo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Martin Bartolo",
-    description: "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
+    description:
+      "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
   },
 };
 
