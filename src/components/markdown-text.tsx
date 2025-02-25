@@ -6,19 +6,19 @@ interface MarkdownTextProps {
 
 export default function MarkdownText({ children }: MarkdownTextProps) {
   const parts = children.split(/(\[[^\]]+\]\([^)]+\))/g);
-  
+
   return (
     <>
       {parts.map((part, index) => {
         const match = /\[([^\]]+)\]\(([^)]+)\)/.exec(part);
-        
+
         if (match) {
           const [, text, url] = match;
           return (
             <Link
               key={index}
               href={url ?? ""}
-              className="underline hover:text-foreground transition-colors"
+              className="underline transition-colors hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -26,9 +26,9 @@ export default function MarkdownText({ children }: MarkdownTextProps) {
             </Link>
           );
         }
-        
+
         return <span key={index}>{part}</span>;
       })}
     </>
   );
-} 
+}

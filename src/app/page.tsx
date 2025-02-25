@@ -7,11 +7,12 @@ import education from "../content/education.json";
 import links from "../content/links.json";
 import sideProjects from "../content/side-projects.json";
 import workExperience from "../content/work-experience.json";
+
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <article className="w-full max-w-screen-sm space-y-10">
+    <article className="w-full max-w-(--breakpoint-sm) space-y-10">
       <header className="flex items-center gap-6" role="banner">
         <Image
           priority
@@ -21,6 +22,7 @@ export default function Home() {
           height={100}
           className="aspect-square rounded-full border border-border object-cover transition-transform hover:scale-105"
         />
+
         <div>
           <h1 className="text-2xl font-semibold tracking-tight text-foreground">
             Martin Bartolo
@@ -83,6 +85,7 @@ export default function Home() {
                 <Title link={item.link}>
                   {item.position} @ {item.company}
                 </Title>
+
                 <ul
                   className="space-y-2 text-sm text-muted-foreground"
                   role="list"

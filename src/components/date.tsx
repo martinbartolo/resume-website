@@ -1,6 +1,6 @@
 export default function Date({ children }: { children: React.ReactNode }) {
   return (
-    <p className="min-w-[150px] whitespace-nowrap text-sm font-medium text-muted-foreground">
+    <p className="min-w-[150px] text-sm font-medium whitespace-nowrap text-muted-foreground">
       {children}
     </p>
   );
