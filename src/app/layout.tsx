@@ -73,10 +73,10 @@ export default function RootLayout({
       className={`${lexend.variable} ${geist.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-geist min-h-screen bg-background antialiased">
-        <div className="relative flex min-h-screen flex-col">
+      <body className="min-h-dvh bg-background font-geist antialiased">
+        <div className="relative flex min-h-dvh flex-col">
           <main className="flex-1">
-            <div className="mx-auto flex max-w-5xl justify-center px-4 py-8 sm:px-6 lg:px-8">
+            <div className="mx-auto flex max-w-5xl justify-center px-4 py-4 sm:py-6 lg:py-8">
               {children}
             </div>
           </main>
