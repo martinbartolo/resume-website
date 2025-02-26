@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Inter, Lexend_Deca } from "next/font/google";
 
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend_Deca({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lexend",
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist",
+});
 
 export const metadata: Metadata = {
   title: "Martin Bartolo",
@@ -32,14 +42,23 @@ export const metadata: Metadata = {
     url: "https://martinbartolo.com",
     title: "Martin Bartolo",
     description:
-      "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
-    siteName: "Martin Bartolo Portfolio",
+      "Personal portfolio website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
+    siteName: "Martin Bartolo",
   },
   twitter: {
     card: "summary_large_image",
     title: "Martin Bartolo",
     description:
-      "Personal portfolio and resume website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
+      "Personal portfolio website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
+    creator: "@prodyesok",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  alternates: {
+    canonical: "https://martinbartolo.com",
   },
 };
 
@@ -49,8 +68,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.className}`} suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans antialiased">
+    <html
+      lang="en"
+      className={`${lexend.variable} ${geist.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-geist min-h-screen bg-background antialiased">
         <div className="relative flex min-h-screen flex-col">
           <main className="flex-1">
             <div className="mx-auto flex max-w-5xl justify-center px-4 py-8 sm:px-6 lg:px-8">
