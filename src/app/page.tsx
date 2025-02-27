@@ -3,15 +3,8 @@
 import { AnimatedTitle } from "./components/AnimatedTitle";
 import { SocialLink } from "./components/SocialLink";
 import { NavButton } from "./components/NavButton";
-import { useEffect } from "react";
-import { initializeRandomColor } from "~/utils/colors";
 
 export default function Home() {
-  useEffect(() => {
-    // Initialize random color once at app start
-    initializeRandomColor();
-  }, []);
-
   return (
     <main className="flex min-h-dvh flex-col justify-between px-4 py-12 sm:px-8 sm:py-16 md:py-20 lg:py-24">
       <div className="flex flex-1 flex-col items-center justify-center">
@@ -24,7 +17,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-12 flex items-center justify-center gap-6 sm:mt-16 sm:gap-8 md:mt-20">
+      <div className="mt-12 flex items-center justify-center gap-6 sm:mt-16 md:mt-20">
         <SocialLink href="https://github.com/martinbartolo" label="GitHub" />
         <SocialLink
           href="https://www.linkedin.com/in/martinbartolo"

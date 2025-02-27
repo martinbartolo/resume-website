@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Lexend_Deca } from "next/font/google";
+import { ColorProvider } from "./components/ColorProvider";
 
 import "../styles/globals.css";
 
@@ -77,7 +78,7 @@ export default function RootLayout({
         <div className="relative flex min-h-dvh flex-col">
           <main className="flex-1">
             <div className="mx-auto flex max-w-5xl justify-center px-4 py-4 sm:py-6 lg:py-8">
-              {children}
+              <ColorProvider>{children}</ColorProvider>
             </div>
           </main>
         </div>
