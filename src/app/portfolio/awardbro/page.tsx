@@ -58,17 +58,9 @@ export default function AwardBroPage() {
       <div className="prose prose-invert max-w-none space-y-6">
         <p>
           AwardBro is a real-time interactive award show platform I developed to
-          streamline the process of creating and hosting engaging award
-          ceremonies with my friends. The application enables hosts to create
-          custom award shows with a focus on real-time interaction and ease of
-          use.
-        </p>
-
-        <p>
-          Built with Next.js, Prisma, tRPC, and Tailwind CSS, the platform
-          offers features like instant voting, live result tracking, and a
-          dynamic presentation mode for winner reveals. The responsive design
-          ensures a seamless experience across all devices.
+          streamline the process of hosting engaging award ceremonies with my
+          friends. Features include instant voting, live result tracking, and a
+          dynamic presentation mode for winner reveals.
         </p>
 
         <div className="not-prose my-12 grid gap-8">
