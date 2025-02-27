@@ -9,15 +9,18 @@ type Phrase = (typeof phrases)[number];
 
 export function AnimatedTitle() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Animate the title to cycle through phrases
   useEffect(() => {
+    if (isHovered) return; // Don't set up interval if hovering
+
     const interval = setInterval(() => {
       setCurrentIndex(current => (current + 1) % phrases.length);
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered]); // Add isHovered to dependencies
 
   const renderPhrase = (phrase: Phrase) => {
     if (phrase === "music") {
@@ -54,6 +57,8 @@ export function AnimatedTitle() {
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
                 className="whitespace-nowrap underline decoration-primary decoration-from-font underline-offset-4 sm:underline-offset-8"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               >
                 {renderPhrase(currentPhrase!)}
               </motion.span>
