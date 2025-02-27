@@ -27,17 +27,20 @@ export default function PortfolioPage() {
       </h1>
 
       <section className="mb-16">
-        <h2 className="mb-6 text-2xl font-medium text-foreground">
+        <h2 className="mb-6 font-medium tracking-wide text-foreground/90 uppercase sm:text-lg md:text-xl">
           Professional Experience
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">
-          <PortfolioCard title="Company Name" href="/portfolio/company-name" />
-          {/* Add more professional experience cards here */}
+          <PortfolioCard
+            title="Trovr"
+            href="/portfolio/trovr"
+            imagePath="https://drive.google.com/uc?export=view&id=1ra1gbU8Ay5owV2MwSOlJYC3S2k-S9V8t"
+          />
         </div>
       </section>
 
       <section>
-        <h2 className="mb-6 text-2xl font-medium text-foreground">
+        <h2 className="mb-6 font-medium tracking-wide text-foreground/90 uppercase sm:text-lg md:text-xl">
           Personal Projects
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">

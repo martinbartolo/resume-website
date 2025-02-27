@@ -21,11 +21,20 @@ export const PortfolioCard = ({
               src={imagePath}
               alt={`${title} preview`}
               fill
-              className="object-cover"
+              className="object-contain p-10"
             />
           )}
         </div>
-        <div className="p-4">
+        <div className="flex items-center gap-2 px-4 py-2">
+          {imagePath && (
+            <Image
+              src={imagePath}
+              alt={`${title} preview`}
+              height={16}
+              width={16}
+              className="w-auto"
+            />
+          )}
           <h3 className="text-lg text-foreground">{title}</h3>
         </div>
       </div>
