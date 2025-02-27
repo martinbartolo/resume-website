@@ -27,7 +27,7 @@ export default function PortfolioPage() {
       </h1>
 
       <section className="mb-16">
-        <h2 className="mb-6 font-medium tracking-wide text-foreground/90 uppercase sm:text-lg md:text-xl">
+        <h2 className="mb-6 font-medium tracking-wide text-foreground/90 sm:text-lg md:text-xl">
           Professional Experience
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">
@@ -40,7 +40,7 @@ export default function PortfolioPage() {
       </section>
 
       <section>
-        <h2 className="mb-6 font-medium tracking-wide text-foreground/90 uppercase sm:text-lg md:text-xl">
+        <h2 className="mb-6 font-medium tracking-wide text-foreground/90 sm:text-lg md:text-xl">
           Personal Projects
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">
