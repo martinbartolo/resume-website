@@ -47,13 +47,13 @@ export default function TrovrPage() {
         <p>
           Working closely with the backend team, I design and implement RESTful
           APIs using OpenAPI specifications, ensuring smooth data flow and
-          consistent user experiences across platforms. I've also set up
+          consistent user experiences across platforms. I&apos;ve also set up
           automated CI/CD pipelines to streamline the deployment process and
           maintain code quality.
         </p>
 
         <p>
-          I've established and implemented a comprehensive testing strategy
+          I&apos;ve established and implemented a comprehensive testing strategy
           using Jest and MSW, ensuring reliable API interactions and component
           behavior across all applications. This includes unit tests for the
           shared component library and integration tests for critical user
@@ -62,9 +62,10 @@ export default function TrovrPage() {
 
         <p>
           My work involves translating complex design requirements into polished
-          user interfaces. I've built and maintain a shared component library
-          that ensures visual consistency across the mobile and web applications
-          while adapting each component to feel native to its platform.
+          user interfaces. I&apos;ve built and maintain a shared component
+          library that ensures visual consistency across the mobile and web
+          applications while adapting each component to feel native to its
+          platform.
         </p>
       </div>
     </main>
