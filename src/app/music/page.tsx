@@ -39,6 +39,10 @@ export default function MusicPage() {
           label="SoundCloud"
         />
         <SocialLink href="https://www.youtube.com/@yesok" label="YouTube" />
+        <SocialLink
+          href="https://www.instagram.com/prodyesok"
+          label="Instagram"
+        />
       </div>
     </main>
   );
