@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Inter, Lexend_Deca } from "next/font/google";
+import { Geist, Lexend_Deca } from "next/font/google";
 
 import "../styles/globals.css";
 

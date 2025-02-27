@@ -5,25 +5,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: hsl(0 0% 2%);
-  --foreground: hsl(0 0% 96%);
-  --card: hsl(0 0% 3%);
-  --card-foreground: hsl(0 0% 96%);
-  --popover: hsl(0 0% 3%);
-  --popover-foreground: hsl(0 0% 96%);
-  --primary: hsl(0 0% 96%);
-  --primary-foreground: hsl(0 0% 2%);
-  --secondary: hsl(0 0% 6%);
-  --secondary-foreground: hsl(0 0% 96%);
-  --muted: hsl(0 0% 8%);
-  --muted-foreground: hsl(0 0% 70%);
-  --accent: hsl(0 0% 8%);
-  --accent-foreground: hsl(0 0% 96%);
-  --destructive: hsl(0 84% 32%);
-  --destructive-foreground: hsl(0 0% 96%);
-  --border: hsl(0 0% 12%);
-  --input: hsl(0 0% 12%);
-  --ring: hsl(0 0% 20%);
+  --background: hsl(225 25% 4%);
+  --foreground: hsl(220 15% 90%);
+
+  /* More subtle colors that blend with background */
+  --card: hsl(225 25% 5%);
+  --card-foreground: hsl(220 15% 90%);
+  --popover: hsl(225 25% 5%);
+  --popover-foreground: hsl(220 15% 90%);
+  --secondary: hsl(225 25% 6%);
+  --secondary-foreground: hsl(220 15% 90%);
+  --muted: hsl(225 25% 8%);
+  --muted-foreground: hsl(225 20% 60%);
+  --accent: hsl(225 25% 7%);
+  --accent-foreground: hsl(220 15% 90%);
+  --destructive: hsl(0 40% 30%);
+  --destructive-foreground: hsl(220 15% 90%);
+  --border: hsl(225 25% 8%);
+  --input: hsl(225 25% 8%);
+  --ring: hsl(225 25% 12%);
+
+  /* Vibrant colors to choose from on load */
+  --vibrant-colors:
+    #ff69b4, /* Hot Pink  */ #00ffcc, /* Bright Turquoise */ #ff3300,
+    /* Vivid Red-Orange */ #33ff00, /* Electric Lime */ #ff9500,
+    /* Bright Orange */ #7700ff, /* Electric Indigo */ #00ffff,
+    /* Cyan */ #ffcc00, /* Golden Yellow */ #ff00ff, /* Magenta */ #00ff66,
+    /* Spring Green */ #1aff8c, /* Mint Green */ #ffff00,
+    /* Neon Yellow */ #9d00ff, /* Bright Purple */ #ff3366,
+    /* Raspberry */ #00ccaa; /* Jade */
+
+  /* This will be set dynamically on page load */
+  --primary: #ff69b4;
+  --primary-foreground: hsl(220 15% 98%);
 }
 
 @theme inline {
@@ -86,6 +100,6 @@
 }
 
 ::selection {
-  background-color: #ff69b4;
+  background-color: var(--primary);
   color: white;
 }

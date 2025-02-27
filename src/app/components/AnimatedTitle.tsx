@@ -8,18 +8,13 @@ const phrases = ["stuff at Trovr", "bopkit.com", "music"];
 export function AnimatedTitle() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Animate the title to cycle through phrases
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    const interval = setInterval(() => {
+      setCurrentIndex(current => (current + 1) % phrases.length);
+    }, 2500);
 
-    const cyclePhrase = () => {
-      timeoutId = setTimeout(() => {
-        setCurrentIndex(current => (current + 1) % phrases.length);
-        cyclePhrase();
-      }, 2500);
-    };
-
-    cyclePhrase();
-    return () => clearTimeout(timeoutId);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -42,7 +37,7 @@ export function AnimatedTitle() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
-                className="whitespace-nowrap text-primary"
+                className="whitespace-nowrap underline decoration-primary decoration-from-font underline-offset-4 sm:underline-offset-8"
               >
                 {phrases[currentIndex]}
               </motion.span>

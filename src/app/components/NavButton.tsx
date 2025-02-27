@@ -9,7 +9,7 @@ export function NavButton({ href, children }: NavButtonProps) {
   return (
     <Link
       href={href}
-      className="border-b-[1.5px] border-muted-foreground/60 text-lg font-medium tracking-wide text-foreground uppercase transition-colors hover:text-muted-foreground sm:text-xl md:text-2xl"
+      className="font-medium tracking-wide text-foreground/90 uppercase underline decoration-primary decoration-1 underline-offset-4 transition-colors hover:text-primary sm:text-lg md:text-xl"
     >
       {children}
     </Link>
