@@ -50,17 +50,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Martin Bartolo",
     description:
-      "Personal portfolio website of Martin Bartolo, a software developer specializing in web development and modern technologies.",
+      "Personal portfolio website of Martin Bartolo, a software developer specializing in modern web technologies.",
     creator: "@prodyesok",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
   },
   alternates: {
     canonical: "https://martinbartolo.com",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
