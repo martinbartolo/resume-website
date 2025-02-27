@@ -14,8 +14,6 @@ export function SoundCloudPlayer({
       <iframe
         width="100%"
         height="166"
-        scrolling="no"
-        frameBorder="0"
         allow="autoplay"
         src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
           trackUrl,

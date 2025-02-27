@@ -1,4 +1,4 @@
-import { SoundCloudPlayer } from "../components/SoundCloudPlayer";
+import { SoundCloudPlayer } from "./components/SoundCloudPlayer";
 import { SocialLink } from "../components/SocialLink";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
