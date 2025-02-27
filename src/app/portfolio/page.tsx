@@ -34,7 +34,7 @@ export default function PortfolioPage() {
           <PortfolioCard
             title="Trovr"
             href="/portfolio/trovr"
-            imagePath="https://drive.google.com/uc?export=view&id=1ra1gbU8Ay5owV2MwSOlJYC3S2k-S9V8t"
+            logoPath="https://drive.google.com/uc?export=view&id=1ra1gbU8Ay5owV2MwSOlJYC3S2k-S9V8t"
           />
         </div>
       </section>
@@ -44,8 +44,17 @@ export default function PortfolioPage() {
           Personal Projects
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">
-          <PortfolioCard title="Project Name" href="/portfolio/project-name" />
-          {/* Add more project cards here */}
+          <PortfolioCard
+            title="Bopkit"
+            href="/portfolio/bopkit"
+            logoPath="https://drive.google.com/uc?export=view&id=1yw-OWfk8keLh55HZuOi7Eo1MsCjAtH2-"
+          />
+          <PortfolioCard
+            title="AwardBro"
+            href="/portfolio/awardbro"
+            imagePath="https://drive.google.com/uc?export=view&id=1MdxoiaKOZrv0xPUyjGn3zXXG7g-5cPg5"
+            logoPath="https://drive.google.com/uc?export=view&id=1BsS2Wj-dXBzvGk0p2S07ykWiqwkhoD-N"
+          />
         </div>
       </section>
     </main>

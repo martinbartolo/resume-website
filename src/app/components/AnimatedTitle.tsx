@@ -30,6 +30,26 @@ export function AnimatedTitle() {
         </Link>
       );
     }
+    if (phrase === "bopkit.com") {
+      return (
+        <Link
+          href="/portfolio/bopkit"
+          className="transition-colors hover:text-primary"
+        >
+          {phrase}
+        </Link>
+      );
+    }
+    if (phrase === "stuff at Trovr") {
+      return (
+        <Link
+          href="/portfolio/trovr"
+          className="transition-colors hover:text-primary"
+        >
+          {phrase}
+        </Link>
+      );
+    }
     return phrase;
   };
 

@@ -1,35 +1,41 @@
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "~/utils/utils";
 
 type PortfolioCardProps = {
   title: string;
   href: string;
   imagePath?: string;
+  logoPath?: string;
 };
 
 export const PortfolioCard = ({
   title,
   href,
   imagePath,
+  logoPath,
 }: PortfolioCardProps) => {
   return (
     <Link href={href}>
       <div className="group overflow-hidden rounded-xl border border-foreground/10 transition-all hover:border-primary">
         <div className="relative aspect-video bg-muted">
-          {imagePath && (
+          {(imagePath || logoPath) && (
             <Image
-              src={imagePath}
+              src={imagePath || logoPath || ""}
               alt={`${title} preview`}
               fill
-              className="object-contain p-10"
+              className={cn(
+                imagePath && "object-cover",
+                logoPath && !imagePath && "object-contain p-10",
+              )}
             />
           )}
         </div>
         <div className="flex items-center gap-2 px-4 py-2">
-          {imagePath && (
+          {logoPath && (
             <Image
-              src={imagePath}
-              alt={`${title} preview`}
+              src={logoPath}
+              alt={`${title} logo`}
               height={16}
               width={16}
               className="w-auto"
