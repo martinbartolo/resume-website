@@ -33,7 +33,7 @@ export default function MusicPage() {
         <SoundCloudPlayer trackUrl="https://soundcloud.com/prodyesok/october-2023-samples-yesok-dubergg" />
       </div>
 
-      <div className="mt-16 flex gap-6">
+      <div className="mt-16 flex flex-col gap-4 sm:flex-row sm:gap-6">
         <SocialLink
           href="https://soundcloud.com/prodyesok"
           label="SoundCloud"
