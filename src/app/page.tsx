@@ -23,6 +23,7 @@ export default function Home() {
           href="https://www.linkedin.com/in/martinbartolo"
           label="LinkedIn"
         />
+        <SocialLink href="mailto:martin9oh9@gmail.com" label="Email" />
       </div>
     </main>
   );
