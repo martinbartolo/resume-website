@@ -107,7 +107,7 @@ export default function AwardBroPage() {
 
           <figure className="space-y-2">
             <Image
-              src="https://drive.google.com/uc?export=view&id=1Pso5q_4PYjahsZBj3Ux3flyWTG_bs5CB"
+              src="https://drive.google.com/uc?export=view&id=1deiClrpWvB9z9QfNjIxCQtvkNe0lLJWl"
               alt="AwardBro Results Page"
               width={800}
               height={450}
