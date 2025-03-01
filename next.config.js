@@ -1,7 +1,7 @@
 /** @type {import("next").NextConfig} */
 const config = {
   images: {
-    remotePatterns: [{ hostname: "drive.google.com" }],
+    remotePatterns: [{ hostname: "7m9tv54vnq.ufs.sh" }],
   },
 };
 

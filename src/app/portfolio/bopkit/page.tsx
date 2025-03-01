@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Bopkit - Portfolio | Martin Bartolo",
@@ -20,8 +21,15 @@ export default function BopkitPage() {
       </Link>
 
       <div className="mb-8">
+        <Image
+          src="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xD1s6P8SSGurQl7nhmEBjakKJ2I53UeMqWZw6"
+          alt="Coming Soon"
+          width={48}
+          height={48}
+          className="mb-4"
+        />
         <h1 className="mb-2 font-lexend text-4xl font-medium text-foreground">
-          <span className="underline decoration-primary decoration-from-font underline-offset-8">
+          <span className="underline decoration-primary decoration-from-font underline-offset-4">
             Bopkit
           </span>
         </h1>

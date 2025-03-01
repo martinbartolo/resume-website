@@ -22,14 +22,14 @@ export default function TrovrPage() {
 
       <div className="mb-8">
         <Image
-          src="https://drive.google.com/uc?export=view&id=1ra1gbU8Ay5owV2MwSOlJYC3S2k-S9V8t"
+          src="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xP2dJvplbA8d9O3fvknGFaNrcwBQyWLeKx5VY"
           alt="Trovr Logo"
           width={48}
           height={48}
           className="mb-4"
         />
         <h1 className="mb-2 font-lexend text-4xl font-medium text-foreground">
-          <span className="underline decoration-primary decoration-from-font underline-offset-8">
+          <span className="underline decoration-primary decoration-from-font underline-offset-4">
             Trovr
           </span>
         </h1>

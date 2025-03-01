@@ -34,7 +34,7 @@ export default function PortfolioPage() {
           <PortfolioCard
             title="Trovr"
             href="/portfolio/trovr"
-            logoPath="https://drive.google.com/uc?export=view&id=1ra1gbU8Ay5owV2MwSOlJYC3S2k-S9V8t"
+            logoPath="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xP2dJvplbA8d9O3fvknGFaNrcwBQyWLeKx5VY"
           />
         </div>
       </section>
@@ -47,13 +47,13 @@ export default function PortfolioPage() {
           <PortfolioCard
             title="Bopkit"
             href="/portfolio/bopkit"
-            logoPath="https://drive.google.com/uc?export=view&id=1yw-OWfk8keLh55HZuOi7Eo1MsCjAtH2-"
+            logoPath="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xD1s6P8SSGurQl7nhmEBjakKJ2I53UeMqWZw6"
           />
           <PortfolioCard
             title="AwardBro"
             href="/portfolio/awardbro"
-            imagePath="https://drive.google.com/uc?export=view&id=1MdxoiaKOZrv0xPUyjGn3zXXG7g-5cPg5"
-            logoPath="https://drive.google.com/uc?export=view&id=1BsS2Wj-dXBzvGk0p2S07ykWiqwkhoD-N"
+            imagePath="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xXjxLT8uItKr5NxT6dJWSoFQYycXOjBPqbhRg"
+            logoPath="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xZ7ztc2ghOQlZrWaoNuAFifJz0qIEbdvVLDyR"
           />
         </div>
       </section>

@@ -22,14 +22,14 @@ export default function AwardBroPage() {
 
       <div className="mb-8">
         <Image
-          src="https://drive.google.com/uc?export=view&id=1BsS2Wj-dXBzvGk0p2S07ykWiqwkhoD-N"
+          src="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xZ7ztc2ghOQlZrWaoNuAFifJz0qIEbdvVLDyR"
           alt="AwardBro Logo"
           width={48}
           height={48}
           className="mb-4"
         />
         <h1 className="mb-3 font-lexend text-4xl font-medium text-foreground">
-          <span className="underline decoration-primary decoration-from-font underline-offset-8">
+          <span className="underline decoration-primary decoration-from-font underline-offset-4">
             AwardBro
           </span>
         </h1>
@@ -66,7 +66,7 @@ export default function AwardBroPage() {
         <div className="not-prose my-12 grid gap-8">
           <figure className="space-y-2">
             <Image
-              src="https://drive.google.com/uc?export=view&id=160zKeFqTUHbc9S1iQ8NvDW4buOFrmBC6"
+              src="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xFnmw0Mbsa4FmEMPl1rbiOUw5Vuq8Ik9nCdKN"
               alt="AwardBro Landing Page"
               width={800}
               height={450}
@@ -79,8 +79,8 @@ export default function AwardBroPage() {
 
           <figure className="space-y-2">
             <Image
-              src="https://drive.google.com/uc?export=view&id=1UpfYfHuM2vnETy4a280h9AWyvdQAIGxR"
-              alt="AwardBro Dashboard"
+              src="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xEHe5lD05l3xwVjbdsqWcGZ6Oeat4SRAfiUL9"
+              alt="AwardBro Management Dashboard"
               width={800}
               height={450}
               className="rounded-xl border border-border"
@@ -93,7 +93,7 @@ export default function AwardBroPage() {
 
           <figure className="space-y-2">
             <Image
-              src="https://drive.google.com/uc?export=view&id=1jryy74hgll-Vul1bNQWgKB-TS6pqeQxr"
+              src="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xB41dHQkOJ9GEgu0v8ezZihMo3CsHTaxw2p5c"
               alt="AwardBro Voting Interface"
               width={800}
               height={450}
@@ -107,10 +107,11 @@ export default function AwardBroPage() {
 
           <figure className="space-y-2">
             <Image
-              src="https://drive.google.com/uc?export=view&id=1deiClrpWvB9z9QfNjIxCQtvkNe0lLJWl"
+              src="https://7m9tv54vnq.ufs.sh/f/Ez5bUhy05l3xXIw9rUuItKr5NxT6dJWSoFQYycXOjBPqbhRg"
               alt="AwardBro Results Page"
               width={800}
               height={450}
+              unoptimized
               className="rounded-xl border border-border"
             />
             <figcaption className="text-center text-sm text-foreground/60">
