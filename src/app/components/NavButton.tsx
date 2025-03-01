@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UnderlineToBackground from "./ui/underline-to-background";
 
 interface NavButtonProps {
   href: string;
@@ -7,11 +8,11 @@ interface NavButtonProps {
 
 export function NavButton({ href, children }: NavButtonProps) {
   return (
-    <Link
-      href={href}
-      className="font-medium tracking-wide text-foreground/90 uppercase underline decoration-primary decoration-1 underline-offset-4 transition-colors hover:text-primary sm:text-lg md:text-xl"
-    >
-      {children}
+    <Link href={href}>
+      <UnderlineToBackground
+        label={children as string}
+        className="font-medium tracking-wide uppercase sm:text-lg md:text-xl"
+      />
     </Link>
   );
 }
