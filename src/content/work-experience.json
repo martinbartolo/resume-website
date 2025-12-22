@@ -3,14 +3,10 @@
     "company": "Trovr",
     "date": "Feb 2024 - Present",
     "description": [
-      "Spearheading the frontend development efforts for a mobile app using React Native.",
-      "Collaborating on the design and implementation of RESTful APIs using OpenAPI specifications.",
-      "Creating a comprehensive testing strategy using Jest and MSW to ensure the reliability of the app.",
-      "Working with the team to implement CI/CD pipelines to automate the deployment process.",
-      "Contributing to the development of a design system to ensure a consistent user experience across the app."
+      "Sole frontend developer building two React Native mobile apps and several Next.js web applications. Collaborate with the backend team on RESTful API design using OpenAPI specs. Maintain the shared component library, CI/CD pipelines, and testing infrastructure with Jest and MSW."
     ],
     "link": "https://trovrapp.com/",
-    "position": "Front End Developer"
+    "position": "Senior Frontend Engineer"
   },
   {
     "company": "Siadat Software",

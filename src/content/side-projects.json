@@ -1,21 +1,12 @@
 [
   {
-    "date": "Ongoing",
-    "description": "A web e-commerce platform for independent music creators",
-    "link": null,
+    "description": "A complete beat selling platform for music producers. Custom storefronts, automatic YouTube uploads with watermarking, and built-in collaboration tools with profit splitting, all in one place.",
+    "link": "https://www.bopkit.com",
     "title": "Bopkit"
   },
   {
-    "date": "2024",
-    "description": "An interactive, lightweight award show platform that allows users to create and manage custom award ceremonies. Features include custom categories, real-time voting, live presentations, and secure event management.",
+    "description": "An interactive award show platform with over 250 ceremonies hosted. Create custom categories, run real-time voting, and deliver live presentations—all from one simple interface.",
     "link": "https://www.awardbro.com",
-    "sourceCode": "https://github.com/martinbartolo/awardbro",
     "title": "AwardBro"
-  },
-  {
-    "date": "Ongoing",
-    "description": "I make music under the name yesok, creating instrumentals for rap artists around the world.",
-    "link": "https://www.youtube.com/@yesok",
-    "title": "Music Production"
   }
 ]

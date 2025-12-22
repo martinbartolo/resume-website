@@ -10,8 +10,18 @@
     "username": "@martinbartolo"
   },
   {
+    "link": "mailto:martin9oh9@gmail.com",
+    "title": "Email",
+    "username": "martin9oh9@gmail.com"
+  },
+  {
     "link": "https://www.youtube.com/@yesok",
     "title": "Youtube",
     "username": "@yesok"
+  },
+  {
+    "link": "https://soundcloud.com/prodyesok",
+    "title": "Soundcloud",
+    "username": "@prodyesok"
   }
 ]
