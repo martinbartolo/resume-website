@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { ThemeProvider } from "../components/theme-provider";
+import { ThemeToggle } from "../components/theme-toggle";
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
   title: "Martin Bartolo",
@@ -49,15 +51,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.className}`} suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <div className="relative flex min-h-screen flex-col">
-          <main className="flex-1">
-            <div className="mx-auto flex max-w-5xl justify-center px-4 py-8 sm:px-6 lg:px-8">
-              {children}
-            </div>
-          </main>
-        </div>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className="bg-background min-h-screen font-sans antialiased">
+        <ThemeProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <header className="absolute top-4 right-4">
+              <ThemeToggle />
+            </header>
+            <main className="flex-1">
+              <div className="mx-auto flex max-w-5xl justify-center px-4 py-8 sm:px-6 lg:px-8">
+                {children}
+              </div>
+            </main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

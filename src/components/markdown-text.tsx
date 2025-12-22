@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-interface MarkdownTextProps {
+type MarkdownTextProps = {
   children: string;
-}
+};
 
 export default function MarkdownText({ children }: MarkdownTextProps) {
   const parts = children.split(/(\[[^\]]+\]\([^)]+\))/g);
@@ -18,7 +18,7 @@ export default function MarkdownText({ children }: MarkdownTextProps) {
             <Link
               key={index}
               href={url ?? ""}
-              className="underline transition-colors hover:text-foreground"
+              className="hover:text-foreground underline transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
