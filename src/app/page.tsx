@@ -90,7 +90,7 @@ export default function Home() {
       <Tabs tabs={tabs} />
 
       <footer className="text-muted-foreground pt-8 text-xs">
-        Made by Martin
+        Made by Martin Bartolo
       </footer>
     </article>
   );
