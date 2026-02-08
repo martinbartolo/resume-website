@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 import SocialIcons from "../components/social-icons";
@@ -44,18 +44,26 @@ function ProjectsSection() {
             <h3 className="text-foreground text-lg font-medium">
               {item.title}
             </h3>
-            {item.link && (
-              <Button variant="link" size="sm" asChild className="gap-1">
-                <Link
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="text-xs">Visit</span>
-                  <ExternalLink className="size-3!" />
-                </Link>
-              </Button>
-            )}
+            {item.link &&
+              (item.link.startsWith("/") ? (
+                <Button variant="link" size="sm" asChild className="gap-1">
+                  <Link href={item.link}>
+                    <span className="text-xs">Read Case Study</span>
+                    <ArrowRight className="size-3!" />
+                  </Link>
+                </Button>
+              ) : (
+                <Button variant="link" size="sm" asChild className="gap-1">
+                  <Link
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="text-xs">Visit</span>
+                    <ExternalLink className="size-3!" />
+                  </Link>
+                </Button>
+              ))}
           </div>
           <p className="text-muted-foreground text-sm">{item.description}</p>
         </article>

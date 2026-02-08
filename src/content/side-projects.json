@@ -1,11 +1,11 @@
 [
   {
-    "description": "A complete beat selling platform for music producers. Custom storefronts, automatic YouTube uploads with watermarking, and built-in collaboration tools with profit splitting, all in one place.",
-    "link": "https://www.bopkit.com",
+    "description": "A complete beat selling platform built solo from scratch. Producers get a custom storefront with automated licensing, multi-party payment splits, audio watermarking, YouTube integration, and more.",
+    "link": "/projects/bopkit",
     "title": "Bopkit"
   },
   {
-    "description": "An interactive award show platform with over 250 ceremonies hosted. Create custom categories, run real-time voting, and deliver live presentations—all from one simple interface.",
+    "description": "An interactive award show platform with over 250 ceremonies hosted. Create custom categories, run real-time voting, and deliver live presentations, all from one interface.",
     "link": "https://www.awardbro.com",
     "title": "AwardBro"
   }
