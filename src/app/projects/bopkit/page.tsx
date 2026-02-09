@@ -79,9 +79,11 @@ export default function BopkitCaseStudy() {
           upload and organize beats, configure license pricing, set up audio
           watermarks, add collaborators with profit sharing, auto-publish to
           YouTube, track sales and revenue through analytics, manage orders,
-          customize their shop&apos;s theme and branding, and more. On the buyer
-          side, customers can browse shops, preview watermarked audio, check out
-          via PayPal, and instantly download their purchased files.
+          customize their shop&apos;s theme and branding, and more. Payments are
+          handled through a PayPal Commerce Platform partner integration, where
+          collaborators are paid their share directly at checkout. On the buyer
+          side, customers can browse shops, preview watermarked audio, check
+          out, and instantly download their purchased files.
         </p>
 
         <p className="text-muted-foreground text-sm leading-relaxed">
