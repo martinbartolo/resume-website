@@ -53,8 +53,8 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="bg-background min-h-screen font-sans antialiased">
         <ThemeProvider>
-          <main className="min-h-screen">
-            <div className="mx-auto w-full max-w-(--breakpoint-sm) px-4 py-8 sm:px-6">
+          <main className="min-h-screen overflow-x-clip">
+            <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6">
               {children}
             </div>
           </main>
