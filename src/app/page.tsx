@@ -82,12 +82,12 @@ export default function Home() {
     <article className="w-full space-y-8">
       <header className="space-y-4" role="banner">
         <div className="flex items-center justify-between">
-          <h1 className="text-foreground text-2xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="text-foreground text-3xl font-semibold tracking-tight">
             Hey, I&apos;m Martin
           </h1>
           <ThemeToggle />
         </div>
-        <p className="text-muted-foreground text-base leading-relaxed sm:text-lg">
+        <p className="text-muted-foreground text-base leading-relaxed">
           Software Engineer from Malta. Building web experiences from start to
           finish.
         </p>

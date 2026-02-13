@@ -743,6 +743,220 @@ export default function BopkitCaseStudy() {
       </section>
 
       <hr className="border-border" />
+
+      {/* Authentication & Security */}
+      <section id="authentication" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Authentication & Security
+        </h2>
+
+        <p className="text-muted-foreground text-base leading-7">
+          Authentication is handled by{" "}
+          <span className="text-foreground font-medium">Better Auth</span> with
+          a Prisma adapter connecting to the same PostgreSQL database. The
+          system supports email/password registration with email verification,
+          Google OAuth, and a username-based sign-in option. Sessions persist
+          across subdomains so a producer signed in at{" "}
+          <span className="text-foreground font-medium">bopkit.com</span> stays
+          signed in on their own shop at{" "}
+          <span className="text-foreground font-medium">
+            username.bopkit.com
+          </span>
+          .
+        </p>
+
+        {/* Sign-Up */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Sign-Up Flow</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Registration is a two-step split form. The first screen collects the
+            email address, and the second collects the password (8-128
+            characters, validated with Zod). After submitting, the user lands on
+            a check-your-email page. A verification email is sent automatically
+            via Resend with a link that expires after one hour. Clicking the
+            link verifies the account and signs the user in automatically. The
+            check-email page includes a resend button with a 60-second cooldown
+            to prevent abuse. Expired verification tokens are auto-cleaned every
+            hour using a cron job.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/auth_signup.png"
+              alt="Bopkit sign-up flow: email input, password input, and check-your-email verification page"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Sign-In */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Sign-In</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Sign-in uses the same split form pattern. The first screen accepts
+            either an email address or a username in a single input field. The
+            system detects which one was entered by checking for an{" "}
+            <span className="text-foreground font-medium">@</span> symbol and
+            routes to the appropriate sign-in method. Usernames are normalized
+            to lowercase and checked to be 3 to 30 characters long, containing
+            only letters, numbers, and dashes. The second screen collects the
+            password and includes a forgot-password link.
+          </p>
+        </div>
+
+        {/* Google OAuth */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Google OAuth</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Both the sign-in and sign-up pages include a Continue with Google
+            button. Google is configured as a trusted provider with account
+            linking enabled, meaning if a user registers with email and later
+            signs in with Google using the same or a different email, the
+            accounts are linked rather than creating a duplicate. Profile data
+            (name, email, avatar) is mapped from the Google profile, and the
+            email is marked as verified automatically since Google has already
+            verified it.
+          </p>
+        </div>
+
+        {/* Password Reset */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Password Reset
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The forgot-password flow sends a reset link that expires after one
+            hour. When the user sets a new password, two things happen on the
+            server side: all existing sessions for that user are deleted from
+            the database, and a password-changed confirmation email is sent.
+            Revoking all sessions ensures that if the password was reset because
+            of a compromise, no previously authenticated session can persist.
+            The user must sign in again with the new password.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/auth_forgot_password.png"
+              alt="Bopkit forgot password page with email input and reset instructions"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Session Management */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Session Management
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Better Auth uses opaque session tokens stored in the database, not
+            JWTs. When a request comes in, the server looks up the token in the{" "}
+            <span className="text-foreground font-medium">Session</span> table
+            to authenticate the user. There are no refresh tokens. Instead,
+            sessions use a sliding-window approach: sessions last 30 days, and
+            if the user is active and the session hasn&apos;t been updated in
+            the last 7 days, Better Auth extends the expiry to another 30 days
+            from that point. Active users stay signed in indefinitely.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            To avoid hitting the database on every request, session data is also
+            cached in a signed{" "}
+            <span className="text-foreground font-medium">session_data</span>{" "}
+            cookie with a 5-minute TTL. Within that window, requests are
+            authenticated from the cookie alone. After 5 minutes, the session is
+            re-verified against the database and the cache is refreshed. For
+            sensitive operations like PayPal onboarding and profile updates, the
+            cache is bypassed with{" "}
+            <span className="text-foreground font-medium">
+              disableCookieCache
+            </span>{" "}
+            to force a fresh database read.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Since Bopkit is a multi-tenant platform with subdomains, cookies
+            need to work across both{" "}
+            <span className="text-foreground font-medium">bopkit.com</span> and{" "}
+            <span className="text-foreground font-medium">
+              username.bopkit.com
+            </span>
+            . The cookie domain is dynamically computed to{" "}
+            <span className="text-foreground font-medium">.bopkit.com</span> in
+            production, which allows a single session to authenticate requests
+            on any subdomain.
+          </p>
+        </div>
+
+        {/* Guest Cart Merging */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Guest Cart Merging
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            An auth hook runs whenever a new session is created, regardless of
+            auth method (email sign-in, Google OAuth, or email verification
+            auto-sign-in). It checks for a{" "}
+            <span className="text-foreground font-medium">guestId</span> cookie.
+            If a guest user had items in their cart before signing in, the cart
+            is merged into their authenticated account and the guest cookie is
+            cleared. This prevents losing cart items during sign-in.
+          </p>
+        </div>
+
+        {/* Route Protection */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Route Protection
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Protected routes are enforced at three layers. Server-side layouts
+            call{" "}
+            <span className="text-foreground font-medium">getSession()</span>{" "}
+            and redirect unauthenticated users to the sign-in page with a
+            callback URL. API routes use a tRPC{" "}
+            <span className="text-foreground font-medium">
+              protectedProcedure
+            </span>{" "}
+            middleware that throws an{" "}
+            <span className="text-foreground font-medium">UNAUTHORIZED</span>{" "}
+            error if no session exists. Dashboard pages additionally verify that
+            the signed-in user owns the shop they are trying to access.
+          </p>
+        </div>
+
+        {/* Account Deletion */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Account Deletion
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Users can delete their account from settings. Before deletion, a
+            hook deletes all of the user&apos;s storage files (beats, artwork,
+            audio tags) from Supabase. If file cleanup fails, the account is
+            still deleted to avoid blocking the user. Orphaned files are cleaned
+            up separately with a cron job.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-border" />
     </article>
   );
 }

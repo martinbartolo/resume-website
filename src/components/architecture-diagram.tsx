@@ -260,7 +260,7 @@ const edges: Edge[] = [
 
 export function ArchitectureDiagram() {
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-lg">
+    <div className="aspect-[4/3] w-full overflow-hidden rounded-lg sm:aspect-video">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -274,7 +274,7 @@ export function ArchitectureDiagram() {
           },
         }}
         fitView
-        fitViewOptions={{ padding: 0.1 }}
+        fitViewOptions={{ padding: 0.15 }}
         nodesDraggable={false}
         nodesConnectable={false}
         elementsSelectable={false}
