@@ -803,10 +803,8 @@ export default function BopkitCaseStudy() {
             either an email address or a username in a single input field. The
             system detects which one was entered by checking for an{" "}
             <span className="text-foreground font-medium">@</span> symbol and
-            routes to the appropriate sign-in method. Usernames are normalized
-            to lowercase and checked to be 3 to 30 characters long, containing
-            only letters, numbers, and dashes. The second screen collects the
-            password and includes a forgot-password link.
+            routes to the appropriate sign-in method. The second screen collects
+            the password and includes a forgot-password link.
           </p>
         </div>
 
@@ -863,9 +861,8 @@ export default function BopkitCaseStudy() {
 
           <p className="text-muted-foreground text-base leading-7">
             Better Auth uses opaque session tokens stored in the database, not
-            JWTs. When a request comes in, the server looks up the token in the{" "}
-            <span className="text-foreground font-medium">Session</span> table
-            to authenticate the user. There are no refresh tokens. Instead,
+            JWTs. When a request comes in, the server looks up the token to
+            authenticate the user. There are no refresh tokens. Instead,
             sessions use a sliding-window approach: sessions last 30 days, and
             if the user is active and the session hasn&apos;t been updated in
             the last 7 days, Better Auth extends the expiry to another 30 days
@@ -874,17 +871,12 @@ export default function BopkitCaseStudy() {
 
           <p className="text-muted-foreground text-base leading-7">
             To avoid hitting the database on every request, session data is also
-            cached in a signed{" "}
-            <span className="text-foreground font-medium">session_data</span>{" "}
-            cookie with a 5-minute TTL. Within that window, requests are
-            authenticated from the cookie alone. After 5 minutes, the session is
-            re-verified against the database and the cache is refreshed. For
-            sensitive operations like PayPal onboarding and profile updates, the
-            cache is bypassed with{" "}
-            <span className="text-foreground font-medium">
-              disableCookieCache
-            </span>{" "}
-            to force a fresh database read.
+            cached in a signed cookie with a 5-minute TTL. Within that window,
+            requests are authenticated from the cookie alone. After 5 minutes,
+            the session is re-verified against the database and the cache is
+            refreshed. For sensitive operations like PayPal onboarding and
+            profile updates, the cache is bypassed to force a fresh database
+            read.
           </p>
 
           <p className="text-muted-foreground text-base leading-7">
@@ -910,11 +902,10 @@ export default function BopkitCaseStudy() {
           <p className="text-muted-foreground text-base leading-7">
             An auth hook runs whenever a new session is created, regardless of
             auth method (email sign-in, Google OAuth, or email verification
-            auto-sign-in). It checks for a{" "}
-            <span className="text-foreground font-medium">guestId</span> cookie.
-            If a guest user had items in their cart before signing in, the cart
-            is merged into their authenticated account and the guest cookie is
-            cleared. This prevents losing cart items during sign-in.
+            auto-sign-in). It checks for a guest cookie. If a guest user had
+            items in their cart before signing in, the cart is merged into their
+            authenticated account and the guest cookie is cleared. This prevents
+            losing cart items during sign-in.
           </p>
         </div>
 
@@ -926,17 +917,11 @@ export default function BopkitCaseStudy() {
 
           <p className="text-muted-foreground text-base leading-7">
             Protected routes are enforced at three layers. Server-side layouts
-            call{" "}
-            <span className="text-foreground font-medium">getSession()</span>{" "}
-            and redirect unauthenticated users to the sign-in page with a
-            callback URL. API routes use a tRPC{" "}
-            <span className="text-foreground font-medium">
-              protectedProcedure
-            </span>{" "}
-            middleware that throws an{" "}
-            <span className="text-foreground font-medium">UNAUTHORIZED</span>{" "}
-            error if no session exists. Dashboard pages additionally verify that
-            the signed-in user owns the shop they are trying to access.
+            check the session and redirect unauthenticated users to the sign-in
+            page with a callback URL. API routes use a tRPC middleware that
+            rejects requests with no valid session. Dashboard pages additionally
+            verify that the signed-in user owns the shop they are trying to
+            access.
           </p>
         </div>
 
@@ -952,6 +937,257 @@ export default function BopkitCaseStudy() {
             audio tags) from Supabase. If file cleanup fails, the account is
             still deleted to avoid blocking the user. Orphaned files are cleaned
             up separately with a cron job.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
+      {/* Onboarding & PayPal Setup */}
+      <section id="onboarding" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Onboarding & PayPal Setup
+        </h2>
+
+        <p className="text-muted-foreground text-base leading-7">
+          After signing up and verifying their email, new users are redirected
+          to the onboarding flow where they claim their shop URL and configure
+          initial settings. Once inside the dashboard, a getting started
+          checklist guides them through the remaining setup steps, including
+          connecting their PayPal account to receive payments.
+        </p>
+
+        {/* Username & Shop URL */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Username & Shop URL
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The first screen asks the user to choose a username. As they type,
+            the input shows a live preview of their shop URL (
+            <span className="text-foreground font-medium">
+              username.bopkit.com
+            </span>
+            ) and validates availability in real time with a 300ms debounce.
+            Usernames are validated against a Zod schema (3-30 characters,
+            letters, numbers, and dashes only) and normalized to lowercase
+            before the availability check, making them case-insensitive.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Below the username field, the currency for the shop is auto-detected
+            based on the user&apos;s location and can be overridden with a
+            dropdown. This determines the currency that prices are listed in and
+            payments are received in.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            When the user submits, the server runs a database transaction that
+            double-checks username availability to prevent race conditions,
+            creates the shop with default theme colors and the selected
+            currency, and initializes default settings for pricing, audio tags,
+            and YouTube metadata. After setup, dashboard at{" "}
+            <span className="text-foreground font-medium">
+              username.bopkit.com/dashboard
+            </span>
+            .
+          </p>
+
+          <div className="!my-6 flex justify-center">
+            <Image
+              src="/bopkit/onboarding_username.png"
+              alt="Bopkit onboarding screen with username selection, live shop URL preview, and currency auto-detection"
+              width={1076}
+              height={713}
+              quality={90}
+              sizes="(min-width: 640px) 448px, 100vw"
+              className="border-border w-full max-w-sm rounded-lg border sm:max-w-md"
+            />
+          </div>
+        </div>
+
+        {/* Getting Started Checklist */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Getting Started Checklist
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Once in the dashboard, a getting started card appears with four
+            tasks to complete:
+          </p>
+
+          <ol className="text-muted-foreground list-inside list-decimal space-y-1.5 text-base">
+            <li>
+              <span className="text-foreground font-medium">
+                Upload your first beat
+              </span>{" "}
+              — checks whether the user has any published beats
+            </li>
+            <li>
+              <span className="text-foreground font-medium">
+                Connect PayPal
+              </span>{" "}
+              — checks whether the user has completed PayPal onboarding
+            </li>
+            <li>
+              <span className="text-foreground font-medium">
+                Add a profile picture
+              </span>{" "}
+              — checks whether the user has uploaded an avatar
+            </li>
+            <li>
+              <span className="text-foreground font-medium">
+                Customize your shop
+              </span>{" "}
+              — checks whether the theme colors have been changed from defaults
+            </li>
+          </ol>
+
+          <p className="text-muted-foreground text-base leading-7">
+            When all four are complete, the checklist records a completion
+            timestamp and shows a congratulations message.
+          </p>
+
+          <div className="!my-6">
+            <Image
+              src="/bopkit/onboarding_checklist.png"
+              alt="Bopkit getting started checklist on the producer dashboard"
+              width={1567}
+              height={557}
+              quality={90}
+              sizes="(min-width: 640px) 640px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* PayPal Merchant Onboarding */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            PayPal Merchant Onboarding
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Before a producer can receive payments, they need to connect their
+            PayPal account. This is not a simple API key integration. Bopkit is
+            registered as a{" "}
+            <span className="text-foreground font-medium">
+              PayPal Commerce Platform partner
+            </span>
+            , which means producers are onboarded as merchants under
+            Bopkit&apos;s partner umbrella. This is the same integration model
+            used by marketplaces and platforms that need to facilitate payments
+            between multiple parties.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            When the user clicks{" "}
+            <span className="text-foreground font-medium">Connect PayPal</span>,
+            the server calls PayPal&apos;s{" "}
+            <span className="text-foreground font-medium">
+              Partner Referrals API
+            </span>{" "}
+            to generate a unique referral URL. The request specifies the
+            features Bopkit needs:{" "}
+            <span className="text-foreground font-medium">PAYMENT</span> for
+            processing transactions,{" "}
+            <span className="text-foreground font-medium">PARTNER_FEE</span> for
+            deducting the platform fee, and{" "}
+            <span className="text-foreground font-medium">
+              ACCESS_MERCHANT_INFORMATION
+            </span>{" "}
+            for verifying account status. The user&apos;s ID is passed as a{" "}
+            <span className="text-foreground font-medium">tracking_id</span> so
+            that when PayPal sends the completion webhook later, the system
+            knows which user it belongs to.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The user is redirected to PayPal where they log in and grant
+            permissions. After authorizing, PayPal redirects back to a callback
+            page that validates the response parameters and shows a three-step
+            progress indicator while it waits for confirmation.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/onboarding_paypal.png"
+              alt="Bopkit PayPal connection flow: connect prompt, PayPal authorization, and callback progress page"
+              width={1600}
+              height={1200}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Asynchronous Completion */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Asynchronous Completion via Webhook
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The reason the callback page needs a progress indicator is that
+            PayPal does not confirm the onboarding synchronously. The redirect
+            back to Bopkit happens immediately, but the actual confirmation
+            arrives asynchronously as a{" "}
+            <span className="text-foreground font-medium">
+              MERCHANT.ONBOARDING.COMPLETED
+            </span>{" "}
+            webhook event. There is a race between the user landing on the
+            callback page and the webhook arriving.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            To handle this, the callback page polls the user&apos;s profile
+            every 2 seconds, checking whether onboarding has completed.
+            Meanwhile, when the webhook arrives, the handler runs inside a
+            database transaction: it idempotently marks the onboarding as
+            complete (so re-delivered webhooks are harmless), stores the
+            merchant&apos;s PayPal identifiers, and sends an in-app notification
+            only on the first successful transition. Once the polling detects
+            the change, the callback page bypasses the session cookie cache to
+            get a fresh read and redirects to the PayPal settings page.
+          </p>
+        </div>
+
+        {/* Ongoing Status Verification */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Ongoing Status Verification
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Connecting a PayPal account is not a one-time event. The
+            merchant&apos;s status can change at any time: they might not
+            confirm their email, their account could be restricted, or they
+            could revoke consent through PayPal&apos;s settings. The dashboard
+            continuously verifies the merchant&apos;s integration status by
+            calling PayPal&apos;s{" "}
+            <span className="text-foreground font-medium">
+              merchant-integrations
+            </span>{" "}
+            endpoint and checking three things: whether the primary email is
+            confirmed, whether the account can receive payments, and whether the
+            OAuth integration is still active.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            If any of these checks fail, a warning banner appears on the
+            dashboard with a specific message and action button for each state:
+            not connected, email not confirmed, payments not receivable, OAuth
+            missing, or verification failed. If a merchant revokes consent
+            through PayPal, a{" "}
+            <span className="text-foreground font-medium">
+              MERCHANT.PARTNER-CONSENT.REVOKED
+            </span>{" "}
+            webhook marks the account as disconnected (keeping their PayPal IDs
+            for re-onboarding) and sends a notification. Users can also manually
+            disconnect their PayPal account from settings at any time.
           </p>
         </div>
       </section>
