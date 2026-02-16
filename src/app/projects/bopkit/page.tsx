@@ -1193,6 +1193,402 @@ export default function BopkitCaseStudy() {
       </section>
 
       <hr className="border-border" />
+
+      {/* Beat Creation */}
+      <section id="beat-creation" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Beat Creation
+        </h2>
+
+        <p className="text-muted-foreground text-base leading-7">
+          Beat creation is the core workflow of the platform. It covers
+          everything from uploading an audio file to having a published beat in
+          the producer&apos;s shop (and optionally on YouTube). The creation
+          flow is a single multi-section form where the producer works through
+          audio upload, watermark configuration, metadata, pricing,
+          collaborators, and YouTube information before publishing.
+        </p>
+
+        <p className="text-muted-foreground text-base leading-7">
+          Everything on the creation page auto-saves as a draft. The form
+          watches for changes with a 3-second debounce, and only sends the
+          specific fields that changed to the server. It compares current values
+          against the last saved state to avoid unnecessary writes, and skips
+          saves entirely while a publish is in progress. Stale drafts are
+          cleaned up automatically by two daily cron jobs: one removes drafts
+          older than 7 days that were never published, and another cleans up
+          drafts whose publish jobs have completed or failed. Both delete
+          associated storage files before removing the database records.
+        </p>
+
+        {/* Upload */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Upload</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The creation page opens with a drag-and-drop zone for the audio
+            file. Only MP3 and WAV files are accepted, with a 50MB size limit.
+            Dropping an unsupported file type shows an error immediately. During
+            upload, a progress bar with a percentage indicator shows the upload
+            status.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The source file type matters. If the producer uploads a WAV file,
+            both WAV and MP3 license types become available for purchase since
+            the system converts WAV to MP3 during publishing. If they upload an
+            MP3, only the MP3 license is offered since converting MP3 to WAV
+            would not improve quality.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/beat_upload.png"
+              alt="Beat creation page with drag-and-drop audio upload and progress indicator"
+              width={2650}
+              height={1000}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Audio Watermarking */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Audio Watermarking
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Audio watermarks (called &ldquo;audio tags&rdquo; in the UI) are
+            short audio clips that play over a beat&apos;s preview to protect it
+            from being used without purchasing. When a buyer browses a shop,
+            they hear the tagged version. Only the clean, untagged files are
+            included in the download after purchase.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Producers can choose from a set of public tags available to all
+            users, or upload up to 5 custom tags of their own (MP3 or WAV, max
+            5MB each). A default tag can be set in settings so new beats are
+            pre-configured. Two timing options control how the tag plays: a{" "}
+            <span className="text-foreground font-medium">start delay</span>{" "}
+            (Immediately, 5s, 10s, 15s, or 30s) that determines when the tag
+            first plays, and a{" "}
+            <span className="text-foreground font-medium">repeat interval</span>{" "}
+            (Never, 15s, 30s, 45s, or 60s) that controls how often it repeats.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/beat_audiotag_settings.png"
+              alt="Audio tag settings page showing public and custom tags, timing configuration, and tag management"
+              width={1177}
+              height={794}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The actual watermarking happens server-side during publishing via
+            FFmpeg. The process builds a filter graph that generates silence for
+            the gaps between tag repeats, concatenates the tag audio with the
+            silence to form a repeatable unit, loops it indefinitely, delays the
+            first occurrence by the configured start time, reduces the tag
+            volume to 40% so it doesn&apos;t overpower the beat, and mixes it
+            with the original audio. The entire operation is streamed. The beat
+            audio is streamed in from Supabase, the tag file is written to a
+            temporary directory for FFmpeg, and the output streams directly to
+            storage without saving an intermediate file to disk.
+          </p>
+        </div>
+
+        {/* Metadata & Artwork */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Metadata & Artwork
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            After uploading the audio file, the BPM and key fields are
+            auto-populated when possible. The extraction runs in parallel with
+            the upload and uses a three-tiered detection approach: first it
+            reads embedded metadata (ID3v2 tags for MP3 files, ACID chunks for
+            WAV files), and if that yields nothing, it falls back to parsing the
+            filename for common patterns like{" "}
+            <span className="text-foreground font-medium">140bpm</span> or{" "}
+            <span className="text-foreground font-medium">G minor</span>.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Artwork can be added in several ways: drag-and-drop, file picker,
+            pasting from clipboard (Ctrl+V / Cmd+V), or pasting a URL. Supported
+            formats include JPEG, PNG, WebP, GIF (up to 5MB), and even video
+            files like MP4, MOV, and WebM (up to 10MB, max 30 seconds), meaning
+            beat artwork can be animated. After selecting an image, a cropping
+            interface lets the producer adjust the framing.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/beat_metadata.png"
+              alt="Beat metadata form with auto-detected BPM and key, artwork upload with cropping, and beat name input"
+              width={2000}
+              height={1000}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Image processing is handled by Sharp on the server during
+            publishing. Static images are resized to a 128x128 WebP thumbnail at
+            80% quality. Animated media (GIFs and videos) go through a different
+            pipeline: FFmpeg converts them to WebM in three variants: a
+            full-resolution hero version, a 128x128 thumbnail at a reduced 15fps
+            framerate, and a static WebP poster extracted from the first frame
+            for use in contexts that don&apos;t support video (like email
+            clients).
+          </p>
+        </div>
+
+        {/* Pricing & Validation */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Pricing & Validation
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Producers set prices for each license type: MP3 and WAV (if the
+            source file was a WAV). Prices are stored in cents to avoid
+            floating-point issues. Default prices can be configured in settings
+            so new beats are pre-filled.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The interesting technical challenge here is minimum price
+            validation. Every collaborator on a beat must receive at least the
+            PayPal minimum payout after all fees are deducted. For USD, that
+            minimum is $5.00. The fees that get deducted include the 10%
+            platform fee, PayPal&apos;s percentage fee (up to 4.99% in the worst
+            case), a fixed fee per currency (e.g., $0.49 for USD), and a
+            potential cross-border conversion fee of up to 4%.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The problem is that you cannot simply reverse the fee formula to
+            find the minimum price. Each fee component in the chain rounds
+            independently: collaborator shares round down, the platform fee
+            rounds to nearest, and PayPal fees round up. A one-cent difference
+            in the input can cause a different rounding outcome at each step,
+            and those small differences compound through the chain in
+            unpredictable ways. No closed-form formula can account for this
+            because the rounding behavior depends on the exact cent value at
+            each stage. The only way to know for certain whether a price is
+            sufficient is to simulate the entire fee calculation and check the
+            result. The system does exactly that: it starts with an analytical
+            estimate, runs the full fee simulation at that price, and if the net
+            payout falls short, increments by one cent and simulates again until
+            every collaborator clears the minimum.
+          </p>
+
+          <div className="!my-6 flex justify-center">
+            <Image
+              src="/bopkit/beat_pricing.png"
+              alt="Beat pricing form with MP3 and WAV license price inputs and validation"
+              width={524}
+              height={505}
+              quality={90}
+              sizes="(min-width: 640px) 384px, 100vw"
+              className="border-border w-full max-w-xs rounded-lg border sm:max-w-sm"
+            />
+          </div>
+        </div>
+
+        {/* Collaborators */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Collaborators</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Producers can add collaborators to a beat to credit other people
+            involved and automatically split revenue. Clicking{" "}
+            <span className="text-foreground font-medium">
+              Add Collaborator
+            </span>{" "}
+            opens a search dialog that queries registered users as they type. If
+            the collaborator is not on the platform, the producer can add them
+            as an anonymous collaborator by name for credit purposes.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Each registered collaborator gets a profit share percentage,
+            adjustable with 0.01% precision. An equal split button distributes
+            shares evenly across all registered collaborators, and adjusting one
+            share automatically redistributes the others proportionally. The
+            total must equal exactly 100% (with a 0.01% floating-point
+            tolerance). Anonymous collaborators always have a 0% share since
+            they have no PayPal account to receive payouts.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            At checkout, each registered collaborator becomes a separate payment
+            recipient in the PayPal order. PayPal pays each party their share
+            directly at the time of purchase. The owner receives the remainder
+            after all collaborator shares are rounded down, which means any
+            rounding cents favor the owner.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/beat_collaborators.png"
+              alt="Collaborator management with user search, anonymous collaborator option, and profit share percentage sliders"
+              width={2000}
+              height={750}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* YouTube Integration */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            YouTube Integration
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Producers can opt to auto-publish beats to YouTube as part of the
+            creation flow. A toggle enables the YouTube section, which requires
+            connecting a YouTube account via Google OAuth (requesting upload and
+            read-only scopes). Once connected, the account name and channel link
+            are displayed with options to switch accounts or unlink.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The YouTube form includes a title, a{" "}
+            <span className="text-foreground font-medium">{"{beat-id}"}</span>{" "}
+            placeholder that auto-generates a purchase link to the beat in the
+            shop, tags, a visibility selector (private, unlisted, or public),
+            and an optional scheduler. A{" "}
+            <span className="text-foreground fon t-medium">
+              Use tagged audio
+            </span>{" "}
+            toggle (shown only if the beat has a watermark configured) lets the
+            producer choose whether the YouTube version uses the watermarked
+            audio. Default values for title, description, and tags can be set in
+            settings so they pre-fill for every new beat.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/beat_youtube.png"
+              alt="YouTube settings in beat creation with account connection, title, description, tags, visibility, and scheduling options"
+              width={1696}
+              height={1476}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The video is generated server-side by FFmpeg, which combines the
+            beat&apos;s audio with its artwork (either a static image or an
+            animated WebM) into an MP4 video. The video is streamed directly to
+            the YouTube Data API v3 without saving an intermediate file. For
+            producers on the free plan, a Bopkit watermark is applied to the
+            video. The description is composed using a utility that ensures the
+            purchase link is always included regardless of what the producer
+            entered.
+          </p>
+        </div>
+
+        {/* Publishing */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Publishing</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            When the producer clicks{" "}
+            <span className="text-foreground font-medium">Publish</span>, the
+            beat enters a multi-step background workflow powered by Inngest. The
+            UI shows a publishing jobs panel with real-time progress, polling
+            every 2 seconds.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/beat_publishing.png"
+              alt="Publishing progress panel showing step-by-step status indicators for planning, processing, saving, and YouTube upload"
+              width={1600}
+              height={700}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The workflow has four steps. The first is{" "}
+            <span className="text-foreground font-medium">Planning</span>, which
+            analyzes the draft and builds an execution plan: what files need to
+            be copied, whether a WAV-to-MP3 conversion is needed, whether audio
+            tagging is required, and what image processing to perform. The
+            second step is{" "}
+            <span className="text-foreground font-medium">
+              Processing Files
+            </span>
+            , which runs three operations in parallel: FFmpeg handles audio
+            conversion and watermarking, direct file copies move assets from the
+            draft bucket to the permanent beats bucket, and Sharp (or FFmpeg for
+            animated media) processes the artwork into its final variants. The
+            third step is{" "}
+            <span className="text-foreground font-medium">
+              Saving to Database
+            </span>
+            , which runs inside an atomic transaction that creates the Beat
+            record, links all collaborators, and updates the publish job status.
+            Critically, this step double-checks the free plan beat quota inside
+            the transaction to prevent a race condition where two concurrent
+            publishes could exceed the limit. The fourth step,{" "}
+            <span className="text-foreground font-medium">Trigger YouTube</span>
+            , dispatches a separate workflow for the YouTube upload if the
+            producer enabled it. Because it runs as its own workflow, a YouTube
+            failure does not prevent the beat from appearing in the shop, and
+            the producer can retry the upload independently.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Each step in the workflow is independently retriable. If step two
+            fails, step one does not re-run because its result is already
+            persisted. If any step fails, the system cleans up any files that
+            were created during the failed attempt, marks the job as failed with
+            a user-friendly error message specific to which step failed, and if
+            a beat record was partially created, it is deleted. A concurrency
+            key based on the draft prevents duplicate workflows from
+            double-clicks or retries, while still allowing multiple different
+            beats to publish concurrently.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            On success, the publishing panel shows a{" "}
+            <span className="text-foreground font-medium">View in Shop</span>{" "}
+            button, and if YouTube was enabled, a{" "}
+            <span className="text-foreground font-medium">Watch</span> button
+            linking to the uploaded video. A dropdown provides additional
+            actions like copying the beat link or navigating to the edit page.
+            On failure, context-specific retry buttons appear:{" "}
+            <span className="text-foreground font-medium">Edit and Retry</span>{" "}
+            if only the YouTube step failed.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-border" />
     </article>
   );
 }
