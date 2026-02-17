@@ -1589,6 +1589,130 @@ export default function BopkitCaseStudy() {
       </section>
 
       <hr className="border-border" />
+
+      {/* Shop Customization */}
+      <section id="shop-customization" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Shop Customization
+        </h2>
+
+        <p className="text-muted-foreground text-base leading-7">
+          Every producer&apos;s shop lives at their own subdomain:{" "}
+          <span className="text-foreground font-medium">
+            username.bopkit.com
+          </span>
+          . Underneath, a Next.js middleware intercepts incoming requests,
+          extracts the subdomain, normalizes it to lowercase, and rewrites the
+          URL to an internal route. In production, if someone navigates to the
+          shop via the main domain (e.g.{" "}
+          <span className="text-foreground font-medium">
+            bopkit.com/user/username
+          </span>
+          ), they get redirected to the subdomain automatically.
+        </p>
+
+        <p className="text-muted-foreground text-base leading-7">
+          The shop layout sets a handful of CSS custom properties on a root
+          container based on the producer&apos;s saved colors and automatically
+          derived text and contrast values. Every component in the shop, from
+          beat cards to the cart to the music player, references these variables
+          through Tailwind utility classes. A single set of components renders
+          every shop, and the visual identity is entirely controlled by the CSS
+          variables set at the layout level.
+        </p>
+
+        <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <Image
+            src="/bopkit/shop_example.png"
+            alt="Example of a producer's customized shop with beats, music player, and custom theme colors"
+            width={1600}
+            height={1600}
+            quality={90}
+            sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+            className="border-border w-full rounded-lg border"
+          />
+        </div>
+
+        {/* Customization Dialog */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Customization Dialog
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Producers can customize their shop&apos;s appearance through a
+            draggable dialog that floats over the shop so they can see changes
+            in real time. There are four color options:{" "}
+            <span className="text-foreground font-medium">background</span>,{" "}
+            <span className="text-foreground font-medium">foreground</span>{" "}
+            (cards and surfaces),{" "}
+            <span className="text-foreground font-medium">accent</span> (buttons
+            and interactive elements), and{" "}
+            <span className="text-foreground font-medium">music player</span>.
+            An optional background image can also be uploaded.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The producer only picks these four colors. The system automatically
+            derives readable text colors for each surface using a luminance
+            formula, so text is always legible regardless of how light or dark
+            the chosen color is. Contrast colors for borders and hover states
+            are also calculated automatically. This means a producer can&apos;t
+            accidentally create a shop with unreadable text.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Changes preview live. When a color is changed in the dialog, the
+            shop behind it updates instantly without any API call. This works by
+            optimistically updating the cached shop data, which flows through a
+            provider that recalculates all derived colors and updates the CSS
+            variables. If the producer cancels, the colors revert to the
+            previous values.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/shop_customize.png"
+              alt="Draggable shop customization dialog with color pickers floating over the shop"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Profile */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Profile & Social Links
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Producers can edit their display name, bio (up to 150 characters),
+            and avatar through a profile dialog accessible from the shop header.
+            The avatar is cropped to a square and processed before upload. Nine
+            social link fields are available: YouTube, Spotify, Apple Music,
+            SoundCloud, Instagram, TikTok, X, Discord, and Twitch. Configured
+            links appear as icons in the shop header.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/shop_profile.png"
+              alt="Edit profile dialog with avatar upload, display name, bio, and social links"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-border" />
     </article>
   );
 }
