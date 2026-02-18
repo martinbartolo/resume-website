@@ -1713,6 +1713,297 @@ export default function BopkitCaseStudy() {
       </section>
 
       <hr className="border-border" />
+
+      {/* Producer Dashboard */}
+      <section id="producer-dashboard" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Producer Dashboard
+        </h2>
+
+        <p className="text-muted-foreground text-base leading-7">
+          The dashboard is the producer&apos;s home base for managing their
+          business. It&apos;s accessible via a &ldquo;Manage Shop&rdquo; button
+          in the site header, or through the avatar dropdown when viewing their
+          own shop. A sidebar navigates between five sections: Overview, Beats,
+          Sales, Collaborations, and Analytics. The sidebar footer also shows
+          the producer&apos;s beat quota (e.g. &ldquo;3/10 beats
+          remaining&rdquo; on the free plan).
+        </p>
+
+        {/* Overview */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Overview</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The overview page is designed to give producers a snapshot of their
+            business. Three metric cards sit at the top: total net earnings,
+            this month&apos;s revenue, and total sales count. Below that, a grid
+            of quick action cards links to the most common tasks: creating a new
+            beat, viewing analytics, managing beats, viewing sales,
+            collaborations, and settings.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The bottom half of the page shows recent activity. A recent sales
+            table lists the latest orders with the buyer&apos;s name, item
+            count, amount, and a status badge. Next to it, two performance cards
+            show the top performing beats (ranked by sales in the last 30 days
+            with revenue) and recent collaborations (showing the owner&apos;s
+            name, your profit share percentage, and sales count).
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            For new users, a getting started checklist appears at the top of the
+            overview. It tracks four tasks: upload your first beat, connect
+            PayPal, add a profile picture, and customize your shop. A progress
+            bar fills as tasks are completed, and a congratulations message
+            appears when all four are done. The checklist is dismissible once
+            finished.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/dashboard_overview.png"
+              alt="Producer dashboard overview with metric cards, quick actions, recent sales, and performance insights"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Analytics */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Analytics</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The analytics page gives producers a deeper look at their revenue
+            and sales trends. Seven metric cards break down the numbers: total
+            earnings, earnings from owned beats, earnings from collaborations,
+            this month&apos;s revenue, total sales count, total beats, and total
+            collaborations. The distinction between owned and collaboration
+            earnings runs through the entire analytics system, since producers
+            need to understand where their money is coming from.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Two stacked area charts show revenue and sales over time, each with
+            separate series for owned beats and collaborations. The series are
+            toggleable so producers can isolate either one. A timeframe selector
+            above the charts offers preset ranges (7 days, 30 days, 3 months, 6
+            months, 12 months, year to date, all time) plus a custom date range
+            picker with a two-month calendar view.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The time-series data is pre-aggregated in the database at daily and
+            monthly granularity rather than computed from raw orders on each
+            page load. When a payment is captured, a background workflow updates
+            these aggregated records as part of the post-capture process. This
+            keeps the analytics page fast regardless of how many orders a
+            producer has.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Below the charts, two performance tables break down individual beats
+            and collaborations. Each table shows sales count, revenue, and last
+            sale date, with rich filtering: name search, sales and revenue range
+            sliders, and a toggle to filter by beats that have actually sold.
+            All tables support sorting, pagination, and configurable column
+            visibility.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/dashboard_analytics.png"
+              alt="Analytics page with revenue and sales charts, timeframe selector, and beat performance tables"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Sales */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Sales</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The sales page is split into two tabs:{" "}
+            <span className="text-foreground font-medium">My Shop</span> for
+            orders placed on the producer&apos;s storefront, and{" "}
+            <span className="text-foreground font-medium">Collaborations</span>{" "}
+            for orders that include beats the producer collaborated on. Both
+            tabs share the same table structure but show different financial
+            perspectives.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The shop sales table shows each order&apos;s date, order ID, buyer
+            name and email, item count, status badge, refund status, order
+            total, and then the producer&apos;s personal financial breakdown:
+            gross share, fees, and net earnings. For orders that are still
+            pending capture, the financial columns show a &ldquo;Pending&rdquo;
+            label instead of amounts. The table supports filtering by date
+            range, buyer name, amount range, order status, and refund status.
+            Both tabs support CSV export for all orders or just selected rows.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/dashboard_sales.png"
+              alt="Sales page with order table showing status badges, financial breakdown, and filtering options"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Clicking into an order opens a detail page with full transparency
+            into the payment. An overview card shows the order status, buyer
+            info, capture date, and the producer&apos;s share and net earnings.
+            A payment details card breaks down the financials: gross amount,
+            PayPal fees, platform fees, and the final take-home amount. If the
+            beat has collaborators, a collaborator breakdown card shows each
+            person&apos;s share, their fees, and their net payout. A payment
+            history card at the bottom shows the full transaction timeline,
+            including any refunds or reversals.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            All financial figures on this page come from actual PayPal fee
+            breakdowns reported via webhooks, not estimates. When a payment is
+            captured, PayPal reports the exact fees charged to each payee, and
+            those are what the dashboard displays. Refund and reversal amounts
+            are tracked separately and deducted from the running totals.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/dashboard_order_detail.png"
+              alt="Order detail page showing payment overview, financial breakdown, collaborator payouts, and transaction history"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Beats Management */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Beats Management
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The beats page lists all published beats in a table with inline
+            audio playback. Each row shows the beat&apos;s name, MP3 and WAV
+            prices, audio tag status, collaborators with their profit share
+            percentages, and the creation date. Additional columns like BPM and
+            key are available but hidden by default and can be toggled on.
+            Column visibility preferences are saved locally so they persist
+            across sessions.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The header shows the producer&apos;s beat quota. On the free plan,
+            this displays as a count (e.g. &ldquo;2 of 10 remaining&rdquo;) and
+            the &ldquo;New Beat&rdquo; button becomes disabled with an upgrade
+            tooltip when the limit is reached. The quota is enforced at the
+            database level too: the publishing workflow double-checks the count
+            inside a transaction to prevent race conditions from concurrent
+            publishes.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Selecting rows reveals a bulk action bar with two options. Bulk
+            download lets the producer choose which file types to include (MP3,
+            WAV, tagged MP3) and packages them into a ZIP file. Bulk delete
+            removes the selected beats after a confirmation dialog. Individual
+            beat actions are available through a dropdown menu on each row.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/dashboard_beats.png"
+              alt="Beats management table with inline playback, pricing columns, collaborator info, and bulk actions"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Collaborations */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Collaborations
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The collaborations page shows the other side of the collaborator
+            system: beats that other producers have added you to. Each row
+            displays the beat name, the shop owner&apos;s name and username,
+            your profit share percentage, sales count, and your net earnings
+            from that beat. A tip banner at the top explains the repost feature,
+            which lets collaborators add a beat to their own shop without
+            re-uploading anything. The original files and metadata are
+            referenced, so the beat appears in the collaborator&apos;s
+            storefront alongside their own beats.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            This separation between owned beats and collaborations is consistent
+            across the entire dashboard. Sales are split into shop and
+            collaboration tabs, analytics track owner and collaboration revenue
+            as separate series, and earnings are always attributed to the
+            correct role. A producer can see exactly how much they earned from
+            their own beats versus beats they contributed to.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/dashboard_collaborations.png"
+              alt="Collaborations page showing beats from other producers with profit share percentages and earnings"
+              width={1600}
+              height={1600}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Settings */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Settings</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The settings page is organized into five tabs: Account, PayPal,
+            YouTube, Pricing, and Audio Tags. Most of these have been covered in
+            context elsewhere in this case study (PayPal connection in
+            onboarding, audio tag configuration in beat creation, YouTube
+            account linking in the YouTube section). The pricing tab lets
+            producers set their shop currency and default prices for MP3 and WAV
+            licenses, which pre-fill the pricing section when creating new
+            beats. The account tab covers username, email, password changes, and
+            account deletion.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-border" />
     </article>
   );
 }
