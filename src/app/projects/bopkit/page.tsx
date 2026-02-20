@@ -2004,6 +2004,324 @@ export default function BopkitCaseStudy() {
       </section>
 
       <hr className="border-border" />
+
+      {/* Buyer Experience */}
+      <section id="buyer-experience" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Buyer Experience
+        </h2>
+
+        <p className="text-muted-foreground text-base leading-7">
+          Everything up to this point has been from the producer&apos;s
+          perspective. The buyer side of Bopkit is a separate experience
+          entirely: browsing a producer&apos;s storefront, previewing beats,
+          adding items to a cart, checking out via PayPal, and downloading
+          purchased files. Buyers don&apos;t need an account to purchase, and
+          the entire flow is designed to feel like shopping on a producer&apos;s
+          own website rather than a third-party marketplace.
+        </p>
+
+        {/* Shop Browsing */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Shop Browsing</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            When a buyer visits a producer&apos;s storefront at{" "}
+            <span className="text-foreground font-medium">
+              username.bopkit.com
+            </span>
+            , they see the producer&apos;s profile (avatar, name, bio, social
+            links) and a grid of published beats. Each beat in the list shows
+            its artwork, name, collaborator credits, BPM, key, and price. Beats
+            can be filtered by search, BPM, and key, and sorted by different
+            criteria. The list loads incrementally via infinite scroll rather
+            than traditional pagination.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Hovering over a beat&apos;s artwork reveals a play button. Clicking
+            it starts the watermarked audio preview and opens the music player
+            at the bottom of the page. The player persists across navigation, so
+            a buyer can click into a beat&apos;s detail page, browse other
+            beats, or open the cart without interrupting playback. This works
+            because the audio engine runs outside of React&apos;s lifecycle in a
+            global state store. The audio instance itself is never torn down on
+            navigation, and signed URLs for audio files are cached client-side
+            to avoid re-fetching. The player also preloads the next track in the
+            background to minimize gaps between songs.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The player has two modes: a full bar across the bottom of the page
+            with artwork, track info, playback controls, a seek bar, and volume
+            control, and a minimized compact version that tucks into the
+            bottom-right corner. On mobile, the layout stacks vertically with
+            the seek bar below the controls.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/buyer_shop.png"
+              alt="A producer's storefront showing the beat grid, profile section, and music player"
+              width={1902}
+              height={943}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Every shop is fully themed using CSS custom properties. The
+            producer&apos;s chosen colors for background, foreground, accent,
+            and music player are applied as variables on the shop layout, and
+            every component references them. Text color readability is computed
+            automatically using a luminance algorithm so that light backgrounds
+            get dark text and vice versa. This means the entire shop, including
+            the music player, filters, buttons, and hover states, adapts to the
+            producer&apos;s brand without any manual text color configuration.
+          </p>
+        </div>
+
+        {/* Beat Detail & Currency */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Beat Detail & Currency
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Clicking a beat opens its detail page with a two-column layout. The
+            left side shows the artwork with a play/pause overlay and the
+            beat&apos;s metadata: name, credits (owner and collaborators), BPM,
+            key, and release date. The right side presents the available license
+            types (MP3 and WAV) with their prices, and Add to Cart and Buy Now
+            buttons. If the producer hasn&apos;t completed PayPal onboarding,
+            the purchase buttons are disabled with a message explaining that the
+            shop isn&apos;t accepting payments yet.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/buyer_beat.png"
+              alt="Beat detail page showing artwork, metadata, license options, and pricing"
+              width={1920}
+              height={1216}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Prices are displayed in the buyer&apos;s local currency by default.
+            On the first visit, the system detects the buyer&apos;s country via
+            IP geolocation and maps it to a currency. Exchange rates are fetched
+            from the Frankfurter API and cached for 24 hours on the client. The
+            conversion is display-only: prices are shown in the buyer&apos;s
+            currency for familiarity, but the actual PayPal charge is always in
+            the seller&apos;s configured shop currency. This avoids any
+            conversion fee surprises. A currency selector in the shop header
+            lets buyers switch manually if the auto-detected currency is wrong,
+            and the preference is persisted in local storage for return visits.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The system also handles zero-decimal currencies like JPY and KRW
+            correctly, where prices don&apos;t use decimal places, and uses the
+            browser&apos;s{" "}
+            <span className="text-foreground font-medium">
+              Intl.NumberFormat
+            </span>{" "}
+            API for proper currency symbol placement and formatting across
+            locales.
+          </p>
+        </div>
+
+        {/* Cart & Checkout */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Cart & Checkout
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Carts are per-shop, meaning a buyer can have items from multiple
+            producer storefronts simultaneously without them mixing together.
+            Each cart item stores the selected license type (MP3 or WAV), and
+            the cart UI shows the line items, license types, and total. Cart
+            actions use optimistic updates so adding and removing items feels
+            instant, with a rollback if the server request fails. Carts expire
+            after 30 days and the expiration extends automatically on each
+            interaction.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Guest buyers get a cart without needing to sign up. The system
+            assigns a guest identifier via a cookie, and if the buyer later
+            creates an account, their guest cart merges into their authenticated
+            cart automatically.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/buyer_cart.png"
+              alt="Shopping cart showing items with license types and total"
+              width={1893}
+              height={874}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            When the buyer enters checkout, the system creates a draft order: a
+            frozen snapshot of the cart at that moment with a 15-minute
+            expiration. This locks in the prices so that if the producer edits
+            pricing during the checkout session, the buyer isn&apos;t affected.
+            If prices have changed since the draft was created, the buyer is
+            alerted and the draft refreshes with the updated amounts. If the
+            draft is about to expire, the system auto-refreshes it in the
+            background.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The checkout page shows an order summary with a PayPal button. Guest
+            checkout is fully supported since PayPal collects the buyer&apos;s
+            email during their own flow. Behind the scenes, clicking the PayPal
+            button creates a PayPal order with multiple purchase units, one for
+            each person receiving funds. If the beat has collaborators, each
+            collaborator&apos;s PayPal account receives their share directly at
+            capture time, with the platform fee deducted from each payee. This
+            is the multi-party payment split covered in the architecture
+            section.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The system also handles edge cases around the checkout flow: if the
+            buyer closes the PayPal popup and returns later, it detects the
+            pending order and picks up where they left off rather than creating
+            a duplicate. Popup closures, cancellations, and payment errors all
+            surface user-friendly messages.
+          </p>
+
+          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+            <Image
+              src="/bopkit/buyer_checkout.png"
+              alt="Checkout page with order summary and PayPal payment button"
+              width={1920}
+              height={1095}
+              quality={90}
+              sizes="(min-width: 1280px) 848px, (min-width: 1024px) 752px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+
+        {/* Order Confirmation & Downloads */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Order Confirmation & Downloads
+          </h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            After the buyer approves the PayPal payment, they land on a
+            processing page that polls the order status every two seconds until
+            the payment is confirmed or a 45-second timeout is reached. The page
+            shows different states as the order progresses: confirming payment,
+            payment complete, payment under review, or an error with guidance.
+            Guest buyers see a message that download links have been sent to
+            their email, while registered users are directed to their order page
+            to download immediately.
+          </p>
+
+          <div className="!my-6 flex justify-center">
+            <Image
+              src="/bopkit/buyer_processing.png"
+              alt="Order processing page showing payment confirmation states"
+              width={640}
+              height={774}
+              quality={90}
+              sizes="(min-width: 640px) 448px, 100vw"
+              className="border-border w-full max-w-sm rounded-lg border sm:max-w-md"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            The order detail page shows the full breakdown: items purchased,
+            license types, prices, and download buttons for each file. Downloads
+            generate signed URLs on-demand with a 30-minute expiration, so files
+            are never publicly accessible. The buyer can also download a license
+            agreement PDF for each item, generated client-side using React PDF.
+            The document includes buyer and seller information, beat details,
+            usage rights specific to the license type (streaming limits, sales
+            limits, music video rights), restrictions, and legal terms. The PDF
+            renderer is dynamically imported only when the buyer clicks the
+            download button, so it doesn&apos;t add to the initial page bundle.
+          </p>
+
+          <div className="!my-6 flex justify-center">
+            <Image
+              src="/bopkit/buyer_order.png"
+              alt="Order detail page with download buttons and order breakdown"
+              width={982}
+              height={801}
+              quality={90}
+              sizes="(min-width: 640px) 540px, 100vw"
+              className="border-border w-full max-w-md rounded-lg border sm:max-w-lg"
+            />
+          </div>
+
+          <p className="text-muted-foreground text-base leading-7">
+            A key design decision here is asset freezing. When a purchase
+            completes, the system snapshots the exact file paths for every
+            purchased item at that moment. If the producer later edits the beat,
+            re-uploads files, or deletes the beat entirely, the buyer&apos;s
+            downloads still work because they reference the frozen copies, not
+            the current beat files. This ensures that buyers always get what
+            they paid for, regardless of what happens to the beat after the
+            sale.
+          </p>
+        </div>
+
+        {/* Order History */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Order History</h3>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Registered buyers can access their full order history in two places:
+            a per-shop view within each producer&apos;s storefront, and a global
+            view across all shops from their account page. Both use cursor-based
+            pagination and show the order status, date, total, and a link to
+            view the full order with downloads.
+          </p>
+
+          <p className="text-muted-foreground text-base leading-7">
+            Guest buyers can still access their orders. After purchase, they
+            receive an email with a link containing a signed access token. The
+            token is generated using HMAC-SHA256 with a 7-day expiration and
+            includes the order ID in its payload. The server validates the
+            signature, checks the expiration, and confirms the order ID matches
+            before granting access. If the token expires, guests can request a
+            new link by entering their email address. The system always returns
+            a generic success message regardless of whether the email matches,
+            preventing anyone from probing which email addresses have orders.
+          </p>
+
+          <div className="!my-6 flex justify-center">
+            <Image
+              src="/bopkit/buyer_orders.png"
+              alt="Order history page showing past purchases with status and download links"
+              width={980}
+              height={332}
+              quality={90}
+              sizes="(min-width: 640px) 540px, 100vw"
+              className="border-border w-full max-w-md rounded-lg border sm:max-w-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-border" />
     </article>
   );
 }
