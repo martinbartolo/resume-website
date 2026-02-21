@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, Calendar, User } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +25,6 @@ const tableOfContents = [
   { id: "error-handling", label: "Refunds, Disputes & Error Handling" },
   { id: "mobile", label: "Mobile Responsiveness" },
   { id: "infrastructure", label: "Infrastructure & Monitoring" },
-  { id: "numbers", label: "By the Numbers" },
   { id: "reflections", label: "Reflections" },
 ];
 
@@ -65,24 +64,20 @@ export default function BopkitCaseStudy() {
           <h1 className="text-foreground text-2xl font-semibold tracking-tight sm:text-4xl">
             Bopkit
           </h1>
-          <p className="text-muted-foreground text-base leading-7 sm:text-lg">
+          <p className="text-foreground/80 text-base leading-7 sm:text-lg">
             How I solo-built a full-stack beat selling platform for music
             producers from the ground up.
           </p>
         </div>
 
-        <div className="text-muted-foreground flex flex-wrap items-center gap-4 text-sm">
+        <div className="text-muted-foreground flex items-center gap-4 text-sm">
           <div className="flex items-center gap-1.5">
             <User className="size-3.5" />
             <span>Martin Bartolo</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Calendar className="size-3.5" />
-            <time dateTime="2025-02-08">Feb 8, 2025</time>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Clock className="size-3.5" />
-            <span>15 min read</span>
+            <time dateTime="2026-02-21">February 21, 2026</time>
           </div>
         </div>
 
@@ -91,7 +86,7 @@ export default function BopkitCaseStudy() {
 
       {/* Introduction */}
       <section id="introduction" className="space-y-5">
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           Bopkit is a platform for music producers to sell beats online. Every
           producer gets a branded storefront at{" "}
           <span className="text-foreground font-medium">
@@ -108,22 +103,13 @@ export default function BopkitCaseStudy() {
           out, and instantly download their purchased files.
         </p>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           I built Bopkit solo as a side project. This case study is a complete
           walkthrough of the product and the engineering behind it, going
           through the entire platform feature-by-feature, showing what the user
           sees and explaining the technical decisions, challenges, and
           architecture underneath.
         </p>
-      </section>
-
-      {/* Demo Video */}
-      <section className="space-y-3">
-        <div className="bg-muted/50 border-border !my-6 flex aspect-video items-center justify-center rounded-lg border lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
-          <p className="text-muted-foreground text-sm">
-            Demo video coming soon
-          </p>
-        </div>
       </section>
 
       {/* Table of Contents */}
@@ -153,7 +139,7 @@ export default function BopkitCaseStudy() {
           Architecture & Tech Stack
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           Bopkit is a Next.js application deployed on Vercel, backed by a
           PostgreSQL database on Supabase. The frontend and backend live in a
           single codebase with end-to-end type safety from the database layer
@@ -162,7 +148,7 @@ export default function BopkitCaseStudy() {
         </p>
 
         {/* Architecture Diagram */}
-        <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+        <div className="!my-6">
           <ArchitectureDiagram />
         </div>
 
@@ -175,7 +161,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Core Framework
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://nextjs.org">Next.js 16</ExtLink> with
                   App Router
@@ -197,7 +183,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Backend & Data
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://trpc.io">tRPC</ExtLink> for end-to-end
                   typesafe API routes
@@ -221,7 +207,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Authentication
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://www.better-auth.com">
                     Better Auth
@@ -235,7 +221,7 @@ export default function BopkitCaseStudy() {
 
             <div className="space-y-1.5">
               <p className="text-foreground text-base font-medium">Payments</p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://developer.paypal.com/docs/commerce-platform/">
                     PayPal Commerce Platform
@@ -247,7 +233,7 @@ export default function BopkitCaseStudy() {
 
             <div className="space-y-1.5">
               <p className="text-foreground text-base font-medium">Storage</p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://supabase.com">Supabase</ExtLink>{" "}
                   Storage for audio files, images, and assets
@@ -259,7 +245,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Background Jobs
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://www.inngest.com">Inngest</ExtLink> for
                   durable workflows with step-by-step execution, retry logic,
@@ -272,7 +258,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Audio & Video Processing
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://ffmpeg.org">FFmpeg</ExtLink> for audio
                   watermarking, WAV-to-MP3 conversion, and YouTube video
@@ -290,7 +276,7 @@ export default function BopkitCaseStudy() {
 
             <div className="space-y-1.5">
               <p className="text-foreground text-base font-medium">Email</p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://resend.com">Resend</ExtLink> for
                   transactional email delivery
@@ -304,7 +290,7 @@ export default function BopkitCaseStudy() {
 
             <div className="space-y-1.5">
               <p className="text-foreground text-base font-medium">UI</p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://tailwindcss.com">
                     Tailwind CSS v4
@@ -332,7 +318,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 State & Forms
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://zustand.docs.pmnd.rs">Zustand</ExtLink>{" "}
                   for global state management (music player)
@@ -355,7 +341,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Audio Playback
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://howlerjs.com">Howler.js</ExtLink> for
                   client-side audio playback with continuous playback across
@@ -366,7 +352,7 @@ export default function BopkitCaseStudy() {
 
             <div className="space-y-1.5">
               <p className="text-foreground text-base font-medium">Other</p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://stuk.github.io/jszip/">JSZip</ExtLink>{" "}
                   for multi-file download packaging
@@ -382,7 +368,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Hosting & Monitoring
               </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-1.5 text-base">
+              <ul className="text-foreground/80 list-inside list-disc space-y-1.5 text-base">
                 <li>
                   <ExtLink href="https://vercel.com">Vercel</ExtLink> for
                   hosting and deployment
@@ -407,7 +393,7 @@ export default function BopkitCaseStudy() {
           <h3 className="text-foreground text-lg font-medium">
             Why PayPal over Stripe?
           </h3>
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The most common question about the stack is why I chose PayPal
             Commerce Platform over Stripe Connect. The short answer is the
             target audience. Most music producers, especially independent ones,
@@ -417,7 +403,7 @@ export default function BopkitCaseStudy() {
             their existing account via an OAuth popup and are ready to receive
             payments in seconds.
           </p>
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             PayPal&apos;s Commerce Platform also supports multi-party payment
             splits natively, meaning each collaborator receives their share
             directly from PayPal at checkout time rather than the platform
@@ -438,7 +424,7 @@ export default function BopkitCaseStudy() {
           Landing Page & Marketing
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           The first thing any visitor sees is the marketing site at bopkit.com.
           It needs to communicate what Bopkit does, show the product in action,
           and convince producers to sign up. Every section of the homepage maps
@@ -458,7 +444,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Hero Section
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 The hero leads with the headline{" "}
                 <span className="text-foreground italic">
                   &ldquo;Your Beat Store, Your Way. Built Complete.&rdquo;
@@ -472,7 +458,7 @@ export default function BopkitCaseStudy() {
                 messaging is deliberately concise: producers scanning the page
                 should understand what Bopkit does within seconds.
               </p>
-              <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+              <div className="!my-6">
                 <Image
                   src="/bopkit/landing_hero.png"
                   alt="Bopkit landing page hero section"
@@ -489,7 +475,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Shops Showcase
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 Titled &ldquo;Made with Bopkit,&rdquo; this section showcases
                 real producer storefronts, each with their own theme and
                 branding. It serves two purposes: it shows visitors what a
@@ -497,7 +483,7 @@ export default function BopkitCaseStudy() {
                 proof by showing that real producers are already using the
                 platform.
               </p>
-              <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+              <div className="!my-6">
                 <Image
                   src="/bopkit/landing_showcase.png"
                   alt="Bopkit shops showcase showing real producer storefronts"
@@ -514,7 +500,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Feature Showcases
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 The homepage includes four dedicated showcase sections:
                 customization, YouTube auto-publishing, collaboration tools, and
                 analytics. Each section is interactive, with a &ldquo;Tap any
@@ -524,7 +510,7 @@ export default function BopkitCaseStudy() {
                 backgrounds, color themes, music player styling, and profile
                 personalization, each with its own video.
               </p>
-              <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+              <div className="!my-6">
                 <Image
                   src="/bopkit/landing_features.png"
                   alt="Bopkit feature showcase section with customization options"
@@ -541,7 +527,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Pricing & FAQ
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 Since the platform was in early access, pricing was kept as
                 simple as possible: a flat 10% per sale with everything included
                 and no subscription tiers. The goal with the section was to
@@ -567,14 +553,14 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Mission & Footer
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 A mission section explains why Bopkit exists and how it
                 positions itself against existing platforms in the beat selling
                 space. The page closes with a final call-to-action and a footer
                 linking to social accounts (TikTok, YouTube, Instagram, X as
                 @getbopkit), legal pages, and support resources.
               </p>
-              <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+              <div className="!my-6">
                 <Image
                   src="/bopkit/landing_footer.png"
                   alt="Bopkit footer with call-to-action and navigation links"
@@ -595,7 +581,7 @@ export default function BopkitCaseStudy() {
             Additional Marketing Pages
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Beyond the homepage, the marketing site includes several standalone
             pages that support the product and build trust with potential users.
           </p>
@@ -605,7 +591,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Pricing Page
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 A dedicated pricing page that breaks down the 10% model with a
                 concrete example: a $50 beat sale, minus the $5 Bopkit fee,
                 equals $45 received (before PayPal transaction fees). It lists
@@ -613,7 +599,7 @@ export default function BopkitCaseStudy() {
                 12-question FAQ covering fees, collaborator splits, refunds,
                 disputes, and currency handling.
               </p>
-              <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+              <div className="!my-6">
                 <Image
                   src="/bopkit/landing_pricingpage.png"
                   alt="Bopkit dedicated pricing page with fee breakdown and FAQ"
@@ -630,14 +616,14 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Licensing Page
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 Licensing is critical in the beat selling industry. Buyers need
                 to understand exactly what they can and cannot do with a
                 purchased beat. This page explains the different license types
                 (MP3 vs WAV), usage rights, and includes an FAQ section
                 addressing common licensing questions.
               </p>
-              <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+              <div className="!my-6">
                 <Image
                   src="/bopkit/landing_licensing.png"
                   alt="Bopkit licensing page explaining license types and usage rights"
@@ -654,12 +640,12 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Roadmap Page
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 A public roadmap organized into three sections: Currently
                 Building, Planned Features, and Completed Features. Users can
                 vote on planned items and submit their own feature suggestions.
               </p>
-              <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+              <div className="!my-6">
                 <Image
                   src="/bopkit/landing_roadmap.png"
                   alt="Bopkit public roadmap with feature voting and suggestions"
@@ -676,7 +662,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Support Page
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 A support hub linking to the FAQ, the public status page
                 (Upptime at status.bopkit.com), and the roadmap. It includes a
                 direct email contact (support@bopkit.com) with guidelines on
@@ -689,7 +675,7 @@ export default function BopkitCaseStudy() {
               <p className="text-foreground text-base font-medium">
                 Legal Pages
               </p>
-              <p className="text-muted-foreground text-base leading-7">
+              <p className="text-foreground/80 text-base leading-7">
                 Terms of Service, Privacy Policy, and Cookie Policy pages, all
                 required for a platform that handles payments and user data.
               </p>
@@ -703,7 +689,7 @@ export default function BopkitCaseStudy() {
             SEO & Programmatic Pages
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             To drive organic traffic, the marketing site includes programmatic
             SEO pages generated from structured data. Competitor comparison
             pages at{" "}
@@ -716,7 +702,7 @@ export default function BopkitCaseStudy() {
             target &ldquo;alternative to X&rdquo; search queries.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Every page includes dynamic metadata (title, description, Open
             Graph, Twitter cards) generated via Next.js{" "}
             <span className="text-foreground">generateMetadata()</span>. A
@@ -728,7 +714,7 @@ export default function BopkitCaseStudy() {
             and WebSite (with a SearchAction template).
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The sitemap is a paginated index with sub-sitemaps for static
             routes, user shops, and beats (10,000 URLs per file). Beat sitemaps
             include Google image sitemap data with titles and captions.
@@ -750,7 +736,7 @@ export default function BopkitCaseStudy() {
           Authentication & Security
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           Authentication is handled by{" "}
           <span className="text-foreground font-medium">Better Auth</span> with
           a Prisma adapter connecting to the same PostgreSQL database. The
@@ -769,7 +755,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Sign-Up Flow</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Registration is a two-step split form. The first screen collects the
             email address, and the second collects the password (8-128
             characters, validated with Zod). After submitting, the user lands on
@@ -781,7 +767,7 @@ export default function BopkitCaseStudy() {
             hour using a cron job.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/auth_signup.png"
               alt="Bopkit sign-up flow: email input, password input, and check-your-email verification page"
@@ -798,7 +784,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Sign-In</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Sign-in uses the same split form pattern. The first screen accepts
             either an email address or a username in a single input field. The
             system detects which one was entered by checking for an{" "}
@@ -812,7 +798,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Google OAuth</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Both the sign-in and sign-up pages include a Continue with Google
             button. Google is configured as a trusted provider with account
             linking enabled, meaning if a user registers with email and later
@@ -830,7 +816,7 @@ export default function BopkitCaseStudy() {
             Password Reset
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The forgot-password flow sends a reset link that expires after one
             hour. When the user sets a new password, two things happen on the
             server side: all existing sessions for that user are deleted from
@@ -840,7 +826,7 @@ export default function BopkitCaseStudy() {
             The user must sign in again with the new password.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/auth_forgot_password.png"
               alt="Bopkit forgot password page with email input and reset instructions"
@@ -859,7 +845,7 @@ export default function BopkitCaseStudy() {
             Session Management
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Better Auth uses opaque session tokens stored in the database, not
             JWTs. When a request comes in, the server looks up the token to
             authenticate the user. There are no refresh tokens. Instead,
@@ -869,7 +855,7 @@ export default function BopkitCaseStudy() {
             from that point. Active users stay signed in indefinitely.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             To avoid hitting the database on every request, session data is also
             cached in a signed cookie with a 5-minute TTL. Within that window,
             requests are authenticated from the cookie alone. After 5 minutes,
@@ -879,7 +865,7 @@ export default function BopkitCaseStudy() {
             read.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Since Bopkit is a multi-tenant platform with subdomains, cookies
             need to work across both{" "}
             <span className="text-foreground font-medium">bopkit.com</span> and{" "}
@@ -899,7 +885,7 @@ export default function BopkitCaseStudy() {
             Guest Cart Merging
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             An auth hook runs whenever a new session is created, regardless of
             auth method (email sign-in, Google OAuth, or email verification
             auto-sign-in). It checks for a guest cookie. If a guest user had
@@ -915,7 +901,7 @@ export default function BopkitCaseStudy() {
             Route Protection
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Protected routes are enforced at three layers. Server-side layouts
             check the session and redirect unauthenticated users to the sign-in
             page with a callback URL. API routes use a tRPC middleware that
@@ -931,7 +917,7 @@ export default function BopkitCaseStudy() {
             Account Deletion
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Users can delete their account from settings. Before deletion, a
             hook deletes all of the user&apos;s storage files (beats, artwork,
             audio tags) from Supabase. If file cleanup fails, the account is
@@ -949,7 +935,7 @@ export default function BopkitCaseStudy() {
           Onboarding & PayPal Setup
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           After signing up and verifying their email, new users are redirected
           to the onboarding flow where they claim their shop URL and configure
           initial settings. Once inside the dashboard, a getting started
@@ -963,7 +949,7 @@ export default function BopkitCaseStudy() {
             Username & Shop URL
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The first screen asks the user to choose a username. As they type,
             the input shows a live preview of their shop URL (
             <span className="text-foreground font-medium">
@@ -975,14 +961,14 @@ export default function BopkitCaseStudy() {
             before the availability check, making them case-insensitive.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Below the username field, the currency for the shop is auto-detected
             based on the user&apos;s location and can be overridden with a
             dropdown. This determines the currency that prices are listed in and
             payments are received in.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             When the user submits, the server runs a database transaction that
             double-checks username availability to prevent race conditions,
             creates the shop with default theme colors and the selected
@@ -1013,12 +999,12 @@ export default function BopkitCaseStudy() {
             Getting Started Checklist
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Once in the dashboard, a getting started card appears with four
             tasks to complete:
           </p>
 
-          <ol className="text-muted-foreground list-inside list-decimal space-y-1.5 text-base">
+          <ol className="text-foreground/80 list-inside list-decimal space-y-1.5 text-base">
             <li>
               <span className="text-foreground font-medium">
                 Upload your first beat
@@ -1045,7 +1031,7 @@ export default function BopkitCaseStudy() {
             </li>
           </ol>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             When all four are complete, the checklist records a completion
             timestamp and shows a congratulations message.
           </p>
@@ -1069,7 +1055,7 @@ export default function BopkitCaseStudy() {
             PayPal Merchant Onboarding
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Before a producer can receive payments, they need to connect their
             PayPal account. This is not a simple API key integration. Bopkit is
             registered as a{" "}
@@ -1082,7 +1068,7 @@ export default function BopkitCaseStudy() {
             between multiple parties.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             When the user clicks{" "}
             <span className="text-foreground font-medium">Connect PayPal</span>,
             the server calls PayPal&apos;s{" "}
@@ -1104,14 +1090,14 @@ export default function BopkitCaseStudy() {
             knows which user it belongs to.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The user is redirected to PayPal where they log in and grant
             permissions. After authorizing, PayPal redirects back to a callback
             page that validates the response parameters and shows a three-step
             progress indicator while it waits for confirmation.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/onboarding_paypal.png"
               alt="Bopkit PayPal connection flow: connect prompt, PayPal authorization, and callback progress page"
@@ -1130,7 +1116,7 @@ export default function BopkitCaseStudy() {
             Asynchronous Completion via Webhook
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The reason the callback page needs a progress indicator is that
             PayPal does not confirm the onboarding synchronously. The redirect
             back to Bopkit happens immediately, but the actual confirmation
@@ -1142,7 +1128,7 @@ export default function BopkitCaseStudy() {
             callback page and the webhook arriving.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             To handle this, the callback page polls the user&apos;s profile
             every 2 seconds, checking whether onboarding has completed.
             Meanwhile, when the webhook arrives, the handler runs inside a
@@ -1161,7 +1147,7 @@ export default function BopkitCaseStudy() {
             Ongoing Status Verification
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Connecting a PayPal account is not a one-time event. The
             merchant&apos;s status can change at any time: they might not
             confirm their email, their account could be restricted, or they
@@ -1176,7 +1162,7 @@ export default function BopkitCaseStudy() {
             OAuth integration is still active.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             If any of these checks fail, a warning banner appears on the
             dashboard with a specific message and action button for each state:
             not connected, email not confirmed, payments not receivable, OAuth
@@ -1200,7 +1186,7 @@ export default function BopkitCaseStudy() {
           Beat Creation
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           Beat creation is the core workflow of the platform. It covers
           everything from uploading an audio file to having a published beat in
           the producer&apos;s shop (and optionally on YouTube). The creation
@@ -1209,7 +1195,7 @@ export default function BopkitCaseStudy() {
           collaborators, and YouTube information before publishing.
         </p>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           Everything on the creation page auto-saves as a draft. The form
           watches for changes with a 3-second debounce, and only sends the
           specific fields that changed to the server. It compares current values
@@ -1225,7 +1211,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Upload</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The creation page opens with a drag-and-drop zone for the audio
             file. Only MP3 and WAV files are accepted, with a 50MB size limit.
             Dropping an unsupported file type shows an error immediately. During
@@ -1233,7 +1219,7 @@ export default function BopkitCaseStudy() {
             status.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The source file type matters. If the producer uploads a WAV file,
             both WAV and MP3 license types become available for purchase since
             the system converts WAV to MP3 during publishing. If they upload an
@@ -1241,7 +1227,7 @@ export default function BopkitCaseStudy() {
             would not improve quality.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/beat_upload.png"
               alt="Beat creation page with drag-and-drop audio upload and progress indicator"
@@ -1260,7 +1246,7 @@ export default function BopkitCaseStudy() {
             Audio Watermarking
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Audio watermarks (called &ldquo;audio tags&rdquo; in the UI) are
             short audio clips that play over a beat&apos;s preview to protect it
             from being used without purchasing. When a buyer browses a shop,
@@ -1268,7 +1254,7 @@ export default function BopkitCaseStudy() {
             included in the download after purchase.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Producers can choose from a set of public tags available to all
             users, or upload up to 5 custom tags of their own (MP3 or WAV, max
             5MB each). A default tag can be set in settings so new beats are
@@ -1280,7 +1266,7 @@ export default function BopkitCaseStudy() {
             (Never, 15s, 30s, 45s, or 60s) that controls how often it repeats.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/beat_audiotag_settings.png"
               alt="Audio tag settings page showing public and custom tags, timing configuration, and tag management"
@@ -1292,7 +1278,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The actual watermarking happens server-side during publishing via
             FFmpeg. The process builds a filter graph that generates silence for
             the gaps between tag repeats, concatenates the tag audio with the
@@ -1312,7 +1298,7 @@ export default function BopkitCaseStudy() {
             Metadata & Artwork
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             After uploading the audio file, the BPM and key fields are
             auto-populated when possible. The extraction runs in parallel with
             the upload and uses a three-tiered detection approach: first it
@@ -1323,7 +1309,7 @@ export default function BopkitCaseStudy() {
             <span className="text-foreground font-medium">G minor</span>.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Artwork can be added in several ways: drag-and-drop, file picker,
             pasting from clipboard (Ctrl+V / Cmd+V), or pasting a URL. Supported
             formats include JPEG, PNG, WebP, GIF (up to 5MB), and even video
@@ -1332,7 +1318,7 @@ export default function BopkitCaseStudy() {
             interface lets the producer adjust the framing.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/beat_metadata.png"
               alt="Beat metadata form with auto-detected BPM and key, artwork upload with cropping, and beat name input"
@@ -1344,7 +1330,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Image processing is handled by Sharp on the server during
             publishing. Static images are resized to a 128x128 WebP thumbnail at
             80% quality. Animated media (GIFs and videos) go through a different
@@ -1362,14 +1348,14 @@ export default function BopkitCaseStudy() {
             Pricing & Validation
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Producers set prices for each license type: MP3 and WAV (if the
             source file was a WAV). Prices are stored in cents to avoid
             floating-point issues. Default prices can be configured in settings
             so new beats are pre-filled.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The interesting technical challenge here is minimum price
             validation. Every collaborator on a beat must receive at least the
             PayPal minimum payout after all fees are deducted. For USD, that
@@ -1379,7 +1365,7 @@ export default function BopkitCaseStudy() {
             potential cross-border conversion fee of up to 4%.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The problem is that you cannot simply reverse the fee formula to
             find the minimum price. Each fee component in the chain rounds
             independently: collaborator shares round down, the platform fee
@@ -1413,7 +1399,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Collaborators</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Producers can add collaborators to a beat to credit other people
             involved and automatically split revenue. Clicking{" "}
             <span className="text-foreground font-medium">
@@ -1424,7 +1410,7 @@ export default function BopkitCaseStudy() {
             as an anonymous collaborator by name for credit purposes.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Each registered collaborator gets a profit share percentage,
             adjustable with 0.01% precision. An equal split button distributes
             shares evenly across all registered collaborators, and adjusting one
@@ -1434,7 +1420,7 @@ export default function BopkitCaseStudy() {
             they have no PayPal account to receive payouts.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             At checkout, each registered collaborator becomes a separate payment
             recipient in the PayPal order. PayPal pays each party their share
             directly at the time of purchase. The owner receives the remainder
@@ -1442,7 +1428,7 @@ export default function BopkitCaseStudy() {
             rounding cents favor the owner.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/beat_collaborators.png"
               alt="Collaborator management with user search, anonymous collaborator option, and profit share percentage sliders"
@@ -1461,7 +1447,7 @@ export default function BopkitCaseStudy() {
             YouTube Integration
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Producers can opt to auto-publish beats to YouTube as part of the
             creation flow. A toggle enables the YouTube section, which requires
             connecting a YouTube account via Google OAuth (requesting upload and
@@ -1469,7 +1455,7 @@ export default function BopkitCaseStudy() {
             are displayed with options to switch accounts or unlink.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The YouTube form includes a title, a{" "}
             <span className="text-foreground font-medium">{"{beat-id}"}</span>{" "}
             placeholder that auto-generates a purchase link to the beat in the
@@ -1484,7 +1470,7 @@ export default function BopkitCaseStudy() {
             settings so they pre-fill for every new beat.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/beat_youtube.png"
               alt="YouTube settings in beat creation with account connection, title, description, tags, visibility, and scheduling options"
@@ -1496,7 +1482,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The video is generated server-side by FFmpeg, which combines the
             beat&apos;s audio with its artwork (either a static image or an
             animated WebM) into an MP4 video. The video is streamed directly to
@@ -1512,7 +1498,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Publishing</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             When the producer clicks{" "}
             <span className="text-foreground font-medium">Publish</span>, the
             beat enters a multi-step background workflow powered by Inngest. The
@@ -1520,7 +1506,7 @@ export default function BopkitCaseStudy() {
             every 2 seconds.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/beat_publishing.png"
               alt="Publishing progress panel showing step-by-step status indicators for planning, processing, saving, and YouTube upload"
@@ -1532,7 +1518,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The workflow has four steps. The first is{" "}
             <span className="text-foreground font-medium">Planning</span>, which
             analyzes the draft and builds an execution plan: what files need to
@@ -1562,7 +1548,7 @@ export default function BopkitCaseStudy() {
             the producer can retry the upload independently.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Each step in the workflow is independently retriable. If step two
             fails, step one does not re-run because its result is already
             persisted. If any step fails, the system cleans up any files that
@@ -1574,7 +1560,7 @@ export default function BopkitCaseStudy() {
             beats to publish concurrently.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             On success, the publishing panel shows a{" "}
             <span className="text-foreground font-medium">View in Shop</span>{" "}
             button, and if YouTube was enabled, a{" "}
@@ -1596,7 +1582,7 @@ export default function BopkitCaseStudy() {
           Shop Customization
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           Every producer&apos;s shop lives at their own subdomain:{" "}
           <span className="text-foreground font-medium">
             username.bopkit.com
@@ -1611,7 +1597,7 @@ export default function BopkitCaseStudy() {
           ), they get redirected to the subdomain automatically.
         </p>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           The shop layout sets a handful of CSS custom properties on a root
           container based on the producer&apos;s saved colors and automatically
           derived text and contrast values. Every component in the shop, from
@@ -1621,7 +1607,7 @@ export default function BopkitCaseStudy() {
           variables set at the layout level.
         </p>
 
-        <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+        <div className="!my-6">
           <Image
             src="/bopkit/shop_example.png"
             alt="Example of a producer's customized shop with beats, music player, and custom theme colors"
@@ -1639,7 +1625,7 @@ export default function BopkitCaseStudy() {
             Customization Dialog
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Producers can customize their shop&apos;s appearance through a
             draggable dialog that floats over the shop so they can see changes
             in real time. There are four color options:{" "}
@@ -1652,7 +1638,7 @@ export default function BopkitCaseStudy() {
             An optional background image can also be uploaded.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The producer only picks these four colors. The system automatically
             derives readable text colors for each surface using a luminance
             formula, so text is always legible regardless of how light or dark
@@ -1661,7 +1647,7 @@ export default function BopkitCaseStudy() {
             accidentally create a shop with unreadable text.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Changes preview live. When a color is changed in the dialog, the
             shop behind it updates instantly without any API call. This works by
             optimistically updating the cached shop data, which flows through a
@@ -1670,7 +1656,7 @@ export default function BopkitCaseStudy() {
             previous values.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/shop_customize.png"
               alt="Draggable shop customization dialog with color pickers floating over the shop"
@@ -1689,7 +1675,7 @@ export default function BopkitCaseStudy() {
             Profile & Social Links
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Producers can edit their display name, bio (up to 150 characters),
             and avatar through a profile dialog accessible from the shop header.
             The avatar is cropped to a square and processed before upload. Nine
@@ -1698,7 +1684,7 @@ export default function BopkitCaseStudy() {
             links appear as icons in the shop header.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/shop_profile.png"
               alt="Edit profile dialog with avatar upload, display name, bio, and social links"
@@ -1720,7 +1706,7 @@ export default function BopkitCaseStudy() {
           Producer Dashboard
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           The dashboard is the producer&apos;s home base for managing their
           business. It&apos;s accessible via a &ldquo;Manage Shop&rdquo; button
           in the site header, or through the avatar dropdown when viewing their
@@ -1734,7 +1720,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Overview</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The overview page is designed to give producers a snapshot of their
             business. Three metric cards sit at the top: total net earnings,
             this month&apos;s revenue, and total sales count. Below that, a grid
@@ -1743,7 +1729,7 @@ export default function BopkitCaseStudy() {
             collaborations, and settings.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The bottom half of the page shows recent activity. A recent sales
             table lists the latest orders with the buyer&apos;s name, item
             count, amount, and a status badge. Next to it, two performance cards
@@ -1752,7 +1738,7 @@ export default function BopkitCaseStudy() {
             name, your profit share percentage, and sales count).
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             For new users, a getting started checklist appears at the top of the
             overview. It tracks four tasks: upload your first beat, connect
             PayPal, add a profile picture, and customize your shop. A progress
@@ -1761,7 +1747,7 @@ export default function BopkitCaseStudy() {
             finished.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/dashboard_overview.png"
               alt="Producer dashboard overview with metric cards, quick actions, recent sales, and performance insights"
@@ -1778,7 +1764,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Analytics</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The analytics page gives producers a deeper look at their revenue
             and sales trends. Seven metric cards break down the numbers: total
             earnings, earnings from owned beats, earnings from collaborations,
@@ -1788,7 +1774,7 @@ export default function BopkitCaseStudy() {
             need to understand where their money is coming from.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Two stacked area charts show revenue and sales over time, each with
             separate series for owned beats and collaborations. The series are
             toggleable so producers can isolate either one. A timeframe selector
@@ -1797,7 +1783,7 @@ export default function BopkitCaseStudy() {
             picker with a two-month calendar view.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The time-series data is pre-aggregated in the database at daily and
             monthly granularity rather than computed from raw orders on each
             page load. When a payment is captured, a background workflow updates
@@ -1806,7 +1792,7 @@ export default function BopkitCaseStudy() {
             producer has.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Below the charts, two performance tables break down individual beats
             and collaborations. Each table shows sales count, revenue, and last
             sale date, with rich filtering: name search, sales and revenue range
@@ -1815,7 +1801,7 @@ export default function BopkitCaseStudy() {
             visibility.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/dashboard_analytics.png"
               alt="Analytics page with revenue and sales charts, timeframe selector, and beat performance tables"
@@ -1832,7 +1818,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Sales</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The sales page is split into two tabs:{" "}
             <span className="text-foreground font-medium">My Shop</span> for
             orders placed on the producer&apos;s storefront, and{" "}
@@ -1842,7 +1828,7 @@ export default function BopkitCaseStudy() {
             perspectives.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The shop sales table shows each order&apos;s date, order ID, buyer
             name and email, item count, status badge, refund status, order
             total, and then the producer&apos;s personal financial breakdown:
@@ -1853,7 +1839,7 @@ export default function BopkitCaseStudy() {
             Both tabs support CSV export for all orders or just selected rows.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/dashboard_sales.png"
               alt="Sales page with order table showing status badges, financial breakdown, and filtering options"
@@ -1865,7 +1851,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Clicking into an order opens a detail page with full transparency
             into the payment. An overview card shows the order status, buyer
             info, capture date, and the producer&apos;s share and net earnings.
@@ -1877,7 +1863,7 @@ export default function BopkitCaseStudy() {
             including any refunds or reversals.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             All financial figures on this page come from actual PayPal fee
             breakdowns reported via webhooks, not estimates. When a payment is
             captured, PayPal reports the exact fees charged to each payee, and
@@ -1885,7 +1871,7 @@ export default function BopkitCaseStudy() {
             are tracked separately and deducted from the running totals.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/dashboard_order_detail.png"
               alt="Order detail page showing payment overview, financial breakdown, collaborator payouts, and transaction history"
@@ -1904,7 +1890,7 @@ export default function BopkitCaseStudy() {
             Beats Management
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The beats page lists all published beats in a table with inline
             audio playback. Each row shows the beat&apos;s name, MP3 and WAV
             prices, audio tag status, collaborators with their profit share
@@ -1914,7 +1900,7 @@ export default function BopkitCaseStudy() {
             across sessions.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The header shows the producer&apos;s beat quota. On the free plan,
             this displays as a count (e.g. &ldquo;2 of 10 remaining&rdquo;) and
             the &ldquo;New Beat&rdquo; button becomes disabled with an upgrade
@@ -1924,7 +1910,7 @@ export default function BopkitCaseStudy() {
             publishes.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Selecting rows reveals a bulk action bar with two options. Bulk
             download lets the producer choose which file types to include (MP3,
             WAV, tagged MP3) and packages them into a ZIP file. Bulk delete
@@ -1932,7 +1918,7 @@ export default function BopkitCaseStudy() {
             beat actions are available through a dropdown menu on each row.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/dashboard_beats.png"
               alt="Beats management table with inline playback, pricing columns, collaborator info, and bulk actions"
@@ -1951,7 +1937,7 @@ export default function BopkitCaseStudy() {
             Collaborations
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The collaborations page shows the other side of the collaborator
             system: beats that other producers have added you to. Each row
             displays the beat name, the shop owner&apos;s name and username,
@@ -1963,7 +1949,7 @@ export default function BopkitCaseStudy() {
             storefront alongside their own beats.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             This separation between owned beats and collaborations is consistent
             across the entire dashboard. Sales are split into shop and
             collaboration tabs, analytics track owner and collaboration revenue
@@ -1972,7 +1958,7 @@ export default function BopkitCaseStudy() {
             their own beats versus beats they contributed to.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/dashboard_collaborations.png"
               alt="Collaborations page showing beats from other producers with profit share percentages and earnings"
@@ -1989,7 +1975,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Settings</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The settings page is organized into five tabs: Account, PayPal,
             YouTube, Pricing, and Audio Tags. Most of these have been covered in
             context elsewhere in this case study (PayPal connection in
@@ -2011,7 +1997,7 @@ export default function BopkitCaseStudy() {
           Buyer Experience
         </h2>
 
-        <p className="text-muted-foreground text-base leading-7">
+        <p className="text-foreground/80 text-base leading-7">
           Everything up to this point has been from the producer&apos;s
           perspective. The buyer side of Bopkit is a separate experience
           entirely: browsing a producer&apos;s storefront, previewing beats,
@@ -2025,7 +2011,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Shop Browsing</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             When a buyer visits a producer&apos;s storefront at{" "}
             <span className="text-foreground font-medium">
               username.bopkit.com
@@ -2038,7 +2024,7 @@ export default function BopkitCaseStudy() {
             than traditional pagination.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Hovering over a beat&apos;s artwork reveals a play button. Clicking
             it starts the watermarked audio preview and opens the music player
             at the bottom of the page. The player persists across navigation, so
@@ -2051,7 +2037,7 @@ export default function BopkitCaseStudy() {
             background to minimize gaps between songs.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The player has two modes: a full bar across the bottom of the page
             with artwork, track info, playback controls, a seek bar, and volume
             control, and a minimized compact version that tucks into the
@@ -2059,7 +2045,7 @@ export default function BopkitCaseStudy() {
             the seek bar below the controls.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/buyer_shop.png"
               alt="A producer's storefront showing the beat grid, profile section, and music player"
@@ -2071,7 +2057,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Every shop is fully themed using CSS custom properties. The
             producer&apos;s chosen colors for background, foreground, accent,
             and music player are applied as variables on the shop layout, and
@@ -2089,7 +2075,7 @@ export default function BopkitCaseStudy() {
             Beat Detail & Currency
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Clicking a beat opens its detail page with a two-column layout. The
             left side shows the artwork with a play/pause overlay and the
             beat&apos;s metadata: name, credits (owner and collaborators), BPM,
@@ -2100,7 +2086,7 @@ export default function BopkitCaseStudy() {
             shop isn&apos;t accepting payments yet.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/buyer_beat.png"
               alt="Beat detail page showing artwork, metadata, license options, and pricing"
@@ -2112,7 +2098,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Prices are displayed in the buyer&apos;s local currency by default.
             On the first visit, the system detects the buyer&apos;s country via
             IP geolocation and maps it to a currency. Exchange rates are fetched
@@ -2125,7 +2111,7 @@ export default function BopkitCaseStudy() {
             and the preference is persisted in local storage for return visits.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The system also handles zero-decimal currencies like JPY and KRW
             correctly, where prices don&apos;t use decimal places, and uses the
             browser&apos;s{" "}
@@ -2143,7 +2129,7 @@ export default function BopkitCaseStudy() {
             Cart & Checkout
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Carts are per-shop, meaning a buyer can have items from multiple
             producer storefronts simultaneously without them mixing together.
             Each cart item stores the selected license type (MP3 or WAV), and
@@ -2154,14 +2140,14 @@ export default function BopkitCaseStudy() {
             interaction.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Guest buyers get a cart without needing to sign up. The system
             assigns a guest identifier via a cookie, and if the buyer later
             creates an account, their guest cart merges into their authenticated
             cart automatically.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/buyer_cart.png"
               alt="Shopping cart showing items with license types and total"
@@ -2173,7 +2159,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             When the buyer enters checkout, the system creates a draft order: a
             frozen snapshot of the cart at that moment with a 15-minute
             expiration. This locks in the prices so that if the producer edits
@@ -2184,7 +2170,7 @@ export default function BopkitCaseStudy() {
             background.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The checkout page shows an order summary with a PayPal button. Guest
             checkout is fully supported since PayPal collects the buyer&apos;s
             email during their own flow. Behind the scenes, clicking the PayPal
@@ -2196,7 +2182,7 @@ export default function BopkitCaseStudy() {
             section.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The system also handles edge cases around the checkout flow: if the
             buyer closes the PayPal popup and returns later, it detects the
             pending order and picks up where they left off rather than creating
@@ -2204,7 +2190,7 @@ export default function BopkitCaseStudy() {
             surface user-friendly messages.
           </p>
 
-          <div className="!my-6 lg:-mx-16 lg:w-[calc(100%+8rem)] xl:-mx-28 xl:w-[calc(100%+14rem)]">
+          <div className="!my-6">
             <Image
               src="/bopkit/buyer_checkout.png"
               alt="Checkout page with order summary and PayPal payment button"
@@ -2223,7 +2209,7 @@ export default function BopkitCaseStudy() {
             Order Confirmation & Downloads
           </h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             After the buyer approves the PayPal payment, they land on a
             processing page that polls the order status every two seconds until
             the payment is confirmed or a 45-second timeout is reached. The page
@@ -2246,7 +2232,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             The order detail page shows the full breakdown: items purchased,
             license types, prices, and download buttons for each file. Downloads
             generate signed URLs on-demand with a 30-minute expiration, so files
@@ -2271,7 +2257,7 @@ export default function BopkitCaseStudy() {
             />
           </div>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             A key design decision here is asset freezing. When a purchase
             completes, the system snapshots the exact file paths for every
             purchased item at that moment. If the producer later edits the beat,
@@ -2287,7 +2273,7 @@ export default function BopkitCaseStudy() {
         <div className="space-y-4">
           <h3 className="text-foreground text-lg font-medium">Order History</h3>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Registered buyers can access their full order history in two places:
             a per-shop view within each producer&apos;s storefront, and a global
             view across all shops from their account page. Both use cursor-based
@@ -2295,7 +2281,7 @@ export default function BopkitCaseStudy() {
             view the full order with downloads.
           </p>
 
-          <p className="text-muted-foreground text-base leading-7">
+          <p className="text-foreground/80 text-base leading-7">
             Guest buyers can still access their orders. After purchase, they
             receive an email with a link containing a signed access token. The
             token is generated using HMAC-SHA256 with a 7-day expiration and
@@ -2322,6 +2308,469 @@ export default function BopkitCaseStudy() {
       </section>
 
       <hr className="border-border" />
+
+      {/* Communication & Notifications */}
+      <section id="communication" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Communication & Notifications
+        </h2>
+
+        <p className="text-foreground/80 text-base leading-7">
+          Every meaningful event in the platform triggers a notification to the
+          relevant parties. When a sale completes, the buyer gets an order
+          confirmation, the seller gets a sale notification, and each
+          collaborator gets an earnings notification. The same pattern applies
+          for refunds, reversals, and payment declines: every party involved
+          receives both an email and an in-app notification specific to their
+          role.
+        </p>
+
+        {/* Email System */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Email System</h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            The platform has 15 email templates built with React Email and
+            delivered through Resend. Ten are order-related: buyer confirmation,
+            seller notification, collaborator notification, and then the same
+            trio for refunds, reversals, and a payment declined notice. The
+            remaining five handle authentication: email verification, password
+            reset, and password change confirmation, plus a feature suggestion
+            acknowledgment.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Emails are never sent inline from API routes. They are triggered
+            from Inngest workflows, which means if the email service is
+            temporarily unavailable, the workflow retries the step
+            automatically. Resend enforces rate limits, so the email sender
+            serializes requests with a minimum 600ms interval between sends and
+            retries with exponential backoff when it receives a 429 response.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Every sent email is logged in the database. If a workflow retries
+            and attempts to send the same email again, the duplicate is detected
+            and the send is skipped. This ensures that even in failure-and-retry
+            scenarios, a buyer never gets two copies of the same order
+            confirmation.
+          </p>
+
+          <div className="!my-6 flex justify-center">
+            <Image
+              src="/bopkit/email_example.png"
+              alt="Example of an order confirmation email sent to a buyer"
+              width={800}
+              height={600}
+              quality={90}
+              sizes="(min-width: 640px) 540px, 100vw"
+              className="border-border w-full max-w-md rounded-lg border sm:max-w-lg"
+            />
+          </div>
+        </div>
+
+        {/* In-App Notifications */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            In-App Notifications
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            A notification bell in the site header shows an unread count badge.
+            Clicking it opens a dropdown with the notification list, loaded via
+            cursor-based pagination with infinite scroll. Each notification has
+            an icon with color coding (green for sales, red for refunds, yellow
+            for warnings), a description, and a relative timestamp. Producers
+            can mark individual notifications as read, mark all as read, or
+            clear them entirely.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Notifications cover over ten event types: completed sales, refunds,
+            reversals, checkout approval reversals, collaborators leaving a
+            beat, beats being reposted, beats being updated or deleted by
+            collaborators, and PayPal account status changes. Mark-as-read uses
+            optimistic updates so the badge count decrements instantly, and the
+            notification list refreshes automatically when the browser window
+            regains focus so producers see new activity without a manual
+            refresh.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            To prevent duplicate notifications from workflow retries, each
+            notification is created with a deterministic ID derived from its
+            type and parameters. If the same event triggers the same
+            notification twice, the duplicate is silently ignored.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
+      {/* Refunds, Disputes & Error Handling */}
+      <section id="error-handling" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Refunds, Disputes & Error Handling
+        </h2>
+
+        <p className="text-foreground/80 text-base leading-7">
+          The payment lifecycle doesn&apos;t end at checkout. Refunds,
+          chargebacks, and payment declines all need to be handled gracefully
+          and reflected accurately across the system. This section covers how
+          each of these flows works.
+        </p>
+
+        {/* Refund Processing */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Refund Processing
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            When a refund occurs on PayPal, a webhook arrives. The handler
+            verifies the signature, records the refund (guarded by a unique
+            constraint to prevent duplicates), and dispatches a background
+            workflow to handle the downstream effects.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            The refund workflow loads the full order context, identifies which
+            payee was refunded, and decrements their analytics. The adjustment
+            is precise: the refund amount is allocated proportionally across
+            beats based on their share of the original gross amount, and all
+            earnings aggregations are updated. A processing flag on the refund
+            record ensures that if the workflow retries, the analytics are only
+            decremented once. After analytics, the workflow sends emails to the
+            buyer, the seller, and the affected collaborator, and creates in-app
+            notifications for each party.
+          </p>
+        </div>
+
+        {/* Reversal Processing */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Reversals & Disputes
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Reversals (chargebacks and disputes) follow the same structure as
+            refunds but are triggered by a different webhook event. The workflow
+            decrements analytics, sends emails to all parties, and creates
+            notifications. The same idempotency patterns apply: unique
+            constraints to prevent duplicate records and a processing flag to
+            prevent double-counting in analytics.
+          </p>
+        </div>
+
+        {/* Decline Reason Mapping */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Decline Reason Mapping
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            PayPal returns cryptic decline codes and reason phrases when a
+            payment fails. Rather than surfacing these raw codes to users, the
+            system maps them to 16 human-readable categories like card declined,
+            insufficient funds, account restricted, and payer action required.
+            Each category has a user-friendly message explaining what happened
+            and contextual guidance suggesting what the buyer can try. The
+            mapper uses defensive substring matching as a fallback for
+            unrecognized codes and logs warnings for any unmapped values so they
+            can be added in future updates.
+          </p>
+        </div>
+
+        {/* Webhook Idempotency */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Webhook Idempotency
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            All nine PayPal webhook event types go through the same entry point.
+            The handler first verifies the webhook signature by calling
+            PayPal&apos;s verification endpoint with the five required
+            transmission headers. Only after the signature is confirmed does
+            processing begin.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Every record type in the system uses unique constraints to prevent
+            duplicate processing. Captures, refunds, and reversals are each
+            keyed by their PayPal identifier, and event IDs are also stored as
+            unique fields. If the same webhook is delivered twice, the database
+            rejects the duplicate and the handler returns a success response
+            without reprocessing. For operations that can&apos;t rely on a
+            database constraint alone, like analytics decrements, a processing
+            timestamp acts as a flag that is checked before and set after each
+            operation within a transaction.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
+      {/* Mobile Responsiveness */}
+      <section id="mobile" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Mobile Responsiveness
+        </h2>
+
+        <p className="text-foreground/80 text-base leading-7">
+          The entire platform is responsive across mobile, tablet, and desktop.
+          Layouts stack vertically on small screens and expand into multi-column
+          grids on larger viewports. The checkout page goes from a two-column
+          layout to a single column, the dashboard sidebar collapses to icons,
+          beat detail pages stack the artwork above the pricing panel, and
+          buttons expand to full width for easier touch targets. All responsive
+          behavior is handled through Tailwind breakpoints with no separate
+          mobile components or device detection.
+        </p>
+
+        <div className="!my-6 flex justify-center gap-4">
+          <Image
+            src="/bopkit/mobile_shop.png"
+            alt="Producer shop on mobile viewport"
+            width={390}
+            height={844}
+            quality={90}
+            sizes="(min-width: 640px) 220px, 45vw"
+            className="border-border w-full max-w-[220px] rounded-lg border"
+          />
+          <Image
+            src="/bopkit/mobile_dashboard.png"
+            alt="Producer dashboard on mobile viewport"
+            width={390}
+            height={844}
+            quality={90}
+            sizes="(min-width: 640px) 220px, 45vw"
+            className="border-border w-full max-w-[220px] rounded-lg border"
+          />
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
+      {/* Infrastructure & Monitoring */}
+      <section id="infrastructure" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Infrastructure & Monitoring
+        </h2>
+
+        <p className="text-foreground/80 text-base leading-7">
+          Running a platform that processes payments and handles file delivery
+          means knowing immediately when something breaks. Bopkit has 12 health
+          check endpoints that cover every external service the platform depends
+          on.
+        </p>
+
+        {/* Health Checks */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">Health Checks</h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Two primary probes serve as the system&apos;s pulse. The liveness
+            probe at{" "}
+            <span className="text-foreground font-medium">/api/healthz</span>{" "}
+            confirms the application is running and returns uptime. The
+            readiness probe at{" "}
+            <span className="text-foreground font-medium">/api/readyz</span>{" "}
+            goes further, testing database connectivity with a one-second
+            timeout and returning a degraded status if the connection fails.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Beyond the probes, ten dedicated status endpoints each test a
+            specific dependency: PostgreSQL connectivity, Supabase Storage
+            bucket access, PayPal API availability and webhook configuration,
+            FFmpeg binary presence, frontend SSR rendering, Resend email API,
+            Inngest workflow registration, Sharp image processing, Google OAuth
+            discovery, and YouTube Data API access. Each endpoint returns a
+            simple JSON response with an ok or error status, sets no-cache
+            headers, and requires no authentication.
+          </p>
+        </div>
+
+        {/* Status Page */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Status Page & Uptime Monitoring
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            These health check endpoints are polled by{" "}
+            <ExtLink href="https://upptime.js.org">Upptime</ExtLink>, which
+            powers a public status page at{" "}
+            <span className="text-foreground font-medium">
+              status.bopkit.com
+            </span>
+            . Core health checks are polled every 30 to 60 seconds, and less
+            critical services every 60 to 120 seconds. The status page is linked
+            from the support page and the site footer, giving both users and the
+            developer visibility into system health.
+          </p>
+
+          <div className="!my-6">
+            <Image
+              src="/bopkit/status.png"
+              alt="Upptime status page showing health check results for all services"
+              width={1200}
+              height={800}
+              quality={90}
+              sizes="(min-width: 640px) 540px, 100vw"
+              className="border-border w-full rounded-lg border"
+            />
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
+      {/* Reflections */}
+      <section id="reflections" className="space-y-6">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl">
+          Reflections
+        </h2>
+
+        {/* What Went Well */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            What Went Well
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            The PayPal Commerce Platform partner integration ended up being the
+            most rewarding part of the project. It was far and away the most
+            complex system to build, but getting multi-party payment splits
+            working correctly, with proper fee allocation, minimum payout
+            validation, and full webhook lifecycle handling, felt like a genuine
+            achievement. The financial calculations alone span hundreds of lines
+            and handle edge cases like rounding discrepancies across
+            collaborator splits, partial refunds affecting proportional fee
+            allocation, and currency-specific minimum payout thresholds.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Choosing Inngest for background workflows turned out to be one of
+            the best technical decisions in the project. The durable execution
+            model, where each step is persisted independently and retries
+            automatically on failure, made it possible to build complex
+            pipelines like the beat publishing workflow without worrying about
+            partial failures leaving the system in a broken state. If step three
+            of four fails, the first two steps don&apos;t re-run, and cleanup
+            logic handles any artifacts. This gave me a level of reliability
+            that would have been much harder to achieve with a traditional job
+            queue.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Using tRPC for the API layer paid off consistently throughout
+            development. Having types flow from the Prisma schema through the
+            API to the frontend meant that breaking changes were caught at
+            compile time rather than surfacing as runtime bugs. Renaming a field
+            in the database schema would immediately highlight every component
+            that needed updating.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Building idempotency into every system from the start, rather than
+            bolting it on later, saved me from real production issues. Webhooks
+            can be delivered multiple times, workflows can retry, and users can
+            double-click buttons. Having every write operation designed to
+            handle duplicates gracefully meant I could trust the system to
+            self-correct without manual intervention.
+          </p>
+        </div>
+
+        {/* What Was Harder Than Expected */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            What Was Harder Than Expected
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            PayPal&apos;s APIs and documentation were significantly harder to
+            work with than I anticipated. The documentation is fragmented across
+            multiple versions and portals, error messages are often vague, and
+            the partner integration model has a steep learning curve compared to
+            something like Stripe Connect. The multi-party payment split logic
+            in particular required working through edge cases around rounding,
+            minimum payouts per currency, fee allocation across collaborators,
+            and the interaction between platform fees and PayPal&apos;s own
+            processing fees. I ended up building an iterative solver to
+            calculate minimum prices because the analytical solution wasn&apos;t
+            reliable across all fee combinations.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            Running FFmpeg inside Vercel serverless functions came with
+            constraints I didn&apos;t fully appreciate upfront. There&apos;s no
+            persistent disk, so all file processing has to stream to and from
+            cloud storage. Timeouts needed to be configured up to five minutes
+            for longer audio files, and the FFmpeg binary itself had to be
+            bundled carefully to keep deploy sizes manageable. I used dynamic
+            imports so the FFmpeg code only loads when a workflow actually needs
+            it, and temporary directories for intermediate files like audio tags
+            that need to exist on disk briefly during processing. It works, but
+            it&apos;s the kind of thing that would be simpler on a dedicated
+            server.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            The minimum pricing validation was a surprisingly deep mathematical
+            problem. Every collaborator needs to receive at least PayPal&apos;s
+            minimum payout after all fees are deducted: the platform fee,
+            PayPal&apos;s percentage fee, a fixed fee per currency, potential
+            cross-border fees, and rounding from flooring collaborator shares.
+            The system simulates the worst-case fee scenario and increments the
+            price until the net payout clears the minimum. This validation runs
+            both when a producer sets their price and again at checkout to catch
+            any edge cases that might have changed between the two moments.
+          </p>
+        </div>
+
+        {/* Technology Choices */}
+        <div className="space-y-4">
+          <h3 className="text-foreground text-lg font-medium">
+            Technology Choices
+          </h3>
+
+          <p className="text-foreground/80 text-base leading-7">
+            I chose Better Auth over NextAuth for authentication. NextAuth has
+            been the default choice in the Next.js ecosystem for years, but its
+            migration history between major versions and API instability made me
+            hesitant. Better Auth offered a cleaner integration with Prisma,
+            more control over session management (including cookie-based session
+            caching to reduce database hits and configurable expiry/refresh
+            intervals), and a more predictable API surface. It was a less common
+            choice, but it turned out to be the right one for this project.
+          </p>
+
+          <p className="text-foreground/80 text-base leading-7">
+            The decision to use PayPal Commerce Platform instead of Stripe
+            Connect was a product decision, not a technical one. Stripe Connect
+            would have been significantly easier to integrate, with better
+            documentation and a more developer-friendly API. But the target
+            audience is music producers, and PayPal is the dominant payment
+            method in the beat selling space. Producers expect PayPal, and
+            buyers are comfortable paying with it. Choosing the harder
+            integration because it was the right fit for the users was a
+            trade-off I&apos;d make again, even knowing how much more complex
+            the implementation would be.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-border" />
+
+      <Link
+        href="/"
+        className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm transition-colors"
+      >
+        <ArrowLeft className="size-3.5" />
+        <span>Back</span>
+      </Link>
     </article>
   );
 }
