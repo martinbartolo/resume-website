@@ -3,7 +3,7 @@
     "company": "Trovr",
     "date": "Feb 2024 - Present",
     "description": [
-      "Sole frontend developer building two React Native mobile apps and several Next.js web applications. Collaborate with the backend team on RESTful API design using OpenAPI specs. Maintain the shared component library, CI/CD pipelines, and testing infrastructure with Jest and MSW."
+      "Trovr builds the Qube, a smart self-serve recycling device for deposit return schemes. As the sole frontend engineer, I own the full frontend stack across two React Native apps and a Next.js admin dashboard for managing Qube devices, user accounts, collections, and deposit returns. Built and maintain the shared component library, CI/CD pipelines, and testing infrastructure. Handle App Store and Google Play releases and collaborate with the backend team on REST API design using OpenAPI specs."
     ],
     "link": "https://trovrapp.com/",
     "position": "Senior Frontend Engineer"
