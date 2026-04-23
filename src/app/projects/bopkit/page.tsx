@@ -5,10 +5,29 @@ import Link from "next/link";
 
 import { ArchitectureDiagram } from "../../../components/architecture-diagram";
 
+const bopkitDescription =
+  "A deep dive into building Bopkit, a multi-tenant SaaS beat selling platform with multi-party payments, audio processing, and durable workflows.";
+
 export const metadata: Metadata = {
-  title: "Bopkit Case Study | Martin Bartolo",
-  description:
-    "A deep dive into building Bopkit, a multi-tenant SaaS beat selling platform with multi-party payments, audio processing, and durable workflows.",
+  title: "Bopkit Case Study",
+  description: bopkitDescription,
+  alternates: {
+    canonical: "/projects/bopkit",
+  },
+  openGraph: {
+    type: "article",
+    url: "/projects/bopkit",
+    title: "Bopkit Case Study",
+    description: bopkitDescription,
+    siteName: "Martin Bartolo",
+    publishedTime: "2026-02-21",
+    authors: ["Martin Bartolo"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bopkit Case Study | Martin Bartolo",
+    description: bopkitDescription,
+  },
 };
 
 const tableOfContents = [
@@ -148,7 +167,7 @@ export default function BopkitCaseStudy() {
         </p>
 
         {/* Architecture Diagram */}
-        <div className="!my-6">
+        <div className="my-6!">
           <ArchitectureDiagram />
         </div>
 
@@ -458,7 +477,7 @@ export default function BopkitCaseStudy() {
                 messaging is deliberately concise: producers scanning the page
                 should understand what Bopkit does within seconds.
               </p>
-              <div className="!my-6">
+              <div className="my-6!">
                 <Image
                   src="/bopkit/landing_hero.png"
                   alt="Bopkit landing page hero section"
@@ -483,7 +502,7 @@ export default function BopkitCaseStudy() {
                 proof by showing that real producers are already using the
                 platform.
               </p>
-              <div className="!my-6">
+              <div className="my-6!">
                 <Image
                   src="/bopkit/landing_showcase.png"
                   alt="Bopkit shops showcase showing real producer storefronts"
@@ -510,7 +529,7 @@ export default function BopkitCaseStudy() {
                 backgrounds, color themes, music player styling, and profile
                 personalization, each with its own video.
               </p>
-              <div className="!my-6">
+              <div className="my-6!">
                 <Image
                   src="/bopkit/landing_features.png"
                   alt="Bopkit feature showcase section with customization options"
@@ -536,7 +555,7 @@ export default function BopkitCaseStudy() {
                 beta testing, placed here intentionally so visitors don&apos;t
                 leave the page to find answers.
               </p>
-              <div className="!my-6 flex justify-center">
+              <div className="my-6! flex justify-center">
                 <Image
                   src="/bopkit/landing_pricing.png"
                   alt="Bopkit pricing section showing 10% fee structure"
@@ -560,7 +579,7 @@ export default function BopkitCaseStudy() {
                 linking to social accounts (TikTok, YouTube, Instagram, X as
                 @getbopkit), legal pages, and support resources.
               </p>
-              <div className="!my-6">
+              <div className="my-6!">
                 <Image
                   src="/bopkit/landing_footer.png"
                   alt="Bopkit footer with call-to-action and navigation links"
@@ -599,7 +618,7 @@ export default function BopkitCaseStudy() {
                 12-question FAQ covering fees, collaborator splits, refunds,
                 disputes, and currency handling.
               </p>
-              <div className="!my-6">
+              <div className="my-6!">
                 <Image
                   src="/bopkit/landing_pricingpage.png"
                   alt="Bopkit dedicated pricing page with fee breakdown and FAQ"
@@ -623,7 +642,7 @@ export default function BopkitCaseStudy() {
                 (MP3 vs WAV), usage rights, and includes an FAQ section
                 addressing common licensing questions.
               </p>
-              <div className="!my-6">
+              <div className="my-6!">
                 <Image
                   src="/bopkit/landing_licensing.png"
                   alt="Bopkit licensing page explaining license types and usage rights"
@@ -645,7 +664,7 @@ export default function BopkitCaseStudy() {
                 Building, Planned Features, and Completed Features. Users can
                 vote on planned items and submit their own feature suggestions.
               </p>
-              <div className="!my-6">
+              <div className="my-6!">
                 <Image
                   src="/bopkit/landing_roadmap.png"
                   alt="Bopkit public roadmap with feature voting and suggestions"
@@ -767,7 +786,7 @@ export default function BopkitCaseStudy() {
             hour using a cron job.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/auth_signup.png"
               alt="Bopkit sign-up flow: email input, password input, and check-your-email verification page"
@@ -826,7 +845,7 @@ export default function BopkitCaseStudy() {
             The user must sign in again with the new password.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/auth_forgot_password.png"
               alt="Bopkit forgot password page with email input and reset instructions"
@@ -980,7 +999,7 @@ export default function BopkitCaseStudy() {
             .
           </p>
 
-          <div className="!my-6 flex justify-center">
+          <div className="my-6! flex justify-center">
             <Image
               src="/bopkit/onboarding_username.png"
               alt="Bopkit onboarding screen with username selection, live shop URL preview, and currency auto-detection"
@@ -1036,7 +1055,7 @@ export default function BopkitCaseStudy() {
             timestamp and shows a congratulations message.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/onboarding_checklist.png"
               alt="Bopkit getting started checklist on the producer dashboard"
@@ -1097,7 +1116,7 @@ export default function BopkitCaseStudy() {
             progress indicator while it waits for confirmation.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/onboarding_paypal.png"
               alt="Bopkit PayPal connection flow: connect prompt, PayPal authorization, and callback progress page"
@@ -1227,7 +1246,7 @@ export default function BopkitCaseStudy() {
             would not improve quality.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/beat_upload.png"
               alt="Beat creation page with drag-and-drop audio upload and progress indicator"
@@ -1266,7 +1285,7 @@ export default function BopkitCaseStudy() {
             (Never, 15s, 30s, 45s, or 60s) that controls how often it repeats.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/beat_audiotag_settings.png"
               alt="Audio tag settings page showing public and custom tags, timing configuration, and tag management"
@@ -1318,7 +1337,7 @@ export default function BopkitCaseStudy() {
             interface lets the producer adjust the framing.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/beat_metadata.png"
               alt="Beat metadata form with auto-detected BPM and key, artwork upload with cropping, and beat name input"
@@ -1382,7 +1401,7 @@ export default function BopkitCaseStudy() {
             every collaborator clears the minimum.
           </p>
 
-          <div className="!my-6 flex justify-center">
+          <div className="my-6! flex justify-center">
             <Image
               src="/bopkit/beat_pricing.png"
               alt="Beat pricing form with MP3 and WAV license price inputs and validation"
@@ -1428,7 +1447,7 @@ export default function BopkitCaseStudy() {
             rounding cents favor the owner.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/beat_collaborators.png"
               alt="Collaborator management with user search, anonymous collaborator option, and profit share percentage sliders"
@@ -1470,7 +1489,7 @@ export default function BopkitCaseStudy() {
             settings so they pre-fill for every new beat.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/beat_youtube.png"
               alt="YouTube settings in beat creation with account connection, title, description, tags, visibility, and scheduling options"
@@ -1506,7 +1525,7 @@ export default function BopkitCaseStudy() {
             every 2 seconds.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/beat_publishing.png"
               alt="Publishing progress panel showing step-by-step status indicators for planning, processing, saving, and YouTube upload"
@@ -1607,7 +1626,7 @@ export default function BopkitCaseStudy() {
           variables set at the layout level.
         </p>
 
-        <div className="!my-6">
+        <div className="my-6!">
           <Image
             src="/bopkit/shop_example.png"
             alt="Example of a producer's customized shop with beats, music player, and custom theme colors"
@@ -1656,7 +1675,7 @@ export default function BopkitCaseStudy() {
             previous values.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/shop_customize.png"
               alt="Draggable shop customization dialog with color pickers floating over the shop"
@@ -1684,7 +1703,7 @@ export default function BopkitCaseStudy() {
             links appear as icons in the shop header.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/shop_profile.png"
               alt="Edit profile dialog with avatar upload, display name, bio, and social links"
@@ -1747,7 +1766,7 @@ export default function BopkitCaseStudy() {
             finished.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/dashboard_overview.png"
               alt="Producer dashboard overview with metric cards, quick actions, recent sales, and performance insights"
@@ -1801,7 +1820,7 @@ export default function BopkitCaseStudy() {
             visibility.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/dashboard_analytics.png"
               alt="Analytics page with revenue and sales charts, timeframe selector, and beat performance tables"
@@ -1839,7 +1858,7 @@ export default function BopkitCaseStudy() {
             Both tabs support CSV export for all orders or just selected rows.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/dashboard_sales.png"
               alt="Sales page with order table showing status badges, financial breakdown, and filtering options"
@@ -1871,7 +1890,7 @@ export default function BopkitCaseStudy() {
             are tracked separately and deducted from the running totals.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/dashboard_order_detail.png"
               alt="Order detail page showing payment overview, financial breakdown, collaborator payouts, and transaction history"
@@ -1918,7 +1937,7 @@ export default function BopkitCaseStudy() {
             beat actions are available through a dropdown menu on each row.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/dashboard_beats.png"
               alt="Beats management table with inline playback, pricing columns, collaborator info, and bulk actions"
@@ -1958,7 +1977,7 @@ export default function BopkitCaseStudy() {
             their own beats versus beats they contributed to.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/dashboard_collaborations.png"
               alt="Collaborations page showing beats from other producers with profit share percentages and earnings"
@@ -2045,7 +2064,7 @@ export default function BopkitCaseStudy() {
             the seek bar below the controls.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/buyer_shop.png"
               alt="A producer's storefront showing the beat grid, profile section, and music player"
@@ -2086,7 +2105,7 @@ export default function BopkitCaseStudy() {
             shop isn&apos;t accepting payments yet.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/buyer_beat.png"
               alt="Beat detail page showing artwork, metadata, license options, and pricing"
@@ -2147,7 +2166,7 @@ export default function BopkitCaseStudy() {
             cart automatically.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/buyer_cart.png"
               alt="Shopping cart showing items with license types and total"
@@ -2190,7 +2209,7 @@ export default function BopkitCaseStudy() {
             surface user-friendly messages.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/buyer_checkout.png"
               alt="Checkout page with order summary and PayPal payment button"
@@ -2220,7 +2239,7 @@ export default function BopkitCaseStudy() {
             to download immediately.
           </p>
 
-          <div className="!my-6 flex justify-center">
+          <div className="my-6! flex justify-center">
             <Image
               src="/bopkit/buyer_processing.png"
               alt="Order processing page showing payment confirmation states"
@@ -2245,7 +2264,7 @@ export default function BopkitCaseStudy() {
             download button, so it doesn&apos;t add to the initial page bundle.
           </p>
 
-          <div className="!my-6 flex justify-center">
+          <div className="my-6! flex justify-center">
             <Image
               src="/bopkit/buyer_order.png"
               alt="Order detail page with download buttons and order breakdown"
@@ -2293,7 +2312,7 @@ export default function BopkitCaseStudy() {
             preventing anyone from probing which email addresses have orders.
           </p>
 
-          <div className="!my-6 flex justify-center">
+          <div className="my-6! flex justify-center">
             <Image
               src="/bopkit/buyer_orders.png"
               alt="Order history page showing past purchases with status and download links"
@@ -2356,7 +2375,7 @@ export default function BopkitCaseStudy() {
             confirmation.
           </p>
 
-          <div className="!my-6 flex justify-center">
+          <div className="my-6! flex justify-center">
             <Image
               src="/bopkit/email_example.png"
               alt="Example of an order confirmation email sent to a buyer"
@@ -2528,7 +2547,7 @@ export default function BopkitCaseStudy() {
           mobile components or device detection.
         </p>
 
-        <div className="!my-6 flex justify-center gap-4">
+        <div className="my-6! flex justify-center gap-4">
           <Image
             src="/bopkit/mobile_shop.png"
             alt="Producer shop on mobile viewport"
@@ -2611,7 +2630,7 @@ export default function BopkitCaseStudy() {
             developer visibility into system health.
           </p>
 
-          <div className="!my-6">
+          <div className="my-6!">
             <Image
               src="/bopkit/status.png"
               alt="Upptime status page showing health check results for all services"
