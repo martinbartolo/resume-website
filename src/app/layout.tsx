@@ -7,9 +7,9 @@ import "../styles/globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 const siteUrl = "https://martinbartolo.com";
-const defaultTitle = "Martin Bartolo | Senior Software Engineer";
+const defaultTitle = "Martin Bartolo | Senior Fullstack Engineer";
 const defaultDescription =
-  "Martin Bartolo is a senior software engineer in Malta building web and mobile products end-to-end with React, Next.js, React Native, and TypeScript.";
+  "Martin Bartolo is a fullstack engineer from Malta, shipping production web and mobile software from start to finish with TypeScript, React, Next.js, React Native, and Node.js.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description: defaultDescription,
   keywords: [
     "Martin Bartolo",
+    "Senior Fullstack Engineer",
     "Senior Software Engineer",
     "Fullstack Engineer",
     "Frontend Engineer",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     "Next.js",
     "React Native",
     "TypeScript",
+    "Node.js",
     "Malta",
     "Portfolio",
     "Resume",
@@ -67,7 +69,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Martin Bartolo",
   url: siteUrl,
-  jobTitle: "Senior Software Engineer",
+  jobTitle: "Senior Fullstack Engineer",
   email: "mailto:martin9oh9@gmail.com",
   address: {
     "@type": "PostalAddress",
