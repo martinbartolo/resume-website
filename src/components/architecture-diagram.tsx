@@ -260,7 +260,7 @@ const edges: Edge[] = [
 
 export function ArchitectureDiagram() {
   return (
-    <div className="aspect-[4/3] w-full overflow-hidden rounded-lg sm:aspect-video">
+    <div className="aspect-4/3 w-full overflow-hidden rounded-lg sm:aspect-video">
       <ReactFlow
         nodes={nodes}
         edges={edges}

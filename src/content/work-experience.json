@@ -3,18 +3,9 @@
     "company": "Trovr",
     "date": "Feb 2024 - Present",
     "description": [
-      "Trovr builds the Qube, a smart self-serve recycling device for deposit return schemes, along with the consumer and merchant apps that support it. As the sole frontend engineer, I own two React Native apps and a Next.js admin dashboard for managing Qube devices, user accounts, and recycling sessions. I also built and maintain the shared component library, CI/CD pipelines, and testing infrastructure. I handle App Store and Google Play releases and collaborate with the backend team on REST API design using OpenAPI specs."
+      "Trovr builds the Qube, a smart self-serve recycling device for deposit return schemes, along with the consumer and merchant apps that support it. I joined as a frontend engineer in early 2024 and was promoted to Senior after the contractor team was phased out, becoming the sole frontend engineer with full ownership of two React Native apps and the Next.js admin dashboard that manages Qube devices, user accounts, and recycling sessions. I own the shared component library, Jest testing infrastructure, and GitLab CI/CD pipelines, ship biweekly releases to App Store and Google Play, and partner with the backend engineer on REST API design via OpenAPI specs."
     ],
     "link": "https://trovrapp.com/",
     "position": "Senior Frontend Engineer"
-  },
-  {
-    "company": "Siadat Software",
-    "date": "Oct 2023 - Dec 2023",
-    "description": [
-      "Worked on MLOps, contributing to the implementation of solutions for efficient model deployment and data processing. Built applications using Python, Angular and SCSS."
-    ],
-    "link": "https://siadat.com/",
-    "position": "Full-stack Developer"
   }
 ]

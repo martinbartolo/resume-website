@@ -88,8 +88,8 @@ export default function Home() {
           <ThemeToggle />
         </div>
         <p className="text-muted-foreground text-base leading-relaxed">
-          Software Engineer from Malta. Building web experiences from start to
-          finish.
+          Fullstack engineer from Malta. Shipping production web and mobile
+          software from start to finish.
         </p>
       </header>
 
