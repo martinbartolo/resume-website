@@ -1,3 +1,5 @@
 node_modules/
 *.html
 *.pdf
+.claude/*.local.json
+applications/
