@@ -4,19 +4,27 @@ Malta (CET) · <a href="https://martinbartolo.com">martinbartolo.com</a> · <a h
 
 ## Summary
 
-Fullstack engineer (TypeScript, React, Node.js) with 3 years of experience shipping production software. Sole frontend engineer at Trovr, a smart-recycling startup with devices live throughout Europe, owning two React Native apps and a Next.js admin dashboard. Outside work, solo-built Bopkit, a multi-tenant SaaS for music producers with subdomain-based storefronts, multi-party PayPal payouts, and durable publishing workflows.
+Fullstack engineer (TypeScript, React, Node.js) with 3 years of experience shipping production software. Frontend developer at Bynario, a security platform for automated vulnerability detection and remediation. Previously the sole frontend engineer at Trovr, a smart-recycling startup with devices live throughout Europe, owning two React Native apps and a Next.js admin dashboard. Outside work, solo-built Bopkit, a multi-tenant SaaS for music producers with subdomain-based storefronts, multi-party PayPal payouts, and durable publishing workflows.
 
 ## Experience
 
-### Trovr <span class="date">Feb 2024 - Present</span>
+### Bynario <span class="date">Aug 2026 - Present</span>
+
+_Automated vulnerability detection and remediation._
+
+**Frontend Developer** · _Aug 2026 - Present_
+
+- Building the platform's React frontend.
+
+### Trovr <span class="date">Feb 2024 - Aug 2026</span>
 
 _Smart self-serve recycling devices (the Qube) for deposit return schemes._
 
-**Senior Frontend Engineer** · _Apr 2025 - Present_
+**Senior Frontend Engineer** · _Apr 2025 - Aug 2026_
 
 - Promoted after the contractor team was phased out. Became the sole frontend engineer with full ownership of two React Native apps (consumer and merchant) and the Next.js admin dashboard managing Qube devices, user accounts, and recycling sessions.
-- Own the shared component library, Jest testing infrastructure, and GitLab CI/CD pipelines. Ship biweekly releases to App Store and Google Play.
-- Partner with the backend engineer on REST API design via OpenAPI specs and own all frontend architectural decisions.
+- Owned the shared component library, Jest testing infrastructure, and GitLab CI/CD pipelines. Shipped biweekly releases to App Store and Google Play.
+- Partnered with the backend engineer on REST API design via OpenAPI specs and owned all frontend architectural decisions.
 
 **Frontend Engineer** · _Feb 2024 - Apr 2025_
 

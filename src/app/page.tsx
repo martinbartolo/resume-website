@@ -18,7 +18,19 @@ function ExperienceSection() {
         <article key={index} className="space-y-2">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
             <h3 className="text-foreground text-lg font-medium">
-              {item.position} at {item.company}
+              {item.position} at{" "}
+              {item.link ? (
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="decoration-muted-foreground/30 hover:decoration-muted-foreground underline decoration-1 underline-offset-4 transition-colors"
+                >
+                  {item.company}
+                </Link>
+              ) : (
+                item.company
+              )}
             </h3>
             <p className="text-muted-foreground/70 text-xs whitespace-nowrap">
               {item.date}

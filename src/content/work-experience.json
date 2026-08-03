@@ -1,11 +1,20 @@
 [
   {
-    "company": "Trovr",
-    "date": "Feb 2024 - Present",
+    "company": "Bynario",
+    "date": "Aug 2026 - Present",
     "description": [
-      "Trovr builds the Qube, a smart self-serve recycling device for deposit return schemes, along with the consumer and merchant apps that support it. I joined as a frontend engineer in early 2024 and was promoted to Senior after the contractor team was phased out, becoming the sole frontend engineer with full ownership of two React Native apps and the Next.js admin dashboard that manages Qube devices, user accounts, and recycling sessions. I own the shared component library, Jest testing infrastructure, and GitLab CI/CD pipelines, ship biweekly releases to App Store and Google Play, and partner with the backend engineer on REST API design via OpenAPI specs."
+      "Bynario works on automated vulnerability detection and remediation. I joined as a frontend developer in August 2026, working on the platform's React frontend."
     ],
-    "link": "https://trovrapp.com/",
+    "link": "https://bynar.io/",
+    "position": "Frontend Developer"
+  },
+  {
+    "company": "Trovr",
+    "date": "Feb 2024 - Aug 2026",
+    "description": [
+      "Trovr builds the Qube, a smart self-serve recycling device for deposit return schemes, along with the consumer and merchant apps that support it. I joined as a frontend engineer in early 2024 and was promoted to Senior after the contractor team was phased out, becoming the sole frontend engineer with full ownership of two React Native apps and the Next.js admin dashboard that manages Qube devices, user accounts, and recycling sessions. I owned the shared component library, Jest testing infrastructure, and GitLab CI/CD pipelines, shipped biweekly releases to App Store and Google Play, and partnered with the backend engineer on REST API design via OpenAPI specs."
+    ],
+    "link": "https://trovr.eu/",
     "position": "Senior Frontend Engineer"
   }
 ]
